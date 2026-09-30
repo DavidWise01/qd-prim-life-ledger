@@ -1,0 +1,46 @@
+{
+  "schema": "qd.tether.manifest.v1",
+  "root_sha256": "f93a73838e22f6d9d1178318a72f47a171ebcf0488ea117e08681ffd93226016",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "a2c5d1b1e8fc2d00576f130634feec851372f52aa103d99d891f4533e011a3ff"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9e0247cf3702a77a24f0250b02d115f8fe1ba3930f1258f183c7d2a130714767"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "a0e6e6c2b48f664c97ca99bce9f3155954a93fbd142301e9294c9723e0c57c9c"
+    },
+    {
+      "path": "TETHER.md",
+      "sha256": "384a8b24e6a936c569997e7e54d15b0c2042b626ff6bc2101fba7fe37648f927"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "912041bc2cea786267eb62bcc866ca75ad648b4bd5d5261a6fa6585aff97ce9a"
+    },
+    {
+      "path": "src/qd_prim.py",
+      "sha256": "afd972dbff0376db5a6f6f2e43f793d51093b88dd2c1fa1ac5d395da2b4cbff6"
+    },
+    {
+      "path": "tests/test_qd_prim.py",
+      "sha256": "47301383b282afc2783fb8fc4d872f067b60f2c6335232f5c801837ede5c8998"
+    },
+    {
+      "path": "docs/NOTATION.md",
+      "sha256": "fd5e347564fd39eba811ea8910f05f69c1b8509155dbfbbdf38b079acae68f70"
+    },
+    {
+      "path": ".github/workflows/test.yml",
+      "sha256": "b366ae512d536c722b08c7d75045caa18a6dffcf6fd8970d4bb5c13212dca965"
+    },
+    {
+      "path": "tools/verify_manifest.py",
+      "sha256": "7dac64a5031f96fa0b7247f06e8f26f13e7fd5750e8e7e5542f6c973a846afb0"
+    }
+  ]
+}
