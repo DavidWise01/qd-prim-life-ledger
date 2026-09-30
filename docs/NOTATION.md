@@ -26,6 +26,7 @@ V10 = {u,d,l,r,x,y,z,-,+,1}
 
 ```text
 PRIM = 1 1 2 8
+dot = sapphon
 prim, append only, add to next
 ```
 
@@ -34,6 +35,15 @@ The eight local positions are:
 ```text
 {unary,binary,ternary,operand1,operand2,operand3,operand4,operand5}
 ```
+
+## Sapphon
+
+```text
+dot[n] = sapphon[n] = Plank[n]
+next write -> sapphon[n+1]
+```
+
+A sapphon is one immutable local dot/register in the append-only trajectory.
 
 ## q.d
 
@@ -48,7 +58,7 @@ The eight local positions are:
 ```text
 (+3 - 2) + (-3 + 2) = +1 + (-1) = 0
 2^3 = 8
-1 1 2 {4} 8 -> next dot -> 2^3 again
+1 1 2 {4} 8 -> next sapphon -> 2^3 again
 ```
 
 ## Homeostatic nesting
