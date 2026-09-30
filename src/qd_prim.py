@@ -10,6 +10,7 @@ from typing import Any
 class QDEvent:
     life: str
     plank: int
+    sapphon: int
     dimension: int
     choice: str
     consequence: str
@@ -27,6 +28,8 @@ class QDLedger:
     """Append-only q.d ledger. Existing events are never mutated."""
 
     PRIM = (1, 1, 2, 8)
+    DOT = "sapphon"
+    SAPPHON_CAPACITY = 2 ** 3
     V10 = ("u", "d", "l", "r", "x", "y", "z", "-", "+", "1")
     DIMENSIONS = tuple(range(12))
     SLOTS = (
@@ -46,6 +49,11 @@ class QDLedger:
     def next_plank(self) -> int:
         return len(self._events)
 
+    @property
+    def next_sapphon(self) -> int:
+        """The next append-only dot/register; dot == sapphon == local Plank index."""
+        return len(self._events)
+
     def append(self, *, dimension: int, choice: str, consequence: str, affect: str, state: Any) -> QDEvent:
         if dimension not in self.DIMENSIONS:
             raise ValueError("dimension must be in 0D..11D")
@@ -53,6 +61,7 @@ class QDLedger:
         event = QDEvent(
             life=self.life,
             plank=self.next_plank,
+            sapphon=self.next_sapphon,
             dimension=dimension,
             choice=choice,
             consequence=consequence,
@@ -66,6 +75,8 @@ class QDLedger:
     def verify(self) -> bool:
         for index, event in enumerate(self._events):
             if event.plank != index:
+                return False
+            if event.sapphon != index:
                 return False
             expected = None if index == 0 else self._events[index - 1].digest()
             if event.parent_hash != expected:
