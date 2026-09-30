@@ -6,6 +6,7 @@ An append-only symbolic trajectory kernel for the `q.d` life-ledger model.
 
 ```text
 PRIM = 1 1 2 8
+dot = sapphon
 rule = append only -> add to next
 ```
 
@@ -46,7 +47,7 @@ Each event preserves:
 - parent record hash
 - monotonic Plank index
 
-The record chain is provenance: old events remain immutable.
+The record chain is provenance: old events remain immutable. Each append has `dot[n] = sapphon[n] = Plank[n]`; the next realized choice opens `sapphon[n+1]`.
 
 ## 3D local volume
 
@@ -56,10 +57,10 @@ A 3D life uses one `2^3 = 8` addressable volume at a time.
 (+3 - 2) + (-3 + 2) = +1 + (-1) = 0
 ```
 
-When the current volume closes/fills, reserve the next self-similar structure:
+When the current volume closes/fills, the dot is a **sapphon**. A committed sapphon is immutable; reserve the next self-similar sapphon:
 
 ```text
-1 1 2 {4} 8 -> next dot -> 2^3 again
+1 1 2 {4} 8 -> next sapphon -> 2^3 again
 ```
 
 Invariant:
