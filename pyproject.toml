@@ -1,0 +1,9 @@
+[project]
+name = "qd-prim-life-ledger"
+version = "0.1.0"
+description = "Append-only symbolic q.d life-trajectory PRIM kernel"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
