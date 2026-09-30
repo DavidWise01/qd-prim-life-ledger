@@ -23,6 +23,16 @@ read current -> resolve -> append next
 
 No committed PRIM is mutated.
 
+### Sapphon
+
+```text
+dot = sapphon
+sapphon[n] = Plank[n]
+append -> sapphon[n+1]
+```
+
+A sapphon is the local append-only dot/register boundary. Each sapphon exposes one local `2^3 = 8` state volume. Once committed, `sapphon[n]` is immutable; new state opens `sapphon[n+1]`.
+
 ## 2. Identity and life-zero
 
 ```text
@@ -55,6 +65,7 @@ For life `L`, event `E_n` is immutable after append.
 E_n = {
   life,
   plank,
+  sapphon,
   dimension,
   choice,
   consequence,
@@ -74,6 +85,7 @@ with:
 
 ```text
 E_(n+1).plank = E_n.plank + 1
+E_(n+1).sapphon = E_(n+1).plank
 E_(n+1).parent_hash = hash(E_n)
 ```
 
@@ -93,7 +105,7 @@ A q.d ledger records ordered life trajectory across these dimensions without rew
 1 1 2 {4} 8
 ```
 
-One q.d state is appended at a time. On closure, allocate the next dot/register rather than mutating the closed one.
+One q.d state is appended at a time. The dot/register is a sapphon. On closure, allocate the next sapphon rather than mutating the closed one.
 
 ## 7. Homeostatic nesting
 
