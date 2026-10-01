@@ -24,6 +24,49 @@ class QDEvent:
     def digest(self) -> str:
         return sha256(self.canonical().encode("utf-8")).hexdigest()
 
+@dataclass(frozen=True)
+class SapphonDaughter:
+    """Terminal Gen-1 external product of the frozen mother kernel."""
+    name: str
+    gem: str
+    color: str
+    generation: int = 1
+    parent: str = "mother"
+    can_spawn: bool = False
+    scope: tuple[str, ...] = ("name", "gem", "color", "qd.append")
+
+    @property
+    def implicit(self) -> dict[str, dict[str, str]]:
+        return {
+            "name": {"implicit": self.name},
+            "color": {"implicit": self.color},
+            "gem": {"implicit": self.gem},
+        }
+
+
+class MotherKernel:
+    """Frozen surgical mother kernel. Emits Gen-1 sapphon daughters only."""
+
+    FROZEN = True
+    KERNEL_PRIMITIVE = (5, 3, 2, 1, 1)
+    GENERATION_LIMIT = 1
+    PRODUCT = "sapphon"
+    COLORS = ("bk", "wt", "red", "blu", "gree", "yell", "purpl", "orang")
+    GEMS = ("onyx", "quartz", "ruby", "sapphire", "emerald", "citrine", "amethyst", "carnelian")
+
+    @classmethod
+    def infer_daughter(cls, token: str) -> SapphonDaughter:
+        normalized = token.strip().lower()
+        if not normalized:
+            raise ValueError("daughter token must be non-empty")
+        index = sha256(normalized.encode("utf-8")).digest()[0] % 8
+        return SapphonDaughter(
+            name=normalized,
+            gem=cls.GEMS[index],
+            color=cls.COLORS[index],
+        )
+
+
 class QDLedger:
     """Append-only q.d ledger. Existing events are never mutated."""
 
