@@ -120,3 +120,27 @@ The earlier mnemonic corpus is now attached as a read-only carrier:
 ```
 
 The structural corpus lives in `data/humanity_corpus_2700.json`. `tools/corpus_tether.py` maps a generated radix address into exactly one immutable corpus slot and local phase. No corpus binding can spawn, append, or mutate a generation.
+
+
+## {{i::mpli::c::it::}} mnemonic overlay
+
+The mnemonic layer is derived and read-only:
+
+```text
+H::UMANITY corpus
+      |
+      v
+{{i::mpli::c::it::}}
+      |
+      +-- CEM -> CHEM
+      +-- TGL -> TOGGLE
+      +-- SPN -> SPIN
+      +-- PNC -> PINCH
+      +-- EMT -> EMIT
+      +-- GLS -> GLASS
+      |
+      +-- AIR bracket
+          2x1^10^-35.99 - {air 36.00}} +36.01
+```
+
+The overlay may emit mnemonic labels but cannot rewrite corpus slots, generate people, spawn daughters, or mutate the frozen mother kernel.
