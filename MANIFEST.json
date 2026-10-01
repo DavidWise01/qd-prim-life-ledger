@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "e34536a55daff69f6d94ff9ed7cccd85bf0845f6d1442760507e7fe8cd8efcb2",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -285,6 +285,23 @@
         "docs/assets/styles.css",
         "docs/site.webmanifest"
       ]
+    },
+    "emergence": {
+      "mode": "derive_from_seeds",
+      "source": "data/toph_aeon_hierarchy.json::emergence.seeds",
+      "verifier": "tools/toph_aeon_hierarchy.py::derive",
+      "trace": [
+        "root0",
+        "q.d=8",
+        "gravity=1000:1",
+        "toroid=366",
+        "rings=20",
+        "ring_years=360",
+        "corpus=7200",
+        "clock=7200",
+        "foam=400"
+      ],
+      "frozen_kernel_modified": false
     }
   },
   "files": [
@@ -294,7 +311,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "60dfca96aff09cc1bd376f1c976742513d93509ace42405af1fcd21187326c72"
+      "sha256": "PENDING"
     },
     {
       "path": "SPEC.md",
@@ -302,7 +319,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "03e3a694fb25bcd5a80c536dfe5244efc4325fa5ab466c74c425477d705e921e"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -350,7 +367,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "8098d10881d50ce296d3ce8667423b823e27882c57e5404585bf489686b2fc89"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -418,15 +435,15 @@
     },
     {
       "path": "data/toph_aeon_hierarchy.json",
-      "sha256": "4a2619a54855bad9d31883053a47941aaa6f9dbde62fdf5029957ba8e6e486e2"
+      "sha256": "PENDING"
     },
     {
       "path": "tools/toph_aeon_hierarchy.py",
-      "sha256": "3cee035e56ed3b760259bf58728e5282500a01496ce1e98de5284ecdca1dcaab"
+      "sha256": "PENDING"
     },
     {
       "path": "tests/test_toph_aeon_hierarchy.py",
-      "sha256": "f16aa4f120fe0b71bc9e0b5f0b3cc65f88e4e389bacae1a63c8053ebba4daf67"
+      "sha256": "PENDING"
     },
     {
       "path": "tools/frame_clock.py",
@@ -438,15 +455,19 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "dd8c858e6bcba79a61333e8c0332ceedc070f48e17ba244278d852e8a731eb8f"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/assets/styles.css",
-      "sha256": "5f9f83c055f77fd5f7157d0ae9ab2bdbb4da8dbb91a3851e28c86c19d25bd879"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/site.webmanifest",
       "sha256": "1878629822896f9a45c472b4c84f4a0ecb94bfa2edd2694e2d1298a38223dc59"
+    },
+    {
+      "path": "docs/assets/app.js",
+      "sha256": "PENDING"
     }
   ]
 }
