@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "5a1a4e57f04d7b9aa6e6664388a19435a3eb1f1038b1b62d06991e55cf50cb75",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -163,6 +163,26 @@
       ],
       "read_only": true,
       "live_network_inspection": false
+    },
+    "kinetic_bounds": {
+      "toward_math": {
+        "plus": "speed_up",
+        "minus": "slow_down"
+      },
+      "reference_vector": "(x+3,y-2)",
+      "geometry": "ellipse from unequal axis magnitudes 3:2",
+      "mandel_literal": "5%/inf.25 + 30 + 30 + 30 + 5%inf.25",
+      "mandel_bands": [
+        0.05,
+        0.3,
+        0.3,
+        0.3,
+        0.05
+      ],
+      "mandel_total": 1,
+      "admission": "mandel_tethered OR juliet_encrypted",
+      "otherwise": "OUT_OF_BOUNDS",
+      "juliet_security_claim": false
     }
   },
   "files": [
@@ -180,7 +200,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "a3f39b2486e05b2db79101c1b8f26534b24f12efe6789fdb2f3858e8b786ee94"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -228,7 +248,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "bc88626b9866bc660445c08f4f788ec311f16f00ad95770334053bd4a0c0d30d"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -265,6 +285,14 @@
     {
       "path": "tests/test_toph_relative_layers.py",
       "sha256": "2f97d23dca8b3d789e572566adcfa1a92872f0b21a63572049b95029cebf82cf"
+    },
+    {
+      "path": "tools/kinetic_bounds.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_kinetic_bounds.py",
+      "sha256": "PENDING"
     }
   ]
 }
