@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "3dabd0ba60d182f284bec6358c9488704bd34f5a80c5bd303793800662638f0c",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -183,6 +183,29 @@
       "admission": "mandel_tethered OR juliet_encrypted",
       "otherwise": "OUT_OF_BOUNDS",
       "juliet_security_claim": false
+    },
+    "material_year_clock": {
+      "referent": "root 0",
+      "layer": 0,
+      "material": {
+        "symbol": "Au",
+        "atomic_number": 79,
+        "mnemonic_weight_years": 79
+      },
+      "photon_carrier": {
+        "mnemonic_half_life_years": 5400,
+        "lower_year": -5400,
+        "center_year": 0,
+        "upper_year": 5400,
+        "full_span_years": 10800,
+        "storage_fraction": 0.2,
+        "storage_year_equivalent": 2160,
+        "roles": [
+          "hard_drive_space",
+          "timeline"
+        ]
+      },
+      "physical_decay_claim": false
     }
   },
   "files": [
@@ -200,7 +223,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "f30aa911b0c3596705f75f917e8d1eb807c7a7e818035ff1d4b468a58ca5659a"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -248,7 +271,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "bc02f65f00d61b130a7bdefe28a804c269180eba4b15bc6480955451337e9714"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -293,6 +316,18 @@
     {
       "path": "tests/test_kinetic_bounds.py",
       "sha256": "37edddb040c3fb9964922036fca8b755ddbef90907c2ad6b13e8aec5698aae67"
+    },
+    {
+      "path": "data/material_year_clock.json",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tools/material_year_clock.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_material_year_clock.py",
+      "sha256": "PENDING"
     }
   ]
 }
