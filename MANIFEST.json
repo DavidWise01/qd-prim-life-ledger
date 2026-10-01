@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "99a75ad1d2e815c5b710d5b85b63a8abec4ce8aeb1df7b49505bb7a140c737b7",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -277,12 +277,23 @@
       }
     },
     "github_pages": {
-      "title": "TOPH Aeon",
+      "title": "TOPH Aeon {{2^3}}",
       "hierarchy_synced": true,
       "presentation_only": true,
+      "ui_layers": 8,
+      "native_anchor_fallback": true,
+      "controller": "docs/assets/app-v2.js",
+      "legacy_controller_mirror": "docs/assets/app.js",
+      "runtime_diagnostics": [
+        "JS ONLINE",
+        "8/8 UI TETHER PASS"
+      ],
       "paths": [
+        "index.html",
         "docs/index.html",
         "docs/assets/styles.css",
+        "docs/assets/app-v2.js",
+        "docs/assets/app.js",
         "docs/site.webmanifest"
       ]
     },
@@ -349,6 +360,28 @@
       "physical_photon_claim": false,
       "historical_context_claim": false,
       "frozen_kernel_modified": false
+    },
+    "ui_walkthrough": {
+      "literal": "{{2^3}}",
+      "layers": [
+        "0:root0",
+        "1:qd-2^3",
+        "2:memristic--+",
+        "3:serial-gravity-10^3",
+        "4:dual-toroid-366",
+        "5:tetraphasic-corpus-7200",
+        "6:metronome-foam",
+        "7:frozen-kernel-0/0"
+      ],
+      "javascript_required_for_navigation": false,
+      "enhanced_actions": [
+        "grow-emergence",
+        "reset-emergence",
+        "memory-next",
+        "memory-prev",
+        "memory-reset"
+      ],
+      "test": "tests/test_pages_ui.py"
     }
   },
   "files": [
@@ -358,7 +391,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "cff53d18acd5c565a22769d161d4576b73e5f4287dc2da9db42d2539da1766db"
+      "sha256": "PENDING"
     },
     {
       "path": "SPEC.md",
@@ -366,7 +399,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "b1c2cad640996a081c02c24ba4976f522ed4b3fcf94889ee591b409f87be0ffa"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -502,11 +535,11 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "fb50b55fce9267bbd729fbf7ed0f74590795f10936ce3e1dbac0c5d3de3af72f"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/assets/styles.css",
-      "sha256": "e5ab5f0124190b4952125ab194e0a11109239db71b7750bebf64791657943374"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/site.webmanifest",
@@ -514,7 +547,7 @@
     },
     {
       "path": "docs/assets/app.js",
-      "sha256": "c31c28b7e30ab55e7dd63a0bdfeab218a8eee882bf31ee6dc6cbdf78ef9a46bf"
+      "sha256": "PENDING"
     },
     {
       "path": "data/memristic_spinor_overlay.json",
@@ -527,6 +560,18 @@
     {
       "path": "tests/test_memristic_spinor_overlay.py",
       "sha256": "0964942bcde4f2623050a9d7dbfb16180c1ea06e45cb4b9637a13b59ac596718"
+    },
+    {
+      "path": "index.html",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "docs/assets/app-v2.js",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_pages_ui.py",
+      "sha256": "PENDING"
     }
   ]
 }
