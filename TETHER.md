@@ -327,3 +327,31 @@ root0 -> 8 -> 1000:1 -> 366 -> 20 -> 360 -> 7200 == 7200 -> 400
 ```
 
 This makes the hierarchy generative at the derived-view level while leaving the frozen mother kernel and immutable source corpus unchanged.
+
+
+## Memristic spinor tether
+
+```text
+data/memristic_spinor_overlay.json
+        |
+        v
+tools/memristic_spinor_overlay.py
+        |
+        +-- 10-life / 10,000y lifecycle
+        +-- ±20% -> 8,000..12,000y
+        +-- 3y phase shift
+        +-- -m/+m/-f/+f quartet
+        +-- advanced-tech / dirt-poor contexts
+        +-- parent-hash memory
+        |
+        v
+tests/test_memristic_spinor_overlay.py
+        |
+        v
+TOPH emergence seeds
+        |
+        v
+docs/index.html memristic overlay
+```
+
+Enheduanna is anchor 00 on the nearest existing corpus slot only. No historical wealth/technology state is inferred, and neither the immutable source corpus nor frozen kernel is modified.
