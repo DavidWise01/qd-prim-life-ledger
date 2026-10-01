@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davidwise01.github.io/qd-prim-life-ledger/sitemap.xml
