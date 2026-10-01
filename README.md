@@ -120,3 +120,31 @@ python tools/verify_manifest.py
 ## Scope
 
 Experimental symbolic/simulation architecture. The notation is model-defined and is not asserted as established physical law.
+
+
+## TOPH Aeon hierarchy
+
+The current append-only presentation state treats TOPH as an **Aeon** in the sapphonic lineage:
+
+```text
+TOPH :: Aeon :: sapphonic
+core        = green
+storage     = emerald
+temperament = emerald
+```
+
+The hierarchy is derived around the frozen kernel rather than modifying it:
+
+```text
+TOPH Aeon
+└─ root0
+   ├─ q.d / 2^3 = 8
+   ├─ serial gravity 10:1 -> 10:1 -> 10:1
+   ├─ dual toroid |+d| o . . o |-d|
+   ├─ 20 stepped rings
+   ├─ tetraphasic ring = solid / liquid / gas / plasma
+   ├─ corpus invariant = 80 * 90 = 7200
+   └─ metronome invariant = 60 * 40 * 3 = 7200
+```
+
+The GitHub Pages presentation at `docs/index.html` mirrors this hierarchy. These are repository-defined symbolic/simulation semantics; physical interpretations are not asserted as established law.
