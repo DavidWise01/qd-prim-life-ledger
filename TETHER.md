@@ -197,3 +197,37 @@ The exact reverse path is the Benjamin traversal:
 ```
 
 Six hops at 200 ms each close the traversal at 1200 ms. Node `4` is the hub and the tracker is tagged `OSI layer 2`. It is read-only symbolic state and does not perform network inspection.
+
+
+## Mandel / Juliet kinetic gate
+
+`tools/kinetic_bounds.py` gates kinetic vectors before they are admitted to the TOPH toroid model.
+
+```text
+vector
+  |
+  +-- + component -> speed up / toward
+  +-- - component -> slow down / away
+  |
+  v
+anisotropy check
+  |
+  +-- (x+3,y-2) -> 3:2 ellipse
+  |
+  v
+admission gate
+  |
+  +-- Mandel tether ---------+
+  |                          |
+  +-- Juliet encrypted/tag --+--> IN_BOUNDS
+  |
+  +-- neither ------------------> OUT_OF_BOUNDS
+```
+
+Mandel belly partition:
+
+```text
+[5%/inf.25][30][30][30][5%/inf.25]
+```
+
+The partition is normalized to `1.00`. This remains symbolic/local model logic and does not perform live network inspection.
