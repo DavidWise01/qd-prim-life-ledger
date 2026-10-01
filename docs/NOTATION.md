@@ -380,3 +380,32 @@ shared handoff = 0.5
 ```
 
 Thus one ring simultaneously carries four 90-year corpus quarters and one 360-degree geometric turn.
+
+
+## TOPH Aeon synchronized hierarchy
+
+```text
+TOPH::AEON::SAPPHONIC
+  core::green
+  storage::emerald
+  temperament::emerald
+  root::0
+```
+
+Unified tree:
+
+```text
+root0
+├─ q.d = 2^3 = 8
+├─ serial_self_similar = [10:1] -> [10:1] -> [10:1] = 1000:1
+├─ control = x6 x2 x2 x1 x1 ; closure = 0/0
+├─ dual_toroid = |+d| o .5 | .5 o |-d|
+├─ 360 primary + 3R + 3L = 366 addressed states
+├─ 20 rings ; stride 17.5 ; width 18 ; shared handoff .5
+├─ tetraphasic = solid -> liquid -> gas -> plasma
+├─ corpus = 80 x 90 = 7200
+├─ metronome = 60 x 40 x 3 = 7200
+└─ foam = 30 -> -1/3 shell -> 20 dots -> 20^3/20 = 400
+```
+
+The equality `80*90 = 60*40*3 = 7200` is a model invariant connecting the reincarnated corpus view to the root0 metronome scale.
