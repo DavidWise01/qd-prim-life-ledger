@@ -13,6 +13,7 @@ from tools.reincarnated_photon_corpus import (
     SOURCE_SLOTS,
     TOROID_LIVES,
     TOROID_YEARS,
+    TETRAPHASIC,
     life_at,
     photon_corpus,
 )
@@ -61,3 +62,4 @@ def test_ring_quarters_are_four_by_ninety():
         assert [x.ring_quarter for x in chunk] == [0, 1, 2, 3]
         assert sum(x.life_years for x in chunk) == 360
         assert [x.life_degrees for x in chunk] == [90, 90, 90, 90]
+        assert [x.phase for x in chunk] == list(TETRAPHASIC)
