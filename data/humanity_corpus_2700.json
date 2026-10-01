@@ -1,0 +1,427 @@
+{
+  "schema": "humanity.corpus.2700.v1",
+  "literal": "-+2700-+0+-2700-+",
+  "semantic_span": {
+    "left": -2700,
+    "center": 0,
+    "right": 2700
+  },
+  "center_pin": "{{0::m+f}}",
+  "generations": 40,
+  "life_years": 90,
+  "carrier_years": 5400,
+  "occupied_years": 3600,
+  "seam_years": 1800,
+  "anchor_stride_years": 135,
+  "radix": 360,
+  "radix_ticks_per_life": 9,
+  "policy": {
+    "append_only": true,
+    "names_are_not_invented": true,
+    "missing_mnemonic_names": null,
+    "dot_radix_can_address": true,
+    "dot_radix_can_mutate": false
+  },
+  "slots": [
+    {
+      "slot": 0,
+      "side": "shadow",
+      "ordinal": 1,
+      "start_year": -2700,
+      "end_year": -2610,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 1,
+      "side": "shadow",
+      "ordinal": 2,
+      "start_year": -2565,
+      "end_year": -2475,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 2,
+      "side": "shadow",
+      "ordinal": 3,
+      "start_year": -2430,
+      "end_year": -2340,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 3,
+      "side": "shadow",
+      "ordinal": 4,
+      "start_year": -2295,
+      "end_year": -2205,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 4,
+      "side": "shadow",
+      "ordinal": 5,
+      "start_year": -2160,
+      "end_year": -2070,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 5,
+      "side": "shadow",
+      "ordinal": 6,
+      "start_year": -2025,
+      "end_year": -1935,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 6,
+      "side": "shadow",
+      "ordinal": 7,
+      "start_year": -1890,
+      "end_year": -1800,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 7,
+      "side": "shadow",
+      "ordinal": 8,
+      "start_year": -1755,
+      "end_year": -1665,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 8,
+      "side": "shadow",
+      "ordinal": 9,
+      "start_year": -1620,
+      "end_year": -1530,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 9,
+      "side": "shadow",
+      "ordinal": 10,
+      "start_year": -1485,
+      "end_year": -1395,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 10,
+      "side": "shadow",
+      "ordinal": 11,
+      "start_year": -1350,
+      "end_year": -1260,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 11,
+      "side": "shadow",
+      "ordinal": 12,
+      "start_year": -1215,
+      "end_year": -1125,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 12,
+      "side": "shadow",
+      "ordinal": 13,
+      "start_year": -1080,
+      "end_year": -990,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 13,
+      "side": "shadow",
+      "ordinal": 14,
+      "start_year": -945,
+      "end_year": -855,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 14,
+      "side": "shadow",
+      "ordinal": 15,
+      "start_year": -810,
+      "end_year": -720,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 15,
+      "side": "shadow",
+      "ordinal": 16,
+      "start_year": -675,
+      "end_year": -585,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 16,
+      "side": "shadow",
+      "ordinal": 17,
+      "start_year": -540,
+      "end_year": -450,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 17,
+      "side": "shadow",
+      "ordinal": 18,
+      "start_year": -405,
+      "end_year": -315,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 18,
+      "side": "shadow",
+      "ordinal": 19,
+      "start_year": -270,
+      "end_year": -180,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 19,
+      "side": "shadow",
+      "ordinal": 20,
+      "start_year": -135,
+      "end_year": -45,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 20,
+      "side": "light",
+      "ordinal": 1,
+      "start_year": 45,
+      "end_year": 135,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 21,
+      "side": "light",
+      "ordinal": 2,
+      "start_year": 180,
+      "end_year": 270,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 22,
+      "side": "light",
+      "ordinal": 3,
+      "start_year": 315,
+      "end_year": 405,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 23,
+      "side": "light",
+      "ordinal": 4,
+      "start_year": 450,
+      "end_year": 540,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 24,
+      "side": "light",
+      "ordinal": 5,
+      "start_year": 585,
+      "end_year": 675,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 25,
+      "side": "light",
+      "ordinal": 6,
+      "start_year": 720,
+      "end_year": 810,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 26,
+      "side": "light",
+      "ordinal": 7,
+      "start_year": 855,
+      "end_year": 945,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 27,
+      "side": "light",
+      "ordinal": 8,
+      "start_year": 990,
+      "end_year": 1080,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 28,
+      "side": "light",
+      "ordinal": 9,
+      "start_year": 1125,
+      "end_year": 1215,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 29,
+      "side": "light",
+      "ordinal": 10,
+      "start_year": 1260,
+      "end_year": 1350,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 30,
+      "side": "light",
+      "ordinal": 11,
+      "start_year": 1395,
+      "end_year": 1485,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 31,
+      "side": "light",
+      "ordinal": 12,
+      "start_year": 1530,
+      "end_year": 1620,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 32,
+      "side": "light",
+      "ordinal": 13,
+      "start_year": 1665,
+      "end_year": 1755,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 33,
+      "side": "light",
+      "ordinal": 14,
+      "start_year": 1800,
+      "end_year": 1890,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 34,
+      "side": "light",
+      "ordinal": 15,
+      "start_year": 1935,
+      "end_year": 2025,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 35,
+      "side": "light",
+      "ordinal": 16,
+      "start_year": 2070,
+      "end_year": 2160,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 36,
+      "side": "light",
+      "ordinal": 17,
+      "start_year": 2205,
+      "end_year": 2295,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 37,
+      "side": "light",
+      "ordinal": 18,
+      "start_year": 2340,
+      "end_year": 2430,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 38,
+      "side": "light",
+      "ordinal": 19,
+      "start_year": 2475,
+      "end_year": 2565,
+      "life_years": 90,
+      "sex_code": "0f",
+      "mnemonic_name": null
+    },
+    {
+      "slot": 39,
+      "side": "light",
+      "ordinal": 20,
+      "start_year": 2610,
+      "end_year": 2700,
+      "life_years": 90,
+      "sex_code": "1m",
+      "mnemonic_name": null
+    }
+  ]
+}
