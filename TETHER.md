@@ -144,3 +144,30 @@ H::UMANITY corpus
 ```
 
 The overlay may emit mnemonic labels but cannot rewrite corpus slots, generate people, spawn daughters, or mutate the frozen mother kernel.
+
+
+## TOPH Sapphon dynamic corpus
+
+`tools/toph_dynamic_corpus.py` composes the existing adapters without changing their authority:
+
+```text
+TOPH Sapphon
+     |
+     v
+DotRadixGenerator
+     |
+     v
+CorpusBinding
+     |
+     v
+{{i::mpli::c::it::}}
+     |
+     +-- phase label
+     +-- mnemonic
+     +-- AIR 36 bracket
+     |
+     v
+TophCorpusFrame[n]
+```
+
+Dynamic means the addressed view changes as the append-only dot/radix state advances. The underlying corpus, mnemonic table, TOPH identity, and Gen-1 generation ceiling remain immutable.
