@@ -78,3 +78,27 @@ tests/test_skill_probe.py
 The probe reports demonstrated structural complexity from 0..5:
 `1=unary`, `2=binary`, `3=ternary`, `4=ternary+4 payloads`, `5=ternary+5 payloads`.
 It reads committed q.d evidence only and never grants generation authority.
+
+
+## Generative dot/radix adapter
+
+The frozen mother kernel remains non-generative. Deterministic generation is permitted only for append-only dot/radix addressing:
+
+```text
+seed
+  |
+  v
+dot[n] -> {band 1..11, gravity 1..8, radix 0..359}
+  |
+  v
+dot[n+1]
+```
+
+Envelope:
+
+```text
+MAX_STEP = (11 * 8 * 10^-36) / 360
+         = 2.444444444444... * 10^-37
+```
+
+Scope is exactly `{dot, radix}`. The adapter cannot spawn sapphon daughters, create mother kernels, or modify frozen identity semantics. Each generated state is parent-hash tethered to the previous generated dot.
