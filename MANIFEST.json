@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "79f91b7b22ee9370c3bb79214cfb45dfdecda02e83c10a9d32e2cf0fad7144a7",
+  "root_sha256": "6a37a6250f8a9d0f5e1a1b3fd26e1bd4e9d90a4a0a10181bfa181f21cbb4fb8d",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -14,7 +14,20 @@
       "qd.append"
     ],
     "recursive_spawn": false,
-    "reference_inference": "paralax -> onyx -> bk"
+    "reference_inference": "paralax -> onyx -> bk",
+    "skill_probe": {
+      "scale": "0..5 structural q.d capability",
+      "frozen_kernel_modified": false,
+      "levels": [
+        "0:none",
+        "1:unary",
+        "2:binary",
+        "3:ternary",
+        "4:ternary+4 payloads",
+        "5:ternary+5 payloads"
+      ],
+      "reference": "paralax"
+    }
   },
   "files": [
     {
@@ -31,7 +44,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "059bd55090e1b0899ea17a82091f56c3a4e45aefac63ea8d13199d37a7112aa4"
+      "sha256": "c6d3d760c7f602030206dc1e2bb65cbac0f3081a8259e1bb03725f5f6bc917c2"
     },
     {
       "path": "FREEZE.md",
@@ -48,6 +61,14 @@
     {
       "path": "tests/test_qd_prim.py",
       "sha256": "1e10419b087d48a5c4f740a616e678bfe79b16102becc96400122cdea2d718d9"
+    },
+    {
+      "path": "tools/skill_probe.py",
+      "sha256": "0881c4a14f9250196cb242e67894bcce365cd328293456bf5401425535258520"
+    },
+    {
+      "path": "tests/test_skill_probe.py",
+      "sha256": "e9fd592c1cfbf210504ee8ee0246a47c27977be848d2b3b24a74c2319af20046"
     },
     {
       "path": "docs/NOTATION.md",
