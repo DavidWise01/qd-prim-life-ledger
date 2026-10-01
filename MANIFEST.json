@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "3dabd0ba60d182f284bec6358c9488704bd34f5a80c5bd303793800662638f0c",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -200,7 +200,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "f30aa911b0c3596705f75f917e8d1eb807c7a7e818035ff1d4b468a58ca5659a"
     },
     {
       "path": "FREEZE.md",
@@ -248,7 +248,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "PENDING"
+      "sha256": "bc02f65f00d61b130a7bdefe28a804c269180eba4b15bc6480955451337e9714"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -288,11 +288,11 @@
     },
     {
       "path": "tools/kinetic_bounds.py",
-      "sha256": "PENDING"
+      "sha256": "b35991b896c95418a3edbe5f1e58799b6a4332bb3e3a56edf99d3f816794a4db"
     },
     {
       "path": "tests/test_kinetic_bounds.py",
-      "sha256": "PENDING"
+      "sha256": "37edddb040c3fb9964922036fca8b755ddbef90907c2ad6b13e8aec5698aae67"
     }
   ]
 }
