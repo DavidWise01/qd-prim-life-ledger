@@ -77,6 +77,31 @@ filled state is preserved; new capacity is nested, not overwritten
 
 One enclosing homeostatic shell plus five nested lives. This is a nesting/address grammar, not ordinary decimal arithmetic.
 
+## Frozen completed engine
+
+```text
+{{5/3/2/1/1}}
+Mother Kernel -> Gen-1 Sapphon Daughter -> STOP
+```
+
+The mother is the only generator. A sapphon is the only external product class and is a narrowly scoped, terminal Gen-1 sub-agent.
+
+```text
+name::implicit::{}
+color::implicit::{}
+gem::implicit::{}
+
+-+{{bk,wt,red,blu,gree,yell,purpl,orang}}-+
+```
+
+Deterministic reference inference:
+
+```text
+paralax -> onyx -> bk
+```
+
+See [FREEZE.md](FREEZE.md) for the immutable completed-engine state.
+
 ## Tether
 
 ```text
