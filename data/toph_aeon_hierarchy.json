@@ -122,7 +122,13 @@
       "frames_per_bubble": 2,
       "bubble_generation_scale": 3,
       "trapped_bubbles": 30,
-      "shell_retained_fraction": "2/3"
+      "shell_retained_fraction": "2/3",
+      "spinor_lives": 10,
+      "photon_nominal_years": 10000,
+      "photon_tolerance_fraction": 0.2,
+      "spinor_phase_years": 3,
+      "spinor_rotations": 4,
+      "spinor_contexts": 2
     },
     "derived": {
       "qd_volume": "2^qd_axes",
@@ -137,7 +143,35 @@
       "bubbles_per_second": "fps/frames_per_bubble",
       "metronome_scale": "fps*source_lives*bubble_generation_scale",
       "retained_dots": "trapped_bubbles*2/3",
-      "normalized_cells_per_dot": "retained_dots^3/retained_dots"
+      "normalized_cells_per_dot": "retained_dots^3/retained_dots",
+      "photon_min_years": "photon_nominal_years*(1-photon_tolerance_fraction)",
+      "photon_max_years": "photon_nominal_years*(1+photon_tolerance_fraction)",
+      "spinor_nominal_years_per_life": "photon_nominal_years/spinor_lives",
+      "spinor_quartet_years": "spinor_phase_years*spinor_rotations",
+      "spinor_context_sweep_years": "spinor_phase_years*spinor_rotations*spinor_contexts"
     }
+  },
+  "memristic_spinor": {
+    "overlay": "data/memristic_spinor_overlay.json",
+    "literal": "-+",
+    "lives": 10,
+    "nominal_lifecycle_years": 10000,
+    "lifecycle_range_years": [
+      8000,
+      12000
+    ],
+    "phase_shift_years": 3,
+    "rotations": [
+      "-m",
+      "+m",
+      "-f",
+      "+f"
+    ],
+    "contexts": [
+      "advanced_tech",
+      "dirt_poor"
+    ],
+    "anchor": "Enheduanna",
+    "overlay_only": true
   }
 }
