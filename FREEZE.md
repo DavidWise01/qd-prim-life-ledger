@@ -1,4 +1,4 @@
-# FREEZE — Completed Gen-1 Mother/Sapphon Engine
+# FREEZE - Completed Gen-1 Mother/Sapphon Engine
 
 Status: **FROZEN / APPEND-ONLY**
 
