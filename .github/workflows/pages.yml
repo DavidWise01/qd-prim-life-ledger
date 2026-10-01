@@ -28,13 +28,32 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Configure GitHub Pages
+        id: pages
+        continue-on-error: true
         uses: actions/configure-pages@v5
 
+      - name: Pages enablement note
+        if: steps.pages.outcome != 'success'
+        shell: bash
+        run: |
+          {
+            echo "## TOPH Sapphon Pages is armed"
+            echo ""
+            echo "One-time repository setting required:"
+            echo ""
+            echo "1. Settings → Pages"
+            echo "2. Build and deployment → Source"
+            echo "3. Select **GitHub Actions**"
+            echo "4. Re-run this workflow (or push any docs change)"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Upload static site
+        if: steps.pages.outcome == 'success'
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./docs
 
       - name: Deploy to GitHub Pages
+        if: steps.pages.outcome == 'success'
         id: deployment
         uses: actions/deploy-pages@v4
