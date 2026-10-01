@@ -231,3 +231,24 @@ Mandel belly partition:
 ```
 
 The partition is normalized to `1.00`. This remains symbolic/local model logic and does not perform live network inspection.
+
+
+## Layer 0 material-weight clock
+
+`tools/material_year_clock.py` adds a read-only mnemonic material clock rooted at zero:
+
+```text
+root 0
+  |
+  +-- Layer 0
+       |
+       +-- Au / 79
+       |    \-- weight = 79 years
+       |
+       +-- photon carrier
+            -5400 ---- 0 ---- +5400
+                full span = 10800 years
+                storage ~= 20% = 2160-year equivalent
+```
+
+This layer uses real material identifiers only as referents. Atomic number and mnemonic year weight are deliberately separated; the timeline is model storage space, not a physical statement about gold or photon decay.
