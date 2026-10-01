@@ -1,0 +1,97 @@
+{
+  "schema": "humanity.mnemonic.overlay.v1",
+  "operator": "{{i::mpli::c::it::}}",
+  "corpus_literal": "-+2700-+0+-2700-+",
+  "center_pin": "{{0::m+f}}",
+  "phase_quantum_years": 45,
+  "phase_cycle": [
+    "creation",
+    "electrum",
+    "matter",
+    "tm8",
+    "gas",
+    "liquid",
+    "solid",
+    "plasma",
+    "nature"
+  ],
+  "shadow_triplets": [
+    {
+      "skeleton": "CEM",
+      "expansion": "CHEM",
+      "phases": [
+        "creation",
+        "electrum",
+        "matter"
+      ]
+    },
+    {
+      "skeleton": "TGL",
+      "expansion": "TOGGLE",
+      "phases": [
+        "tm8",
+        "gas",
+        "liquid"
+      ]
+    },
+    {
+      "skeleton": "SPN",
+      "expansion": "SPIN",
+      "phases": [
+        "solid",
+        "plasma",
+        "nature"
+      ]
+    }
+  ],
+  "light_triplets": [
+    {
+      "skeleton": "PNC",
+      "expansion": "PINCH",
+      "phases": [
+        "plasma",
+        "nature",
+        "creation"
+      ]
+    },
+    {
+      "skeleton": "EMT",
+      "expansion": "EMIT",
+      "phases": [
+        "electrum",
+        "matter",
+        "tm8"
+      ]
+    },
+    {
+      "skeleton": "GLS",
+      "expansion": "GLASS",
+      "phases": [
+        "gas",
+        "liquid",
+        "solid"
+      ]
+    }
+  ],
+  "center_phase": "solid",
+  "air_boundary": {
+    "user_literal": "2x1^10^-35.99 - {air 36.00}} +36.01",
+    "normalized_symbolic": "2 x 1^10^-35.99 - {air 36.00} + 36.01",
+    "lower": "2 x 1^10^-35.99",
+    "center": {
+      "label": "air",
+      "coordinate": "36.00"
+    },
+    "upper": "+36.01",
+    "semantics": "symbolic transition bracket; not ordinary exponent arithmetic",
+    "mutable": false
+  },
+  "policy": {
+    "read_only": true,
+    "recovered_history": false,
+    "generated_mnemonics": true,
+    "preserve_letter_order": true,
+    "allow_insertions_only": true,
+    "corpus_mutation": false
+  }
+}
