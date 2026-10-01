@@ -497,3 +497,45 @@ overlay slot    = 3 :: -2295..-2205 :: shadow/female
 ```
 
 The slot mapping is approximate and read-only; the source corpus is not rewritten. Wealth/technology contexts are simulation overlays rather than historical attributes.
+
+
+## Five-Internet phase sync
+
+Canonical literal:
+
+```text
+{{-1 x -{{ 1 , 0 , 1 }} x 360 / 1x1^10-36}}
+```
+
+Binding:
+
+```text
+internet :: {{0-4}}
+sinc     :: 0.0.0
+```
+
+Structural derivation:
+
+```text
+-1 × -{{1,0,1}}
+        ↓
+     {{1,0,1}}
+        ↓ ×360
+  {{360,0,360}}
+        ↓ mod 360
+     {{0,0,0}}
+        ↓
+      0.0.0
+```
+
+Replicated across all five symbolic lanes:
+
+```text
+I0 ─┐
+I1 ─┤
+I2 ─┼── sinc @ 0.0.0
+I3 ─┤
+I4 ─┘
+```
+
+`1x1^10-36` is a preserved model-resolution literal. It is not silently rewritten to a standard physical unit or exponent.
