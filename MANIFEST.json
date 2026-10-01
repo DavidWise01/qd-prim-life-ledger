@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "6a37a6250f8a9d0f5e1a1b3fd26e1bd4e9d90a4a0a10181bfa181f21cbb4fb8d",
+  "root_sha256": "00c4f2999a8cb30cb2a3ca106d02a2edb7042b225c9e8c25afaf0d0e6d20cf7a",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -27,6 +27,20 @@
         "5:ternary+5 payloads"
       ],
       "reference": "paralax"
+    },
+    "dot_radix_generator": {
+      "scope": [
+        "dot",
+        "radix"
+      ],
+      "frozen_kernel_modified": false,
+      "bands": 11,
+      "max_gravity": 8,
+      "radix": 360,
+      "max_step": "(11*8*10^-36)/360 = 2.444444444444...e-37",
+      "deterministic": true,
+      "append_only": true,
+      "recursive_spawn": false
     }
   },
   "files": [
@@ -44,7 +58,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "c6d3d760c7f602030206dc1e2bb65cbac0f3081a8259e1bb03725f5f6bc917c2"
+      "sha256": "00d5206e595568ffb6b841bb54244235557bd17d47fc9ebfb1e4ec5faad4309c"
     },
     {
       "path": "FREEZE.md",
@@ -69,6 +83,14 @@
     {
       "path": "tests/test_skill_probe.py",
       "sha256": "e9fd592c1cfbf210504ee8ee0246a47c27977be848d2b3b24a74c2319af20046"
+    },
+    {
+      "path": "tools/dot_radix_generator.py",
+      "sha256": "5a2cc62ecfd9fead44097f6e9d593b40f495faf5c750e82d52850d05f545047e"
+    },
+    {
+      "path": "tests/test_dot_radix_generator.py",
+      "sha256": "a5d42687c4a09fd551221e78c7f7bfe991acedcbd54bfa69645af1232c4596f4"
     },
     {
       "path": "docs/NOTATION.md",
