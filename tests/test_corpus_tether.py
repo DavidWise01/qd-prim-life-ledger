@@ -8,7 +8,7 @@ from tools.corpus_tether import (
     load_corpus,
     verify_corpus,
 )
-from tools.dot_radix_generator import DotRadixGenerator
+from tools.dot_radix_generator import DotRadixGenerator, DotRadixState
 
 
 def test_humanity_literal_and_center_are_preserved():
@@ -43,16 +43,24 @@ def test_shadow_center_light_geometry():
     assert verify_corpus()
 
 
-def test_360_radix_maps_to_40_lives_with_nine_phases_each():
+def test_360_radix_maps_exactly_to_40_lives_with_nine_phases_each():
     assert RADIX_TICKS_PER_LIFE == 9
     seen = {slot: set() for slot in range(40)}
-    gen = DotRadixGenerator("humanity-corpus")
-    for state in gen.generate(3600):
+    for radix in range(360):
+        state = DotRadixState(
+            seed="coverage",
+            index=radix,
+            band=1,
+            gravity=1,
+            radix=radix,
+            step="0E-36",
+            parent_hash=None,
+        )
         binding = bind_dot(state)
         seen[binding.corpus_slot].add(binding.radix_phase)
-        assert 0 <= binding.corpus_slot < 40
-        assert 0 <= binding.radix_phase < 9
-    assert all(phases <= set(range(9)) for phases in seen.values())
+        assert binding.corpus_slot == radix // 9
+        assert binding.radix_phase == radix % 9
+    assert all(phases == set(range(9)) for phases in seen.values())
 
 
 def test_binding_is_read_only_and_does_not_create_generation():
