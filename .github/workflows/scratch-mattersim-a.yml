@@ -1,0 +1,39 @@
+name: scratch-mattersim-a-survivor
+
+on:
+  push:
+    branches:
+      - scratch/mattersim-a-run
+    paths:
+      - "scratch/mattersim_a_runner.py"
+      - ".github/workflows/scratch-mattersim-a.yml"
+  workflow_dispatch:
+
+jobs:
+  run-a-survivor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install MatterSim
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install mattersim
+
+      - name: Run A first-survivor
+        run: |
+          set -o pipefail
+          python scratch/mattersim_a_runner.py 2>&1 | tee scratch/mattersim_a_results/run.log
+
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mattersim-a-survivor
+          path: scratch/mattersim_a_results/
+          if-no-files-found: warn
