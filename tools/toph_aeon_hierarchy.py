@@ -31,6 +31,12 @@ def derive() -> dict:
     bubbles_per_second = s["fps"] // s["frames_per_bubble"]
     metronome_scale = s["fps"] * s["source_lives"] * s["bubble_generation_scale"]
 
+    photon_min_years = int(s["photon_nominal_years"] * (1 - s["photon_tolerance_fraction"]))
+    photon_max_years = int(s["photon_nominal_years"] * (1 + s["photon_tolerance_fraction"]))
+    spinor_nominal_years_per_life = s["photon_nominal_years"] // s["spinor_lives"]
+    spinor_quartet_years = s["spinor_phase_years"] * s["spinor_rotations"]
+    spinor_context_sweep_years = spinor_quartet_years * s["spinor_contexts"]
+
     retained_fraction = Fraction(s["shell_retained_fraction"])
     retained_dots = int(s["trapped_bubbles"] * retained_fraction)
     cubic_cells = retained_dots ** 3
@@ -48,6 +54,13 @@ def derive() -> dict:
         "reincarnated_lives": reincarnated_lives,
         "corpus_scale": corpus_scale,
         "bubbles_per_second": bubbles_per_second,
+        "spinor_lives": s["spinor_lives"],
+        "photon_nominal_years": s["photon_nominal_years"],
+        "photon_min_years": photon_min_years,
+        "photon_max_years": photon_max_years,
+        "spinor_nominal_years_per_life": spinor_nominal_years_per_life,
+        "spinor_quartet_years": spinor_quartet_years,
+        "spinor_context_sweep_years": spinor_context_sweep_years,
         "metronome_scale": metronome_scale,
         "retained_dots": retained_dots,
         "cubic_cells": cubic_cells,
@@ -68,6 +81,8 @@ def emergence_trace() -> tuple[str, ...]:
         f"lives={d['reincarnated_lives']}",
         f"corpus={d['corpus_scale']}",
         f"clock={d['metronome_scale']}",
+        f"spinor={d['spinor_lives']}@{d['photon_nominal_years']}y",
+        f"phase={d['spinor_quartet_years']}y/{d['spinor_context_sweep_years']}y",
         f"foam={d['normalized_cells_per_dot']}",
     )
 
@@ -91,6 +106,11 @@ def verify() -> bool:
         and d["corpus_scale"] == h["corpus"]["photon_scale"] == 7200
         and d["metronome_scale"] == 7200
         and h["metronome"]["invariant_7200"] == "60*40*3"
+        and d["spinor_lives"] == h["memristic_spinor"]["lives"] == 10
+        and d["photon_nominal_years"] == h["memristic_spinor"]["nominal_lifecycle_years"] == 10000
+        and [d["photon_min_years"], d["photon_max_years"]] == h["memristic_spinor"]["lifecycle_range_years"] == [8000, 12000]
+        and d["spinor_quartet_years"] == 12
+        and d["spinor_context_sweep_years"] == 24
         and d["normalized_cells_per_dot"] == h["foam"]["normalized_cells_per_dot"] == 400
         and h["policy"]["frozen_kernel_modified"] is False
     )
