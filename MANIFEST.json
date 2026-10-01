@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "035975aa169e9482f1fd548c645b6b53c04f36bc091f580064237d4142f868a2",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -206,6 +206,37 @@
         ]
       },
       "physical_decay_claim": false
+    },
+    "reincarnated_photon_corpus": {
+      "source_corpus": "data/humanity_corpus_2700.json",
+      "source_slots": 40,
+      "lives": 80,
+      "life_years": 90,
+      "photon_years": 7200,
+      "rings": 20,
+      "lives_per_ring": 4,
+      "ring_years": 360,
+      "life_degrees": 90,
+      "ring_stride": 17.5,
+      "ring_width": 18,
+      "shared_handoff": 0.5,
+      "hub_control_remainder": 10,
+      "geometric_closure": 360,
+      "dual_toroid": {
+        "-d": {
+          "lives": 40,
+          "years": 3600,
+          "rings": "0..9"
+        },
+        "+d": {
+          "lives": 40,
+          "years": 3600,
+          "rings": "10..19"
+        }
+      },
+      "identities_invented": false,
+      "source_mutable": false,
+      "physical_photon_claim": false
     }
   },
   "files": [
@@ -223,7 +254,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "d0185762f143cf82d238661c7299d8f8d5a7b5233064316ea4e25b4e4d3beb28"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -271,7 +302,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "d3b1b8d766f03168020737b3abe8a431fa2f46ab4f1f67257875b0c0c8cf23ef"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -328,6 +359,14 @@
     {
       "path": "tests/test_material_year_clock.py",
       "sha256": "9b39db292d90a06c1f632f30c79c6523f443a3122aa7bfb5d5c6a07032881d15"
+    },
+    {
+      "path": "tools/reincarnated_photon_corpus.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_reincarnated_photon_corpus.py",
+      "sha256": "PENDING"
     }
   ]
 }
