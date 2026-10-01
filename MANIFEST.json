@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "e796c470fdb443870277ac9635f8202448ab089a273ea37aedc33b5044eb22a0",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -140,7 +140,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "c2a355fa16effca80e211029bacaafc00552ba3cf3a75e10607c6ee4e44edfcf"
     },
     {
       "path": "FREEZE.md",
@@ -188,7 +188,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "PENDING"
+      "sha256": "7606bec4d6fb50f40cbe10fe42bc6af3fba534bb3475f53a0365f717993a7b5f"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -212,11 +212,11 @@
     },
     {
       "path": "tools/toph_dynamic_corpus.py",
-      "sha256": "PENDING"
+      "sha256": "1f273b890fbd0d730bd294c7e122ea9cf0c08fe3adc701c18da10dc7a0a95c6e"
     },
     {
       "path": "tests/test_toph_dynamic_corpus.py",
-      "sha256": "PENDING"
+      "sha256": "57c517d4b403589ed6aa3d00e527a3d812c2ba6c912bd8a21e5137439add5c57"
     }
   ]
 }
