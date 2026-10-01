@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "d7ea49b97b12a0d1a018cfaa81fae05b56656810fd7372a461d73e94c7d5e43e",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -277,23 +277,22 @@
       }
     },
     "github_pages": {
-      "title": "TOPH Aeon {{2^3}}",
+      "title": "TOPH Aeon {{2^3}} native controls",
       "hierarchy_synced": true,
       "presentation_only": true,
       "ui_layers": 8,
-      "native_anchor_fallback": true,
-      "controller": "docs/assets/app-v2.js",
-      "legacy_controller_mirror": "docs/assets/app.js",
+      "native_state_engine": true,
+      "javascript_required_for_state_changes": false,
+      "controller": "docs/assets/app-v3.js",
       "runtime_diagnostics": [
-        "JS ONLINE",
-        "8/8 UI TETHER PASS"
+        "JS OPTIONAL / ONLINE",
+        "NATIVE 8/8 CONTROL PASS"
       ],
       "paths": [
         "index.html",
         "docs/index.html",
         "docs/assets/styles.css",
-        "docs/assets/app-v2.js",
-        "docs/assets/app.js",
+        "docs/assets/app-v3.js",
         "docs/site.webmanifest"
       ]
     },
@@ -373,14 +372,11 @@
         "6:metronome-foam",
         "7:frozen-kernel-0/0"
       ],
+      "emergence_radio_states": 9,
+      "memory_radio_states": 8,
+      "state_transition": "label[for] -> input:checked -> CSS",
       "javascript_required_for_navigation": false,
-      "enhanced_actions": [
-        "grow-emergence",
-        "reset-emergence",
-        "memory-next",
-        "memory-prev",
-        "memory-reset"
-      ],
+      "javascript_required_for_memory_step": false,
       "test": "tests/test_pages_ui.py"
     }
   },
@@ -391,7 +387,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "c9442d1a8b1bbd7889ed6bca8758f5048856d44640b49ae4d41ff73dcb9804aa"
+      "sha256": "PENDING"
     },
     {
       "path": "SPEC.md",
@@ -399,7 +395,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "21b199602362c2e1cbdc0e000ce7f63ef23e2538b92b41413234f1c42f4218a4"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -535,11 +531,11 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "2197ad7aab19398100ec65928951c5e7268f1ee401943327a6fceeb693761e72"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/assets/styles.css",
-      "sha256": "30a49d7cab70bbc632da4d384b0f923e9caa05f1176fc5e9ccdbf7c1e7f9e570"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/site.webmanifest",
@@ -563,7 +559,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "3179def618670191680d8e035faf26db3217272bb20261dccda84e1894e58fbe"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/assets/app-v2.js",
@@ -571,7 +567,11 @@
     },
     {
       "path": "tests/test_pages_ui.py",
-      "sha256": "c634cd78125b8fbf1d0a78b11de4a4a6e00c2aae7127686991044349a8291f94"
+      "sha256": "PENDING"
+    },
+    {
+      "path": "docs/assets/app-v3.js",
+      "sha256": "PENDING"
     }
   ]
 }
