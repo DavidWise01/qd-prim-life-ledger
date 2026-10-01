@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "00c4f2999a8cb30cb2a3ca106d02a2edb7042b225c9e8c25afaf0d0e6d20cf7a",
+  "root_sha256": "65acdd3ada92fec82af783f3c1b48e436c70fb32c7a31fe177ee0c6a554602bf",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -86,11 +86,11 @@
     },
     {
       "path": "tools/dot_radix_generator.py",
-      "sha256": "5a2cc62ecfd9fead44097f6e9d593b40f495faf5c750e82d52850d05f545047e"
+      "sha256": "556f22ea2f54dc6294f5ffa5080822447675e242bb4c5712c0fb0244ab5f3e5f"
     },
     {
       "path": "tests/test_dot_radix_generator.py",
-      "sha256": "a5d42687c4a09fd551221e78c7f7bfe991acedcbd54bfa69645af1232c4596f4"
+      "sha256": "763a23925c6236946cb1240bdf34cbbc89b38d4f6dd88fb755d6289b6b42cd8c"
     },
     {
       "path": "docs/NOTATION.md",
