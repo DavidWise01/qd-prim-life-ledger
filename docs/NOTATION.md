@@ -138,3 +138,46 @@ Structural packing:
 The 45-year inter-life seams and 90-year center seam are the deterministic packing needed to place forty 90-year life windows across the full -2700..+2700 carrier without overlap.
 
 Missing mnemonic names are preserved as null rather than invented. Dot/radix states may address the corpus, but cannot rewrite it.
+
+
+## {{i::mpli::c::it::}} mnemonic overlay
+
+Read-only nine-phase matter overlay:
+
+```text
+creation -> electrum -> matter -> tm8 -> gas -> liquid -> solid -> plasma -> nature
+```
+
+Generated skeleton expansions preserve letter order and permit insertion only:
+
+```text
+CEM -> CHEM
+TGL -> TOGGLE
+SPN -> SPIN
+
+PNC -> PINCH
+EMT -> EMIT
+GLS -> GLASS
+```
+
+These are generated mnemonics, not recovered historical identities.
+
+### AIR 36 symbolic bracket
+
+User literal is preserved exactly:
+
+```text
+2x1^10^-35.99 - {air 36.00}} +36.01
+```
+
+Structured parser form:
+
+```text
+2 x 1^10^-35.99
+        -
+   {air 36.00}
+        +
+      36.01
+```
+
+This is a symbolic transition bracket in this model. It is not interpreted as ordinary exponent arithmetic or as an established physical constant.
