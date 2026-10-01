@@ -5,6 +5,10 @@ def test_prim():
 
 def test_slots_equal_local_volume():
     assert len(QDLedger.SLOTS) == local_volume_count() == 8
+    assert QDLedger.SAPPHON_CAPACITY == 8
+
+def test_dot_is_sapphon():
+    assert QDLedger.DOT == "sapphon"
 
 def test_balance_closes_zero():
     assert balanced_3d() == 0
@@ -20,7 +24,9 @@ def test_append_only_plank_progression():
         affect="append-next", state={"volume": 8},
     )
     assert e0.plank == 0
+    assert e0.sapphon == 0
     assert e1.plank == 1
+    assert e1.sapphon == 1
     assert e1.parent_hash == e0.digest()
     assert qd.verify()
 
