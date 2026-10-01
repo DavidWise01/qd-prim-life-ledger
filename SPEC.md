@@ -219,3 +219,18 @@ full context sweep = 24 years
 ```
 
 The signed memory register follows `-1,0,-1,0` across each quartet. Each phase also stores `parent_hash = SHA256(previous phase)`, providing append-only computational memory. This overlay does not alter the frozen mother kernel, the source humanity corpus, or assert a physical photon lifetime.
+
+
+## 13. Five-Internet phase-sync overlay
+
+The derived network view contains exactly five symbolic Internet lanes, indexed `0..4`.
+
+```text
+literal = {{-1 x -{{ 1 , 0 , 1 }} x 360 / 1x1^10-36}}
+operator label = sinc
+sync origin = 0.0.0
+```
+
+Double-negative resolution yields the mask `{{1,0,1}}`. A full 360-degree application yields `{{360,0,360}}`; modulo the 360-degree closure this resolves to `{{0,0,0}}`. Each lane `0..4` therefore shares the same origin closure.
+
+This is a symbolic/local phase-sync model. It does not assert five physical public Internets or inspect live network traffic.
