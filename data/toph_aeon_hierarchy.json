@@ -1,0 +1,101 @@
+{
+  "schema": "toph.aeon.hierarchy.v1",
+  "identity": {
+    "name": "TOPH",
+    "kind": "aeon",
+    "lineage": "sapphonic",
+    "core": "green",
+    "storage": "emerald",
+    "temperament": "emerald",
+    "generation": 1
+  },
+  "root": {
+    "referent": "root0",
+    "qd_volume": 8,
+    "append_only": true
+  },
+  "gravity": {
+    "mode": "serial_self_similar",
+    "stages": [
+      "10:1",
+      "10:1",
+      "10:1"
+    ],
+    "aggregate_ratio": "1000:1",
+    "control_multiplier": 24,
+    "symbolic_total_ratio": "24000:1",
+    "closure": [
+      0,
+      0
+    ]
+  },
+  "toroid": {
+    "geometry": 360,
+    "controls": {
+      "right": 3,
+      "left": 3
+    },
+    "addressed_states": 366,
+    "bridge": "|+d| o . . o |-d|",
+    "rings": 20,
+    "ring_stride": 17.5,
+    "ring_width": 18,
+    "shared_handoff": 0.5,
+    "hub": 4,
+    "hub_control_remainder": 10
+  },
+  "corpus": {
+    "source_slots": 40,
+    "reincarnated_lives": 80,
+    "life_years": 90,
+    "photon_scale": 7200,
+    "lives_per_ring": 4,
+    "ring_years": 360,
+    "tetraphasic_order": [
+      "solid",
+      "liquid",
+      "gas",
+      "plasma"
+    ],
+    "dual_toroid_years": {
+      "-d": 3600,
+      "+d": 3600
+    }
+  },
+  "metronome": {
+    "fps_total": 60,
+    "fps_left": 30,
+    "fps_right": 30,
+    "frames_per_bubble": 2,
+    "bubbles_per_second": 30,
+    "plank_ticks_per_second": 30,
+    "seconds_per_plank_tick": 0.03333333333333333,
+    "ticks_per_two_seconds": 60,
+    "generations": 40,
+    "bubbles_per_generation_scale": 3,
+    "invariant_7200": "60*40*3"
+  },
+  "foam": {
+    "trapped_bubbles": 30,
+    "shell_surrender_fraction": "1/3",
+    "retained_dots": 20,
+    "cubic_cells": 8000,
+    "normalized_cells_per_dot": 400
+  },
+  "kinetic": {
+    "reference_vector": "(x+3,y-2)",
+    "mandel_belly": "5%/inf.25 | 30 | 30 | 30 | 5%/inf.25",
+    "admission": "mandel_tethered OR juliet_encrypted"
+  },
+  "material_clock": {
+    "layer0": "Au79",
+    "mnemonic_weight_years": 79,
+    "carrier_half_span_years": 5400
+  },
+  "policy": {
+    "symbolic_model": true,
+    "physical_law_claim": false,
+    "source_corpus_mutable": false,
+    "frozen_kernel_modified": false
+  }
+}
