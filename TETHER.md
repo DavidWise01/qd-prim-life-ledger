@@ -5,6 +5,7 @@ This repository is intentionally tethered: every executable, test, notation file
 ```text
                          CANONICAL ROOT
                          PRIM = 1 1 2 8
+                         dot = sapphon
                     append only -> add next
                                 |
               +-----------------+-----------------+
@@ -36,13 +37,14 @@ This repository is intentionally tethered: every executable, test, notation file
 
 ## Append-only tether
 
-At repository level, Git history supplies the outer provenance chain. At q.d level, `parent_hash` supplies the inner trajectory chain.
+At repository level, Git history supplies the outer provenance chain. At q.d level, `parent_hash` supplies the inner trajectory chain. Each append also tethers `dot[n] = sapphon[n] = Plank[n]`.
 
 ```text
 Git commit n ---> Git commit n+1
       |                |
       v                v
 q.d event n ----> q.d event n+1
+ sapphon[n]       sapphon[n+1]
         parent_hash = SHA256(event n)
 ```
 
