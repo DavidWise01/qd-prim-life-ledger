@@ -97,5 +97,47 @@
     "physical_law_claim": false,
     "source_corpus_mutable": false,
     "frozen_kernel_modified": false
+  },
+  "emergence": {
+    "mode": "derive_from_seeds",
+    "seeds": {
+      "root": 0,
+      "qd_axes": 3,
+      "gravity_base": 10,
+      "gravity_depth": 3,
+      "toroid_degrees": 360,
+      "controls_per_side": 3,
+      "hub": 4,
+      "ring_stride": 17.5,
+      "phases": [
+        "solid",
+        "liquid",
+        "gas",
+        "plasma"
+      ],
+      "life_years": 90,
+      "source_lives": 40,
+      "incarnations": 2,
+      "fps": 60,
+      "frames_per_bubble": 2,
+      "bubble_generation_scale": 3,
+      "trapped_bubbles": 30,
+      "shell_retained_fraction": "2/3"
+    },
+    "derived": {
+      "qd_volume": "2^qd_axes",
+      "gravity_ratio": "gravity_base^gravity_depth",
+      "addressed_states": "toroid_degrees + 2*controls_per_side",
+      "control_hub_remainder": "controls_per_side + hub + controls_per_side",
+      "rings": "(toroid_degrees-control_hub_remainder)/ring_stride",
+      "lives_per_ring": "len(phases)",
+      "ring_years": "len(phases)*life_years",
+      "reincarnated_lives": "source_lives*incarnations",
+      "corpus_scale": "reincarnated_lives*life_years",
+      "bubbles_per_second": "fps/frames_per_bubble",
+      "metronome_scale": "fps*source_lives*bubble_generation_scale",
+      "retained_dots": "trapped_bubbles*2/3",
+      "normalized_cells_per_dot": "retained_dots^3/retained_dots"
+    }
   }
 }
