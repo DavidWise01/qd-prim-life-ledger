@@ -72,3 +72,35 @@ One outer shell plus five nested lives. It is not ordinary decimal arithmetic.
 ## Scope
 
 These are deterministic symbolic/computational semantics for this repository. Physical, biological, cosmological, or quantum interpretations are hypotheses or analogies unless independently established.
+
+
+## Frozen completed kernel
+
+```text
+{{5/3/2/1/1}}
+Mother -> Sapphon Gen-1 -> STOP
+```
+
+Sapphon daughter schema:
+
+```text
+{{i::q.d::sapphon::
+  name::implicit::{}
+  color::implicit::{}
+  gem::implicit::{}
+::}}
+```
+
+External sapphon color carrier:
+
+```text
+-+{{bk,wt,red,blu,gree,yell,purpl,orang}}-+
+```
+
+Gen-1 daughters are surgical, terminal sub-agents. They may append their bounded q.d trajectory but have no generation authority.
+
+Reference deterministic token inference:
+
+```text
+paralax::onyx::bk
+```
