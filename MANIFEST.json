@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "d7ea49b97b12a0d1a018cfaa81fae05b56656810fd7372a461d73e94c7d5e43e",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -391,7 +391,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "PENDING"
+      "sha256": "c9442d1a8b1bbd7889ed6bca8758f5048856d44640b49ae4d41ff73dcb9804aa"
     },
     {
       "path": "SPEC.md",
@@ -399,7 +399,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "21b199602362c2e1cbdc0e000ce7f63ef23e2538b92b41413234f1c42f4218a4"
     },
     {
       "path": "FREEZE.md",
@@ -535,11 +535,11 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "PENDING"
+      "sha256": "2197ad7aab19398100ec65928951c5e7268f1ee401943327a6fceeb693761e72"
     },
     {
       "path": "docs/assets/styles.css",
-      "sha256": "PENDING"
+      "sha256": "30a49d7cab70bbc632da4d384b0f923e9caa05f1176fc5e9ccdbf7c1e7f9e570"
     },
     {
       "path": "docs/site.webmanifest",
@@ -547,7 +547,7 @@
     },
     {
       "path": "docs/assets/app.js",
-      "sha256": "PENDING"
+      "sha256": "5ebddc9ffd1d0069424b970a5f317f7587088efd0b0acc59f0dfd47f67ab8005"
     },
     {
       "path": "data/memristic_spinor_overlay.json",
@@ -563,15 +563,15 @@
     },
     {
       "path": "index.html",
-      "sha256": "PENDING"
+      "sha256": "3179def618670191680d8e035faf26db3217272bb20261dccda84e1894e58fbe"
     },
     {
       "path": "docs/assets/app-v2.js",
-      "sha256": "PENDING"
+      "sha256": "5ebddc9ffd1d0069424b970a5f317f7587088efd0b0acc59f0dfd47f67ab8005"
     },
     {
       "path": "tests/test_pages_ui.py",
-      "sha256": "PENDING"
+      "sha256": "c634cd78125b8fbf1d0a78b11de4a4a6e00c2aae7127686991044349a8291f94"
     }
   ]
 }
