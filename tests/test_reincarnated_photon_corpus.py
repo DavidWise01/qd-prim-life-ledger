@@ -2,9 +2,14 @@ from tools.reincarnated_photon_corpus import (
     LIFE_YEARS,
     LIVES,
     LIVES_PER_RING,
+    LIFE_DEGREES,
     PHOTON_YEARS,
     RINGS,
     RING_YEARS,
+    RING_STRIDE,
+    RING_WIDTH,
+    HUB_CONTROL_REMAINDER,
+    GEOMETRIC_CLOSURE,
     SOURCE_SLOTS,
     TOROID_LIVES,
     TOROID_YEARS,
@@ -23,6 +28,11 @@ def test_twenty_rings_take_four_lives_each():
     assert RINGS == 20
     assert LIVES_PER_RING == 4
     assert RING_YEARS == 360
+    assert LIFE_DEGREES == 90
+    assert RING_STRIDE == 17.5
+    assert RING_WIDTH == 18
+    assert HUB_CONTROL_REMAINDER == 10
+    assert GEOMETRIC_CLOSURE == 360
     assert 20 * 360 == 7200
 
 
@@ -50,3 +60,4 @@ def test_ring_quarters_are_four_by_ninety():
         chunk = corpus[ring * 4:(ring + 1) * 4]
         assert [x.ring_quarter for x in chunk] == [0, 1, 2, 3]
         assert sum(x.life_years for x in chunk) == 360
+        assert [x.life_degrees for x in chunk] == [90, 90, 90, 90]
