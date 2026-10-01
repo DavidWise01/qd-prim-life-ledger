@@ -107,4 +107,40 @@
     showStage(0);
   }
 
+
+  const memory = document.querySelector('[data-memory]');
+  if (memory) {
+    const stepButton = memory.querySelector('[data-memory-step]');
+    const phaseEl = memory.querySelector('[data-memory-phase]');
+    const contextEl = memory.querySelector('[data-memory-context]');
+    const yearEl = memory.querySelector('[data-memory-year]');
+    const rotations = ['−m', '+m', '−f', '+f'];
+    const deltas = [-1, 1, -1, 1];
+    const contexts = ['advanced tech', 'dirt poor'];
+    let index = 0;
+    let charge = -1;
+
+    const renderMemory = () => {
+      const rotation = rotations[index % 4];
+      const context = contexts[Math.floor(index / 4) % 2];
+      if (index === 0) charge = -1;
+      phaseEl.textContent = rotation;
+      contextEl.textContent = context;
+      yearEl.textContent = 'year +' + (index * 3) + ' · memory ' + (charge > 0 ? '+' : '') + charge;
+    };
+
+    stepButton.addEventListener('click', () => {
+      index += 1;
+      if (index % 8 === 0) {
+        index = 0;
+        charge = -1;
+      } else {
+        charge += deltas[index % 4];
+      }
+      renderMemory();
+    });
+
+    renderMemory();
+  }
+
 })();
