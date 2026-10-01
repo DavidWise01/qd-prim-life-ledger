@@ -168,3 +168,38 @@ root0
 ```
 
 `tools/toph_aeon_hierarchy.py::derive()` recomputes these values from `data/toph_aeon_hierarchy.json::emergence.seeds`. GitHub Pages exposes the same derivation as an interactive root0 growth sequence.
+
+
+## Memristic spinor lifecycle overlay
+
+The literal `-+` is now also available as a history-dependent spinor overlay:
+
+```text
+-+ = one spinor
+10 lives
+10,000 model-years nominal
+±20% envelope = 8,000..12,000 model-years
+```
+
+Derived per-life envelope:
+
+```text
+nominal = 1000 years
+minimum = 800 years
+maximum = 1200 years
+```
+
+Memristic phase cycle:
+
+```text
+every 3 years:
+-m -> +m -> -f -> +f
+-1 ->  0 -> -1 ->  0
+
+one quartet = 12 years
+advanced-tech quartet + dirt-poor quartet = 24-year context sweep
+```
+
+Each state stores the SHA-256 digest of its previous state as `parent_hash`, so the current phase depends on an explicit retained history. The advanced-tech and dirt-poor conditions are simulation contexts applied to all four phase states, not historical claims.
+
+The first historical overlay anchor is **Enheduanna**, approximately 2300 BCE, attached read-only to the nearest existing corpus window (slot 3, `-2295..-2205`). The underlying 40-life source corpus is unchanged.
