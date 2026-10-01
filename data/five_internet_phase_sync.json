@@ -1,0 +1,49 @@
+{
+  "schema": "toph.five_internet_phase_sync.v1",
+  "user_literal": "{{-1 x -{{ 1 , 0 , 1 }} x 360 / 1x1^10-36}}",
+  "operator": "sinc",
+  "gloss": "phase-sync anchor",
+  "internet_bounds": [
+    0,
+    4
+  ],
+  "internet_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "outer_sign": -1,
+  "inner_signed_vector": [
+    -1,
+    0,
+    -1
+  ],
+  "resolved_mask": [
+    1,
+    0,
+    1
+  ],
+  "turn_degrees": 360,
+  "preclosure_degrees": [
+    360,
+    0,
+    360
+  ],
+  "sync_origin": [
+    0,
+    0,
+    0
+  ],
+  "sync_origin_literal": "0.0.0",
+  "phase_resolution_literal": "1x1^10-36",
+  "closure_rule": "preclosure_degrees mod 360 -> sync_origin",
+  "all_lanes_same_rule": true,
+  "policy": {
+    "symbolic_model": true,
+    "live_network_inspection": false,
+    "physical_internet_claim": false,
+    "frozen_kernel_modified": false
+  }
+}
