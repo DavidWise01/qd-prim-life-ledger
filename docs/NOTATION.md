@@ -409,3 +409,43 @@ root0
 ```
 
 The equality `80*90 = 60*40*3 = 7200` is a model invariant connecting the reincarnated corpus view to the root0 metronome scale.
+
+
+## Emergence rule
+
+TOPH's visible hierarchy is generated from seed relations:
+
+```text
+seed(root0)
+ -> q.d
+ -> serial gravity
+ -> dual toroid
+ -> stepped rings
+ -> tetraphasic corpus
+ -> metronome
+ -> foam memory
+```
+
+Canonical seed set:
+
+```text
+root=0
+qd_axes=3
+gravity_base=10
+gravity_depth=3
+turn=360
+controls=3L+3R
+hub=4
+ring_stride=17.5
+phases={solid,liquid,gas,plasma}
+life=90
+source_lives=40
+incarnations=2
+fps=60
+frames_per_bubble=2
+bubble_generation_scale=3
+trapped_bubbles=30
+shell_retained=2/3
+```
+
+Derived state is verified against the stored hierarchy so an inconsistent hard-coded presentation fails the tether.
