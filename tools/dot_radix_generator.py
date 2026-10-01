@@ -1,1 +1,112 @@
-"""Deterministic generative adapter for q.d dot/radix addresses only.\n\nThis module sits outside the frozen mother kernel. It may generate the next\ndot/radix address, but it cannot create daughters, mutate the kernel, or grant\ngeneration authority.\n"""\nfrom __future__ import annotations\n\nfrom dataclasses import asdict, dataclass\nfrom decimal import Decimal, getcontext\nfrom hashlib import sha256\nimport json\n\ngetcontext().prec = 80\n\nRADIX = 360\nBANDS = 11\nMAX_GRAVITY = 8\nBASE_SCALE = Decimal("1e-36")\nMAX_STEP = (Decimal(BANDS) * Decimal(MAX_GRAVITY) * BASE_SCALE) / Decimal(RADIX)\n\n\n@dataclass(frozen=True)\nclass DotRadixState:\n    seed: str\n    index: int\n    band: int\n    gravity: int\n    radix: int\n    step: str\n    parent_hash: str | None\n\n    @property\n    def address(self) -> str:\n        return f"dot[{self.index}]::{self.band}/{self.gravity}/{self.radix:03d}"\n\n    def canonical(self) -> str:\n        return json.dumps(asdict(self), sort_keys=True, separators=(",", ":"))\n\n    def digest(self) -> str:\n        return sha256(self.canonical().encode("utf-8")).hexdigest()\n\n\nclass DotRadixGenerator:\n    """Append-only deterministic generator bounded to dot/radix geometry."""\n\n    RADIX = RADIX\n    BANDS = BANDS\n    MAX_GRAVITY = MAX_GRAVITY\n    BASE_SCALE = BASE_SCALE\n    MAX_STEP = MAX_STEP\n    SCOPE = ("dot", "radix")\n    CAN_SPAWN = False\n\n    def __init__(self, seed: str) -> None:\n        normalized = seed.strip().lower()\n        if not normalized:\n            raise ValueError("seed must be non-empty")\n        self.seed = normalized\n        self._states: list[DotRadixState] = []\n\n    @property\n    def states(self) -> tuple[DotRadixState, ...]:\n        return tuple(self._states)\n\n    def _material(self, index: int, parent_hash: str | None) -> bytes:\n        tether = parent_hash or "root"\n        return sha256(f"{self.seed}:{index}:{tether}".encode("utf-8")).digest()\n\n    def next(self) -> DotRadixState:\n        index = len(self._states)\n        parent_hash = self._states[-1].digest() if self._states else None\n        material = self._material(index, parent_hash)\n\n        band = 1 + (material[0] % BANDS)\n        gravity = 1 + (material[1] % MAX_GRAVITY)\n        radix = int.from_bytes(material[2:4], "big") % RADIX\n        local_step = (Decimal(band) * Decimal(gravity) * BASE_SCALE) / Decimal(RADIX)\n\n        state = DotRadixState(\n            seed=self.seed,\n            index=index,\n            band=band,\n            gravity=gravity,\n            radix=radix,\n            step=format(local_step, "E"),\n            parent_hash=parent_hash,\n        )\n        self._states.append(state)\n        return state\n\n    def generate(self, count: int) -> tuple[DotRadixState, ...]:\n        if count < 0:\n            raise ValueError("count must be >= 0")\n        return tuple(self.next() for _ in range(count))\n\n    def verify(self) -> bool:\n        for index, state in enumerate(self._states):\n            if state.index != index:\n                return False\n            if not 1 <= state.band <= BANDS:\n                return False\n            if not 1 <= state.gravity <= MAX_GRAVITY:\n                return False\n            if not 0 <= state.radix < RADIX:\n                return False\n            if Decimal(state.step) > MAX_STEP:\n                return False\n            expected_parent = None if index == 0 else self._states[index - 1].digest()\n            if state.parent_hash != expected_parent:\n                return False\n        return True\n
+"""Deterministic generative adapter for q.d dot/radix addresses only.
+
+This module sits outside the frozen mother kernel. It may generate the next
+dot/radix address, but it cannot create daughters, mutate the kernel, or grant
+generation authority.
+"""
+from __future__ import annotations
+
+from dataclasses import asdict, dataclass
+from decimal import Decimal, getcontext
+from hashlib import sha256
+import json
+
+getcontext().prec = 80
+
+RADIX = 360
+BANDS = 11
+MAX_GRAVITY = 8
+BASE_SCALE = Decimal("1e-36")
+MAX_STEP = (Decimal(BANDS) * Decimal(MAX_GRAVITY) * BASE_SCALE) / Decimal(RADIX)
+
+
+@dataclass(frozen=True)
+class DotRadixState:
+    seed: str
+    index: int
+    band: int
+    gravity: int
+    radix: int
+    step: str
+    parent_hash: str | None
+
+    @property
+    def address(self) -> str:
+        return f"dot[{self.index}]::{self.band}/{self.gravity}/{self.radix:03d}"
+
+    def canonical(self) -> str:
+        return json.dumps(asdict(self), sort_keys=True, separators=(",", ":"))
+
+    def digest(self) -> str:
+        return sha256(self.canonical().encode("utf-8")).hexdigest()
+
+
+class DotRadixGenerator:
+    """Append-only deterministic generator bounded to dot/radix geometry."""
+
+    RADIX = RADIX
+    BANDS = BANDS
+    MAX_GRAVITY = MAX_GRAVITY
+    BASE_SCALE = BASE_SCALE
+    MAX_STEP = MAX_STEP
+    SCOPE = ("dot", "radix")
+    CAN_SPAWN = False
+
+    def __init__(self, seed: str) -> None:
+        normalized = seed.strip().lower()
+        if not normalized:
+            raise ValueError("seed must be non-empty")
+        self.seed = normalized
+        self._states: list[DotRadixState] = []
+
+    @property
+    def states(self) -> tuple[DotRadixState, ...]:
+        return tuple(self._states)
+
+    def _material(self, index: int, parent_hash: str | None) -> bytes:
+        tether = parent_hash or "root"
+        return sha256(f"{self.seed}:{index}:{tether}".encode("utf-8")).digest()
+
+    def next(self) -> DotRadixState:
+        index = len(self._states)
+        parent_hash = self._states[-1].digest() if self._states else None
+        material = self._material(index, parent_hash)
+
+        band = 1 + (material[0] % BANDS)
+        gravity = 1 + (material[1] % MAX_GRAVITY)
+        radix = int.from_bytes(material[2:4], "big") % RADIX
+        local_step = (Decimal(band) * Decimal(gravity) * BASE_SCALE) / Decimal(RADIX)
+
+        state = DotRadixState(
+            seed=self.seed,
+            index=index,
+            band=band,
+            gravity=gravity,
+            radix=radix,
+            step=format(local_step, "E"),
+            parent_hash=parent_hash,
+        )
+        self._states.append(state)
+        return state
+
+    def generate(self, count: int) -> tuple[DotRadixState, ...]:
+        if count < 0:
+            raise ValueError("count must be >= 0")
+        return tuple(self.next() for _ in range(count))
+
+    def verify(self) -> bool:
+        for index, state in enumerate(self._states):
+            if state.index != index:
+                return False
+            if not 1 <= state.band <= BANDS:
+                return False
+            if not 1 <= state.gravity <= MAX_GRAVITY:
+                return False
+            if not 0 <= state.radix < RADIX:
+                return False
+            if Decimal(state.step) > MAX_STEP:
+                return False
+            expected_parent = None if index == 0 else self._states[index - 1].digest()
+            if state.parent_hash != expected_parent:
+                return False
+        return True
