@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "65acdd3ada92fec82af783f3c1b48e436c70fb32c7a31fe177ee0c6a554602bf",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -41,6 +41,21 @@
       "deterministic": true,
       "append_only": true,
       "recursive_spawn": false
+    },
+    "humanity_corpus_2700": {
+      "literal": "-+2700-+0+-2700-+",
+      "semantic_span": [
+        -2700,
+        0,
+        2700
+      ],
+      "center_pin": "{{0::m+f}}",
+      "generations": 40,
+      "life_years": 90,
+      "carrier_years": 5400,
+      "radix_ticks_per_life": 9,
+      "read_only": true,
+      "names_invented": false
     }
   },
   "files": [
@@ -58,7 +73,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "00d5206e595568ffb6b841bb54244235557bd17d47fc9ebfb1e4ec5faad4309c"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -94,7 +109,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "c78a75f328d88076c4db5ab844e8a6227175b3dcb832e85f82521e3349158f3c"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -102,7 +117,19 @@
     },
     {
       "path": "tools/verify_manifest.py",
-      "sha256": "7dac64a5031f96fa0b7247f06e8f26f13e7fd5750e8e7e5542f6c973a846afb0"
+      "sha256": "PENDING"
+    },
+    {
+      "path": "data/humanity_corpus_2700.json",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tools/corpus_tether.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_corpus_tether.py",
+      "sha256": "PENDING"
     }
   ]
 }
