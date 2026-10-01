@@ -1,12 +1,12 @@
 {
-  "name": "TOPH Sapphon",
+  "name": "TOPH Aeon",
   "short_name": "TOPH",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#020805",
   "theme_color": "#03100a",
-  "description": "Emerald holographic presentation of the frozen Gen-1 q.d mother/daughter engine.",
+  "description": "TOPH Aeon — sapphonic green-core, emerald-storage hierarchy over the frozen q.d PRIM life ledger.",
   "icons": [
     {
       "src": "./favicon.svg",
