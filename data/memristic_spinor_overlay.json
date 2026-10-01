@@ -1,0 +1,59 @@
+{
+  "schema": "toph.memristic.spinor.v1",
+  "mode": "derived_overlay",
+  "spinor": {
+    "literal": "-+",
+    "polarity": [
+      "-",
+      "+"
+    ],
+    "lives": 10,
+    "nominal_photon_lifecycle_years": 10000,
+    "tolerance_fraction": 0.2,
+    "lifecycle_min_years": 8000,
+    "lifecycle_max_years": 12000,
+    "nominal_years_per_life": 1000,
+    "life_min_years": 800,
+    "life_max_years": 1200
+  },
+  "memristic": {
+    "phase_shift_years": 3,
+    "rotation_states": [
+      "-m",
+      "+m",
+      "-f",
+      "+f"
+    ],
+    "rotations_per_quartet": 4,
+    "quartet_years": 12,
+    "contexts": [
+      "advanced_tech",
+      "dirt_poor"
+    ],
+    "context_sweep_years": 24,
+    "rule": "next state retains parent hash and advances one 3-year phase; context switches after each 4-state quartet"
+  },
+  "anchor": {
+    "user_label": "enihendua",
+    "canonical_name": "Enheduanna",
+    "approximate_year_bce": 2300,
+    "corpus_slot": 3,
+    "corpus_window_start": -2295,
+    "corpus_window_end": -2205,
+    "corpus_side": "shadow",
+    "source_role": "historical anchor only",
+    "overlay_only": true,
+    "facts": {
+      "role": "high priestess at Ur",
+      "period": "Akkadian period / circa 2300 BCE",
+      "authorship_note": "commonly treated as earliest named author; attribution of surviving hymns is debated"
+    }
+  },
+  "policy": {
+    "source_corpus_mutable": false,
+    "frozen_kernel_modified": false,
+    "socioeconomic_contexts_are_simulation_overlays": true,
+    "historical_wealth_or_technology_claim": false,
+    "physical_photon_claim": false
+  }
+}
