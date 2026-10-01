@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://davidwise01.github.io/qd-prim-life-ledger/">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="stylesheet" href="./assets/styles.css?v=8">
+  <link rel="stylesheet" href="./assets/styles.css?v=9">
   <title>TOPH Aeon — Sapphonic Emerald Hierarchy</title>
 </head>
 <body>
@@ -113,12 +113,22 @@
       </div>
 
       <div class="emergence-shell glass-shell reveal" data-emergence>
+        <input class="state-radio" type="radio" name="emergence-state" id="em0" checked>
+        <input class="state-radio" type="radio" name="emergence-state" id="em1">
+        <input class="state-radio" type="radio" name="emergence-state" id="em2">
+        <input class="state-radio" type="radio" name="emergence-state" id="em3">
+        <input class="state-radio" type="radio" name="emergence-state" id="em4">
+        <input class="state-radio" type="radio" name="emergence-state" id="em5">
+        <input class="state-radio" type="radio" name="emergence-state" id="em6">
+        <input class="state-radio" type="radio" name="emergence-state" id="em7">
+        <input class="state-radio" type="radio" name="emergence-state" id="em8">
+
         <div class="seed-core">
-          <a class="seed-button" href="#qd8" data-seed data-action="grow-emergence" aria-label="Grow TOPH emergence from root0">
+          <label class="seed-button" for="em1" aria-label="Grow TOPH emergence from root0">
             <span>root0</span>
             <b>SEED / GROW</b>
-          </a>
-          <div class="seed-caption">green core · emerald memory</div>
+          </label>
+          <div class="seed-caption">native state machine · no JS required</div>
         </div>
 
         <div class="emergence-lattice" aria-live="polite">
@@ -133,8 +143,29 @@
         </div>
 
         <div class="emergence-readout">
-          <span data-readout>root0 waiting</span>
-          <a href="#emergence" class="button button-ghost mini-button" data-reset data-action="reset-emergence">reset</a>
+          <div class="em-state-deck" aria-live="polite">
+            <span class="em-state state-0">root0 waiting</span>
+            <span class="em-state state-1">root0 → {{2^3}} = 8 q.d states</span>
+            <span class="em-state state-2">8 → serial gravity 10^3 = 1000:1</span>
+            <span class="em-state state-3">1000:1 → 360 + 3L + 3R = 366 addresses</span>
+            <span class="em-state state-4">366 → (360 − 10) / 17.5 = 20 rings</span>
+            <span class="em-state state-5">20 rings → 4 phases × 90 = 360 per ring</span>
+            <span class="em-state state-6">40 × 2 × 90 = 7200 corpus</span>
+            <span class="em-state state-7">60 × 40 × 3 = 7200 metronome</span>
+            <span class="em-state state-8">30 bubbles → 20 dots → 20³ / 20 = 400</span>
+          </div>
+          <div class="emergence-controls">
+            <label class="button button-primary mini-button em-next next-0" for="em1">next →</label>
+            <label class="button button-primary mini-button em-next next-1" for="em2">next →</label>
+            <label class="button button-primary mini-button em-next next-2" for="em3">next →</label>
+            <label class="button button-primary mini-button em-next next-3" for="em4">next →</label>
+            <label class="button button-primary mini-button em-next next-4" for="em5">next →</label>
+            <label class="button button-primary mini-button em-next next-5" for="em6">next →</label>
+            <label class="button button-primary mini-button em-next next-6" for="em7">next →</label>
+            <label class="button button-primary mini-button em-next next-7" for="em8">next →</label>
+            <label class="button button-primary mini-button em-next next-8" for="em0">wrap → root0</label>
+            <label class="button button-ghost mini-button" for="em0">reset</label>
+          </div>
         </div>
       </div>
 
@@ -154,6 +185,15 @@
 
       <div class="memory-layout">
         <article class="spinor-card glass-shell reveal" data-memory>
+          <input class="state-radio" type="radio" name="memory-state" id="mem0" checked>
+          <input class="state-radio" type="radio" name="memory-state" id="mem1">
+          <input class="state-radio" type="radio" name="memory-state" id="mem2">
+          <input class="state-radio" type="radio" name="memory-state" id="mem3">
+          <input class="state-radio" type="radio" name="memory-state" id="mem4">
+          <input class="state-radio" type="radio" name="memory-state" id="mem5">
+          <input class="state-radio" type="radio" name="memory-state" id="mem6">
+          <input class="state-radio" type="radio" name="memory-state" id="mem7">
+
           <div class="spinor-orbit">
             <div class="spinor-half negative">−</div>
             <div class="spinor-anchor">
@@ -164,13 +204,97 @@
             <div class="spinor-half positive">+</div>
           </div>
 
-          <div class="memory-readout">
-            <span data-memory-phase>−m</span>
-            <b data-memory-context>advanced tech</b>
-            <small data-memory-year>year +0 · memory −1</small><small data-memory-life>life 0 / 9</small>
-          </div>
+          <div class="memory-state-deck" aria-live="polite">
 
-          <div class="memory-controls"><a class="button button-ghost memory-step" href="#memory-state-list" data-action="memory-prev">← 3 years</a><a class="button button-primary memory-step" href="#memory-state-list" data-memory-step data-action="memory-next">advance 3 years →</a><a class="button button-ghost memory-step" href="#memory" data-action="memory-reset">reset</a></div>
+            <div class="memory-state-panel state-0">
+              <span class="memory-phase">−m</span>
+              <b class="memory-context">ADVANCED TECH</b>
+              <small>year +0 · memory −1</small>
+              <small>life 0 / 9</small>
+              <div class="memory-controls">
+                <label class="button button-ghost memory-step" for="mem7">← 3 years</label>
+                <label class="button button-primary memory-step" for="mem1">advance 3 years →</label>
+                <label class="button button-ghost memory-step" for="mem0">reset</label>
+              </div>
+            </div>
+            <div class="memory-state-panel state-1">
+              <span class="memory-phase">+m</span>
+              <b class="memory-context">ADVANCED TECH</b>
+              <small>year +3 · memory 0</small>
+              <small>life 0 / 9</small>
+              <div class="memory-controls">
+                <label class="button button-ghost memory-step" for="mem0">← 3 years</label>
+                <label class="button button-primary memory-step" for="mem2">advance 3 years →</label>
+                <label class="button button-ghost memory-step" for="mem0">reset</label>
+              </div>
+            </div>
+            <div class="memory-state-panel state-2">
+              <span class="memory-phase">−f</span>
+              <b class="memory-context">ADVANCED TECH</b>
+              <small>year +6 · memory −1</small>
+              <small>life 0 / 9</small>
+              <div class="memory-controls">
+                <label class="button button-ghost memory-step" for="mem1">← 3 years</label>
+                <label class="button button-primary memory-step" for="mem3">advance 3 years →</label>
+                <label class="button button-ghost memory-step" for="mem0">reset</label>
+              </div>
+            </div>
+            <div class="memory-state-panel state-3">
+              <span class="memory-phase">+f</span>
+              <b class="memory-context">ADVANCED TECH</b>
+              <small>year +9 · memory 0</small>
+              <small>life 0 / 9</small>
+              <div class="memory-controls">
+                <label class="button button-ghost memory-step" for="mem2">← 3 years</label>
+                <label class="button button-primary memory-step" for="mem4">advance 3 years →</label>
+                <label class="button button-ghost memory-step" for="mem0">reset</label>
+              </div>
+            </div>
+            <div class="memory-state-panel state-4">
+              <span class="memory-phase">−m</span>
+              <b class="memory-context">DIRT POOR</b>
+              <small>year +12 · memory −1</small>
+              <small>life 0 / 9</small>
+              <div class="memory-controls">
+                <label class="button button-ghost memory-step" for="mem3">← 3 years</label>
+                <label class="button button-primary memory-step" for="mem5">advance 3 years →</label>
+                <label class="button button-ghost memory-step" for="mem0">reset</label>
+              </div>
+            </div>
+            <div class="memory-state-panel state-5">
+              <span class="memory-phase">+m</span>
+              <b class="memory-context">DIRT POOR</b>
+              <small>year +15 · memory 0</small>
+              <small>life 0 / 9</small>
+              <div class="memory-controls">
+                <label class="button button-ghost memory-step" for="mem4">← 3 years</label>
+                <label class="button button-primary memory-step" for="mem6">advance 3 years →</label>
+                <label class="button button-ghost memory-step" for="mem0">reset</label>
+              </div>
+            </div>
+            <div class="memory-state-panel state-6">
+              <span class="memory-phase">−f</span>
+              <b class="memory-context">DIRT POOR</b>
+              <small>year +18 · memory −1</small>
+              <small>life 0 / 9</small>
+              <div class="memory-controls">
+                <label class="button button-ghost memory-step" for="mem5">← 3 years</label>
+                <label class="button button-primary memory-step" for="mem7">advance 3 years →</label>
+                <label class="button button-ghost memory-step" for="mem0">reset</label>
+              </div>
+            </div>
+            <div class="memory-state-panel state-7">
+              <span class="memory-phase">+f</span>
+              <b class="memory-context">DIRT POOR</b>
+              <small>year +21 · memory 0</small>
+              <small>life 0 / 9</small>
+              <div class="memory-controls">
+                <label class="button button-ghost memory-step" for="mem6">← 3 years</label>
+                <label class="button button-primary memory-step" for="mem0">wrap +3 years →</label>
+                <label class="button button-ghost memory-step" for="mem0">reset</label>
+              </div>
+            </div>
+          </div>
         </article>
 
         <div class="memory-metrics reveal">
@@ -448,6 +572,6 @@ temperament = emerald</code></pre>
   </footer>
 
   <noscript><div class="noscript">JavaScript is optional. All model content remains visible without it.</div></noscript>
-  <script src="./assets/app-v2.js?v=8" defer></script>
+  <script src="./assets/app-v3.js?v=9" defer></script>
 </body>
 </html>
