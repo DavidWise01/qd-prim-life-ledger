@@ -1,0 +1,53 @@
+name: Corpus Manifest Probe
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/corpus-manifest-probe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute canonical tether hashes
+        shell: python
+        run: |
+          import hashlib
+          from pathlib import Path
+
+          paths = [
+              ".gitignore",
+              "README.md",
+              "SPEC.md",
+              "TETHER.md",
+              "FREEZE.md",
+              "pyproject.toml",
+              "src/qd_prim.py",
+              "tests/test_qd_prim.py",
+              "tools/skill_probe.py",
+              "tests/test_skill_probe.py",
+              "tools/dot_radix_generator.py",
+              "tests/test_dot_radix_generator.py",
+              "data/humanity_corpus_2700.json",
+              "tools/corpus_tether.py",
+              "tests/test_corpus_tether.py",
+              "docs/NOTATION.md",
+              ".github/workflows/test.yml",
+              "tools/verify_manifest.py",
+          ]
+
+          entries = []
+          for path in paths:
+              digest = hashlib.sha256(Path(path).read_bytes()).hexdigest()
+              entries.append((path, digest))
+              print(f"FILE {path} {digest}")
+
+          root_input = "".join(f"{p}:{d}\n" for p, d in sorted(entries)).encode()
+          root = hashlib.sha256(root_input).hexdigest()
+          print(f"ROOT {root}")
