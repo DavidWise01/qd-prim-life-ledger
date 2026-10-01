@@ -102,3 +102,21 @@ MAX_STEP = (11 * 8 * 10^-36) / 360
 ```
 
 Scope is exactly `{dot, radix}`. The adapter cannot spawn sapphon daughters, create mother kernels, or modify frozen identity semantics. Each generated state is parent-hash tethered to the previous generated dot.
+
+
+## H::UMANITY corpus tether
+
+The earlier mnemonic corpus is now attached as a read-only carrier:
+
+```text
+-+2700-+0+-2700-+
+       |
+       +-- {{0::m+f}}
+       |
+       +-- 20 shadow life slots
+       +-- 20 light life slots
+       +-- 90 years per life
+       +-- 9 radix phases per life
+```
+
+The structural corpus lives in `data/humanity_corpus_2700.json`. `tools/corpus_tether.py` maps a generated radix address into exactly one immutable corpus slot and local phase. No corpus binding can spawn, append, or mutate a generation.
