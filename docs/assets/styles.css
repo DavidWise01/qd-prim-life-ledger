@@ -432,3 +432,99 @@ code,pre{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace
 
 @media (max-width:1050px){.layer-walk{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:620px){.layer-walk{grid-template-columns:repeat(2,1fr)}.layer-walk a{min-height:92px}}
+
+
+/* v9 native no-JS state machines */
+.state-radio{
+  position:absolute;
+  inline-size:1px;
+  block-size:1px;
+  opacity:0;
+  overflow:hidden;
+  clip-path:inset(50%);
+  white-space:nowrap;
+}
+label.button,label.seed-button{cursor:pointer;user-select:none;-webkit-user-select:none}
+
+/* Emergence: radio state is authoritative; JS is optional. */
+.em-state,.em-next{display:none}
+.em-state-deck{min-width:0;flex:1}
+.em-state{color:#9ed8b8;font:800 .76rem "SFMono-Regular",Consolas,monospace;letter-spacing:.05em}
+.emergence-controls{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+
+#em0:checked ~ .emergence-readout .state-0,
+#em1:checked ~ .emergence-readout .state-1,
+#em2:checked ~ .emergence-readout .state-2,
+#em3:checked ~ .emergence-readout .state-3,
+#em4:checked ~ .emergence-readout .state-4,
+#em5:checked ~ .emergence-readout .state-5,
+#em6:checked ~ .emergence-readout .state-6,
+#em7:checked ~ .emergence-readout .state-7,
+#em8:checked ~ .emergence-readout .state-8,
+#em0:checked ~ .emergence-readout .next-0,
+#em1:checked ~ .emergence-readout .next-1,
+#em2:checked ~ .emergence-readout .next-2,
+#em3:checked ~ .emergence-readout .next-3,
+#em4:checked ~ .emergence-readout .next-4,
+#em5:checked ~ .emergence-readout .next-5,
+#em6:checked ~ .emergence-readout .next-6,
+#em7:checked ~ .emergence-readout .next-7,
+#em8:checked ~ .emergence-readout .next-8{display:inline-flex}
+
+#em1:checked ~ .emergence-lattice .em-node:nth-child(-n+1),
+#em2:checked ~ .emergence-lattice .em-node:nth-child(-n+2),
+#em3:checked ~ .emergence-lattice .em-node:nth-child(-n+3),
+#em4:checked ~ .emergence-lattice .em-node:nth-child(-n+4),
+#em5:checked ~ .emergence-lattice .em-node:nth-child(-n+5),
+#em6:checked ~ .emergence-lattice .em-node:nth-child(-n+6),
+#em7:checked ~ .emergence-lattice .em-node:nth-child(-n+7),
+#em8:checked ~ .emergence-lattice .em-node:nth-child(-n+8){
+  opacity:1;
+  transform:none;
+  filter:none;
+  border-color:rgba(111,255,187,.36);
+  background:linear-gradient(145deg,rgba(55,229,145,.12),rgba(7,31,19,.54));
+  box-shadow:0 0 28px rgba(47,234,145,.09);
+}
+
+/* Memristic stepper: eight native states, no JS needed. */
+.memory-state-deck{width:100%;display:grid;place-items:center}
+.memory-state-panel{
+  display:none;
+  width:100%;
+  justify-items:center;
+  gap:5px;
+  text-align:center;
+}
+.memory-state-panel .memory-phase{font-size:2.7rem;font-weight:950;color:#baffd8}
+.memory-state-panel .memory-context{color:#86f5ba;letter-spacing:.12em;font-size:.72rem}
+.memory-state-panel small{color:#789b87;font:700 .7rem "SFMono-Regular",Consolas,monospace}
+.memory-state-panel small+small{color:#5f856f}
+.memory-state-panel .memory-controls{margin-top:14px}
+
+#mem0:checked ~ .memory-state-deck .state-0,
+#mem1:checked ~ .memory-state-deck .state-1,
+#mem2:checked ~ .memory-state-deck .state-2,
+#mem3:checked ~ .memory-state-deck .state-3,
+#mem4:checked ~ .memory-state-deck .state-4,
+#mem5:checked ~ .memory-state-deck .state-5,
+#mem6:checked ~ .memory-state-deck .state-6,
+#mem7:checked ~ .memory-state-deck .state-7{display:grid}
+
+#mem0:focus-visible ~ .memory-state-deck .state-0,
+#mem1:focus-visible ~ .memory-state-deck .state-1,
+#mem2:focus-visible ~ .memory-state-deck .state-2,
+#mem3:focus-visible ~ .memory-state-deck .state-3,
+#mem4:focus-visible ~ .memory-state-deck .state-4,
+#mem5:focus-visible ~ .memory-state-deck .state-5,
+#mem6:focus-visible ~ .memory-state-deck .state-6,
+#mem7:focus-visible ~ .memory-state-deck .state-7{
+  outline:2px solid #8cffbd;
+  outline-offset:8px;
+  border-radius:18px;
+}
+
+@media (max-width:700px){
+  .emergence-readout{align-items:flex-start;flex-direction:column}
+  .emergence-controls{justify-content:flex-start}
+}
