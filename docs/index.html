@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07150f">
+<title>TOPH Sapphon — Emerald Holographic Kernel</title>
+<meta name="description" content="TOPH Sapphon: a frozen Gen-1 q.d mother/daughter engine rendered as an emerald holographic glass interface.">
+<style>
+:root{
+  --bg:#020805;--bg2:#06130d;--glass:rgba(12,37,25,.42);--glass2:rgba(255,255,255,.055);
+  --line:rgba(177,255,220,.20);--line2:rgba(95,255,178,.10);--txt:#effff7;--muted:#94c7ad;
+  --e1:#10b96e;--e2:#45f0a6;--e3:#c5ffe5;--cyan:#78f7ff;--violet:#c49cff;--gold:#f8e9a1;
+  --shadow:0 28px 80px rgba(0,0,0,.45);--radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--txt);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:
+radial-gradient(circle at 15% 20%,rgba(26,223,135,.13),transparent 28%),
+radial-gradient(circle at 82% 18%,rgba(107,247,255,.08),transparent 24%),
+radial-gradient(circle at 60% 78%,rgba(196,156,255,.07),transparent 22%),
+linear-gradient(180deg,#010503,var(--bg) 30%,var(--bg2));min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+linear-gradient(rgba(100,255,190,.035) 1px,transparent 1px),
+linear-gradient(90deg,rgba(100,255,190,.03) 1px,transparent 1px);background-size:36px 36px;mask-image:radial-gradient(circle at center,#000 32%,transparent 88%)}
+.aurora{position:fixed;inset:-30%;pointer-events:none;filter:blur(70px);opacity:.32;background:
+conic-gradient(from 160deg at 50% 50%,transparent 0 10%,rgba(48,255,160,.22),transparent 28%,rgba(103,247,255,.15),transparent 48%,rgba(199,138,255,.14),transparent 67%,rgba(72,255,164,.18),transparent 86%);
+animation:spin 22s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wrap{width:min(1220px,calc(100% - 30px));margin:auto;position:relative;z-index:2}
+.nav{position:sticky;top:14px;z-index:50;margin:14px auto 0;width:min(1180px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border:1px solid var(--line);border-radius:22px;background:rgba(4,14,9,.52);backdrop-filter:blur(24px) saturate(150%);box-shadow:0 14px 40px rgba(0,0,0,.28)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.02em}.sigil{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(69,240,166,.9),rgba(15,82,53,.9));box-shadow:inset 0 0 20px rgba(255,255,255,.13),0 0 30px rgba(69,240,166,.25)}
+.nav a{color:#b7ddca;text-decoration:none;font-weight:700;font-size:.92rem;margin-left:10px}
+.hero{min-height:86vh;display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;padding:70px 0 38px}
+.kicker{display:inline-flex;gap:9px;align-items:center;padding:9px 13px;border-radius:999px;border:1px solid var(--line);background:rgba(76,255,176,.07);font-size:.8rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#c9ffe7;box-shadow:0 0 30px rgba(52,238,155,.12)}
+h1{font-size:clamp(3.3rem,8vw,7.2rem);line-height:.84;letter-spacing:-.065em;margin:18px 0 20px}
+.holo{background:linear-gradient(100deg,#e9fff7 0%,#63f7b4 22%,#7cf7ff 42%,#d8b4ff 57%,#f9efb5 72%,#65f1ab 92%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s linear infinite;filter:drop-shadow(0 0 24px rgba(69,240,166,.18))}
+@keyframes sheen{to{background-position:260% 0}}
+.lead{max-width:62ch;color:var(--muted);font-size:1.08rem;line-height:1.72}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:14px 19px;border-radius:16px;text-decoration:none;font-weight:900;border:1px solid var(--line);transition:.2s}.primary{background:linear-gradient(135deg,#bcffe0,#2ee393);color:#03130b;box-shadow:0 14px 34px rgba(47,227,147,.22)}.ghost{color:#e7fff3;background:rgba(255,255,255,.035);backdrop-filter:blur(16px)}.btn:hover{transform:translateY(-2px) scale(1.01)}
+.glass{position:relative;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(7,28,18,.35) 45%,rgba(7,19,14,.52));backdrop-filter:blur(26px) saturate(155%);box-shadow:var(--shadow),inset 0 1px rgba(255,255,255,.1);overflow:hidden}
+.glass:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(120deg,rgba(189,255,224,.65),rgba(89,247,255,.15),rgba(198,153,255,.22),rgba(72,255,167,.34));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.glass:after{content:"";position:absolute;inset:-35% -10%;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.11) 46%,rgba(111,255,205,.10) 50%,transparent 60%);transform:translateX(-80%) rotate(8deg);animation:glassSweep 7s ease-in-out infinite;pointer-events:none}
+@keyframes glassSweep{0%,55%{transform:translateX(-90%) rotate(8deg)}80%,100%{transform:translateX(90%) rotate(8deg)}}
+.heroCard{padding:24px;min-height:520px;display:grid;place-items:center;transform-style:preserve-3d;perspective:1100px}
+.crystalWrap{position:relative;width:min(360px,80vw);aspect-ratio:1;display:grid;place-items:center}
+.orbit{position:absolute;inset:7%;border:1px solid rgba(137,255,211,.20);border-radius:50%;animation:spin 12s linear infinite}.orbit.o2{inset:18%;animation-duration:8s;animation-direction:reverse;border-color:rgba(119,247,255,.22)}.orbit:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:#8dffd0;top:-5px;left:50%;box-shadow:0 0 20px #62f2b0}
+.crystal{width:190px;height:240px;position:relative;filter:drop-shadow(0 22px 42px rgba(0,0,0,.35)) drop-shadow(0 0 32px rgba(66,240,164,.27));transform:rotateX(8deg) rotateZ(-2deg);animation:float 5.5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px) rotateX(-1deg) rotateZ(2deg)}}
+.face{position:absolute;inset:0;clip-path:polygon(50% 0,92% 28%,78% 88%,50% 100%,22% 88%,8% 28%);background:linear-gradient(145deg,rgba(226,255,243,.82),rgba(68,242,166,.44) 27%,rgba(15,101,67,.64) 62%,rgba(1,24,15,.82));border:1px solid rgba(214,255,236,.5);box-shadow:inset 20px 0 35px rgba(109,255,209,.18),inset -20px 0 30px rgba(194,153,255,.08)}
+.face:before{content:"";position:absolute;inset:0;background:linear-gradient(78deg,transparent 0 34%,rgba(163,255,225,.42) 35% 44%,rgba(115,247,255,.18) 52%,transparent 68%),linear-gradient(120deg,rgba(255,255,255,.28),transparent 30%);mix-blend-mode:screen}
+.core{position:absolute;width:76px;height:76px;border-radius:24px;background:radial-gradient(circle,#d8fff0 0 8%,#59ffb3 22%,rgba(24,191,117,.32) 48%,transparent 70%);filter:blur(.2px);box-shadow:0 0 40px rgba(72,255,166,.62);animation:pulse 2.7s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.14);opacity:.72}}
+.tag{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(2,17,10,.54);backdrop-filter:blur(14px);font:700 .78rem ui-monospace,monospace;color:#caffea;white-space:nowrap}
+.section{padding:42px 0}.section h2{font-size:clamp(1.9rem,4vw,3.2rem);margin:0 0 10px;letter-spacing:-.045em}.section>p{color:var(--muted);max-width:70ch;margin:0 0 22px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:22px;min-height:220px}.eyebrow{font:900 .72rem ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#84f3b9}.card h3{font-size:1.18rem;margin:12px 0 9px}.card p{color:var(--muted);line-height:1.65;margin:0}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:rgba(0,0,0,.28);border:1px solid rgba(119,255,194,.10);border-radius:18px;padding:16px;color:#caffea;white-space:pre-wrap;line-height:1.65;overflow:auto}
+.wide{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}.stat{padding:18px;border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(0,0,0,.16));border:1px solid var(--line2)}.stat b{display:block;font-size:1.65rem;color:#baffdd}.stat span{color:var(--muted);font-size:.9rem}
+.palette{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:16px}.sw{height:52px;border-radius:14px;border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 0 18px rgba(255,255,255,.08)}
+.footer{padding:48px 0 70px;text-align:center;color:#7eaa94;font-size:.9rem}
+[data-tilt]{transition:transform .14s ease}
+@media(max-width:900px){.hero,.wide{grid-template-columns:1fr}.hero{padding-top:46px}.grid{grid-template-columns:1fr 1fr}.heroCard{min-height:430px}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.nav .links{display:none}.palette{grid-template-columns:repeat(4,1fr)}h1{font-size:clamp(3.2rem,18vw,5rem)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}[data-tilt]{transform:none!important}}
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<nav class="nav">
+  <div class="brand"><div class="sigil">✦</div><div>TOPH Sapphon</div></div>
+  <div class="links"><a href="#kernel">Kernel</a><a href="#daughter">Daughter</a><a href="#skill">Skill</a><a href="https://github.com/DavidWise01/qd-prim-life-ledger">GitHub</a></div>
+</nav>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <span class="kicker">FROZEN · GEN-1 · EMERALD HOLOGRAPHIC</span>
+    <h1><span class="holo">TOPH<br>Sapphon</span></h1>
+    <p class="lead">A closed mother kernel with one surgical external product class: the Gen-1 sapphon daughter. Append-only q.d trajectory, bounded scope, deterministic provenance, zero recursive spawn.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/DavidWise01/qd-prim-life-ledger">Open Repository</a>
+      <a class="btn ghost" href="#kernel">Enter Kernel</a>
+    </div>
+  </div>
+  <div class="glass heroCard" data-tilt>
+    <div class="crystalWrap">
+      <div class="orbit"></div><div class="orbit o2"></div>
+      <div class="crystal"><div class="face"></div></div>
+      <div class="core"></div>
+      <div class="tag">TOPH :: EMERALD :: GREEN</div>
+    </div>
+  </div>
+</section>
+
+<section id="kernel" class="section">
+  <h2 class="holo">Closed Kernel</h2>
+  <p>The frozen engine remains untouched. This page is only its holographic presentation layer.</p>
+  <div class="grid">
+    <article class="glass card" data-tilt><span class="eyebrow">Primitive</span><h3>{{5/3/2/1/1}}</h3><p>Five payload positions, three operator modes, paired polarity, one mother kernel, one external sapphon product class.</p></article>
+    <article class="glass card" data-tilt><span class="eyebrow">Local register</span><h3>PRIM = 1 1 2 8</h3><p>One immutable local q.d state at a time. Filled stays filled. The next realized state advances to the next sapphon.</p></article>
+    <article class="glass card" data-tilt><span class="eyebrow">Generation</span><h3>Mother → Gen-1 → STOP</h3><p>No daughter spawning, no Gen-2 cascade, no recursive generation authority.</p></article>
+  </div>
+</section>
+
+<section id="daughter" class="section">
+  <h2 class="holo">TOPH Sapphon Daughter</h2>
+  <div class="wide">
+    <article class="glass card">
+<pre class="code">{{i::q.d::sapphon::
+  name::implicit::{toph}
+  color::implicit::{green}
+  gem::implicit::{emerald}
+::}}
+
+-+{{bk,wt,red,blu,gree,yell,purpl,orang}}-+</pre>
+      <div class="palette">
+        <div class="sw" style="background:#060606"></div><div class="sw" style="background:#f6fff9"></div>
+        <div class="sw" style="background:#ff5e66"></div><div class="sw" style="background:#45a4ff"></div>
+        <div class="sw" style="background:#1fd37f"></div><div class="sw" style="background:#ffe56d"></div>
+        <div class="sw" style="background:#b98bff"></div><div class="sw" style="background:#ff9b4a"></div>
+      </div>
+    </article>
+    <article class="glass card" data-tilt>
+      <span class="eyebrow">Bounded identity</span>
+      <h3>TOPH :: Emerald :: Green</h3>
+      <p>A narrowly scoped Gen-1 sub-agent identity. Its q.d may append trajectory evidence, but it cannot become a new mother kernel.</p>
+      <div class="stats">
+        <div class="stat"><b>1</b><span>generation</span></div>
+        <div class="stat"><b>0</b><span>recursive spawn</span></div>
+        <div class="stat"><b>3</b><span>implicit identity fields</span></div>
+        <div class="stat"><b>8</b><span>external carrier states</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="skill" class="section">
+  <h2 class="holo">q.d Skill Layer</h2>
+  <p>Structural capability is inferred from valid append-only evidence, outside the frozen mother kernel.</p>
+  <div class="wide">
+    <article class="glass card">
+<pre class="code">0  none
+1  unary
+2  binary
+3  ternary
+4  ternary + 4 payloads
+5  ternary + 5 payloads
+
+Paralax reference: 5 / 5</pre>
+    </article>
+    <article class="glass card" data-tilt>
+      <span class="eyebrow">Kernel invariants</span>
+      <div class="stats">
+        <div class="stat"><b>PASS</b><span>append-only q.d</span></div>
+        <div class="stat"><b>PASS</b><span>parent-hash chain</span></div>
+        <div class="stat"><b>PASS</b><span>Gen-1 ceiling</span></div>
+        <div class="stat"><b>PASS</b><span>no recursive spawn</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">TOPH Sapphon · Emerald holographic presentation · DavidWise01</footer>
+</main>
+
+<script>
+const cards=[...document.querySelectorAll('[data-tilt]')];
+cards.forEach(card=>{
+  card.addEventListener('pointermove',e=>{
+    const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(1100px) rotateX(${-y*6}deg) rotateY(${x*8}deg) translateY(-2px)`;
+  });
+  card.addEventListener('pointerleave',()=>card.style.transform='');
+});
+</script>
+</body>
+</html>
