@@ -4,6 +4,7 @@ This repository is intentionally tethered: every executable, test, notation file
 
 ```text
                          CANONICAL ROOT
+                         {{5/3/2/1/1}} FROZEN
                          PRIM = 1 1 2 8
                          dot = sapphon
                     append only -> add next
@@ -27,13 +28,14 @@ This repository is intentionally tethered: every executable, test, notation file
 
 ## Canonical relationships
 
-1. `README.md` is the human entry point.
-2. `SPEC.md` defines normative model behavior.
-3. `docs/NOTATION.md` preserves literal symbolic notation and semantic glosses.
-4. `src/qd_prim.py` is the executable reference implementation.
-5. `tests/test_qd_prim.py` checks the executable invariants.
-6. `.github/workflows/test.yml` re-runs the invariants on every push and pull request.
-7. `MANIFEST.json` hashes the tethered files and supplies one deterministic root hash.
+1. `FREEZE.md` pins the completed Gen-1 mother/daughter kernel state.
+2. `README.md` is the human entry point.
+3. `SPEC.md` defines normative model behavior.
+4. `docs/NOTATION.md` preserves literal symbolic notation and semantic glosses.
+5. `src/qd_prim.py` is the executable reference implementation.
+6. `tests/test_qd_prim.py` checks the executable invariants, including Paralax daughter inference.
+7. `.github/workflows/test.yml` re-runs the invariants on every push and pull request.
+8. `MANIFEST.json` hashes the tethered files and supplies one deterministic root hash.
 
 ## Append-only tether
 
