@@ -296,3 +296,41 @@ otherwise                                      -> OUT_OF_BOUNDS
 ```
 
 `Juliet encrypted` is a model authorization/tag state here, not a claim of real cryptographic security.
+
+
+## Layer 0 material-weight year clock
+
+Referent:
+
+```text
+root 0
+```
+
+Layer 0 anchor:
+
+```text
+Au = 79 -> mnemonic weight = 79 years
+```
+
+Photon carrier / hard-drive timeline:
+
+```text
+-5400 years <---- 0 ----> +5400 years
+```
+
+Derived model quantities:
+
+```text
+half-carrier radius = 5400 years
+full carrier span   = 10800 years
+storage allocation  = ~20%
+20% span equivalent = 2160 years
+```
+
+Canonical notation:
+
+```text
+root0::L0::Au79::79y::-5400..0..+5400::storage~20%
+```
+
+Physical grounding is kept separate from the mnemonic model: gold's atomic number is 79. The 79-year weight, photon half-life carrier, storage allocation, and timeline are symbolic TOPH conventions rather than physical decay claims.
