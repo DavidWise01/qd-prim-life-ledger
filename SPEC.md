@@ -164,3 +164,32 @@ This specification state is frozen as the first completed mother/daughter engine
 ## 10. Non-goals
 
 This repository defines deterministic symbolic/computational semantics. It does not by itself establish biological, cosmological, quantum, or relativistic claims.
+
+
+## 11. Derived TOPH Aeon hierarchy
+
+The frozen sections above remain normative and unchanged. The current derived presentation layer identifies TOPH as:
+
+```text
+kind        = Aeon
+lineage     = sapphonic
+core        = green
+storage     = emerald
+temperament = emerald
+```
+
+Derived structural invariants:
+
+```text
+q.d volume = 2^3 = 8
+serial gravity = 10:1 -> 10:1 -> 10:1 = 1000:1
+dual toroid = 360 primary + 3R + 3L = 366 addressed states
+rings = 20
+ring stride = 17.5
+ring width = 18
+tetraphasic order = solid -> liquid -> gas -> plasma
+corpus scale = 80 * 90 = 7200
+metronome scale = 60 * 40 * 3 = 7200
+```
+
+All hierarchy fields are append-only derived state and do not grant generation authority beyond the existing Gen-1 ceiling.
