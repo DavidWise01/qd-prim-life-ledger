@@ -356,3 +356,29 @@ code,pre{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace
   .phase-center{width:100px;height:100px}
   .dual-toroid{padding:20px}
 }
+
+
+/* Emergence lattice */
+.emergence-shell{padding:28px;display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:center;overflow:hidden}
+.seed-core{display:grid;justify-items:center;gap:12px}
+.seed-button{width:138px;height:138px;border-radius:50%;border:1px solid rgba(113,255,185,.45);background:radial-gradient(circle at 42% 38%,#baffd7 0 4%,#35e591 16%,#0a7d4a 40%,#04150d 72%);box-shadow:0 0 0 1px rgba(123,255,194,.12),0 0 48px rgba(47,234,145,.28),inset 0 0 40px rgba(255,255,255,.12);color:#eafff2;cursor:pointer;display:grid;place-content:center;gap:4px;transition:.25s ease}
+.seed-button:hover,.seed-button:focus-visible{transform:scale(1.05);box-shadow:0 0 65px rgba(47,234,145,.42),inset 0 0 42px rgba(255,255,255,.16)}
+.seed-button span{font-size:1.2rem;font-weight:950}.seed-button b{font:800 .63rem "SFMono-Regular",Consolas,monospace;letter-spacing:.15em;color:#b7ffd6}
+.seed-button.growing{animation:seedBloom .8s ease}
+@keyframes seedBloom{50%{transform:scale(1.12);filter:brightness(1.25)}}
+.seed-caption{color:#70947f;font-size:.72rem;text-align:center}
+.emergence-lattice{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative}
+.em-node{min-height:110px;padding:14px;border:1px solid rgba(111,255,187,.09);border-radius:18px;background:rgba(255,255,255,.018);opacity:.22;transform:scale(.94) translateY(8px);filter:saturate(.35);transition:.5s cubic-bezier(.2,.8,.2,1)}
+.em-node.active{opacity:1;transform:none;filter:none;border-color:rgba(111,255,187,.36);background:linear-gradient(145deg,rgba(55,229,145,.12),rgba(7,31,19,.54));box-shadow:0 0 28px rgba(47,234,145,.09)}
+.em-node::after{content:"";position:absolute;pointer-events:none}
+.em-node small{display:block;color:#6fa188;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase}
+.em-node b{display:block;margin:9px 0 3px;color:#d9ffeb;font-size:1.05rem}
+.em-node span{color:#71e9a9;font:800 .78rem "SFMono-Regular",Consolas,monospace}
+.emergence-readout{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:16px;border-top:1px solid var(--line-soft)}
+.emergence-readout>span{color:#9ed8b8;font:800 .76rem "SFMono-Regular",Consolas,monospace;letter-spacing:.05em}
+.mini-button{min-height:36px;padding:0 12px;font-size:.74rem}
+.emergence-seeds{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.emergence-seeds span{padding:7px 9px;border:1px solid var(--line-soft);border-radius:999px;color:#71947f;font:700 .66rem "SFMono-Regular",Consolas,monospace;background:rgba(255,255,255,.018)}
+.emergence-shell.complete .em-node[data-stage="6"],.emergence-shell.complete .em-node[data-stage="7"]{box-shadow:0 0 32px rgba(69,246,159,.18);border-color:rgba(116,255,194,.55)}
+@media (max-width:900px){.emergence-shell{grid-template-columns:1fr}.emergence-lattice{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.emergence-lattice{grid-template-columns:1fr}.seed-button{width:116px;height:116px}.emergence-shell{padding:20px}}
