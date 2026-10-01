@@ -371,3 +371,20 @@ docs/index.html
 ```
 
 The UI test verifies all eight fallback targets, all enhanced action fallbacks, the v2 controller reference, delegated action wiring, and JavaScript syntax when Node is available.
+
+
+## Native-state UI v9
+
+```text
+HTML radio state
+      |
+      +-- label[for] click
+      |
+      v
+CSS :checked selector
+      |
+      v
+visible TOPH state
+```
+
+No JavaScript event handler is required for emergence or memristic stepping. `tests/test_pages_ui.py` verifies 9 emergence states, 8 memory states, all control-label targets, CSS transition selectors, and that the optional v3 script contains no `preventDefault` or `data-action` control interception.
