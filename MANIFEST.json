@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "710b968f857015a6bd5809c3453e16717d62bcf7cf9c733c9c8ca08798e5ed3f",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -277,7 +277,7 @@
       }
     },
     "github_pages": {
-      "title": "TOPH Aeon {{2^3}} native controls",
+      "title": "TOPH Aeon {{2^3}} native controls + five-internet sync",
       "hierarchy_synced": true,
       "presentation_only": true,
       "ui_layers": 8,
@@ -378,6 +378,43 @@
       "javascript_required_for_navigation": false,
       "javascript_required_for_memory_step": false,
       "test": "tests/test_pages_ui.py"
+    },
+    "five_internet_phase_sync": {
+      "overlay": "data/five_internet_phase_sync.json",
+      "literal": "{{-1 x -{{ 1 , 0 , 1 }} x 360 / 1x1^10-36}}",
+      "operator": "sinc",
+      "bounds": [
+        0,
+        4
+      ],
+      "internet_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "resolved_mask": [
+        1,
+        0,
+        1
+      ],
+      "preclosure_degrees": [
+        360,
+        0,
+        360
+      ],
+      "closure_origin": [
+        0,
+        0,
+        0
+      ],
+      "closure_origin_literal": "0.0.0",
+      "phase_resolution_literal": "1x1^10-36",
+      "closure_rule": "{{360,0,360}} mod 360 -> {{0,0,0}}",
+      "live_network_inspection": false,
+      "physical_internet_claim": false,
+      "frozen_kernel_modified": false
     }
   },
   "files": [
@@ -387,15 +424,15 @@
     },
     {
       "path": "README.md",
-      "sha256": "3678fa6c26e7b94f8c9f31139b1433bee404b5bd8c752ca9f269fd4bd8e4dc86"
+      "sha256": "PENDING"
     },
     {
       "path": "SPEC.md",
-      "sha256": "6e0515974074f4632094e74d303655b72c8159ebd307386d3f6f745391fb87f4"
+      "sha256": "PENDING"
     },
     {
       "path": "TETHER.md",
-      "sha256": "f6c847d014aa2b57fcaac9be59e081828ae35560a25863b6619647833d8c3fb1"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -443,7 +480,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "324c7d55c67afe40780679706830c5233aad5840526762125f479c745f432f97"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -511,11 +548,11 @@
     },
     {
       "path": "data/toph_aeon_hierarchy.json",
-      "sha256": "4e9b68f35de88f739f62687583e1026e6b37f3adff5f21094ab0919d3a87eccc"
+      "sha256": "PENDING"
     },
     {
       "path": "tools/toph_aeon_hierarchy.py",
-      "sha256": "28e9b2f0e8c1766fbdbffbca4fb582fbf072c304f01d2099e35d6751426c2dfb"
+      "sha256": "PENDING"
     },
     {
       "path": "tests/test_toph_aeon_hierarchy.py",
@@ -531,11 +568,11 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "fbaf3a86439d390b2cb5490c8b0b5b3c47cd24caf49844bb7b432f5d58b50a2e"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/assets/styles.css",
-      "sha256": "f0e932147652c570861a37060ed7e626686d05358ab6afc5288afb70d2132559"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/site.webmanifest",
@@ -559,7 +596,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "5c9915f79d77b02f5b1aa2f6d854510c51388b3b37da0e608501a55d11893d45"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/assets/app-v2.js",
@@ -567,11 +604,23 @@
     },
     {
       "path": "tests/test_pages_ui.py",
-      "sha256": "ab9b504faa45ff3044a1c041dcd4a52ffc7f3e0b817a98b7f6a06f71b4e241d5"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/assets/app-v3.js",
       "sha256": "f8994045bb2bd9c946d47fd412575955242670700d3feec67fe1685653e907f7"
+    },
+    {
+      "path": "data/five_internet_phase_sync.json",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tools/five_internet_phase_sync.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_five_internet_phase_sync.py",
+      "sha256": "PENDING"
     }
   ]
 }
