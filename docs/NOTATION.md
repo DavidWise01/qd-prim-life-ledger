@@ -449,3 +449,51 @@ shell_retained=2/3
 ```
 
 Derived state is verified against the stored hierarchy so an inconsistent hard-coded presentation fails the tether.
+
+
+## Memristic `-+` spinor
+
+```text
+-+ :: spinor
+10 lives :: 10,000y nominal :: ±20%
+8,000y <= lifecycle <= 12,000y
+```
+
+Nominal per-life projection:
+
+```text
+10,000 / 10 = 1,000y
+range per life = 800..1,200y
+```
+
+Phase memory:
+
+```text
+3y   3y   3y   3y
+-m -> +m -> -f -> +f
+-1     0    -1     0
+
+quartet = 12y
+two context quartets = 24y
+```
+
+Context matrix:
+
+```text
+                 -m   +m   -f   +f
+advanced_tech    -1    0   -1    0
+dirt_poor        -1    0   -1    0
+```
+
+Every state retains the previous state's hash. Thus the overlay is memristic computationally: present state carries explicit path memory even when the signed register returns to zero.
+
+Historical anchor 00:
+
+```text
+user alias      = enihendua
+canonical name  = Enheduanna
+approximate era = c. 2300 BCE
+overlay slot    = 3 :: -2295..-2205 :: shadow/female
+```
+
+The slot mapping is approximate and read-only; the source corpus is not rewritten. Wealth/technology contexts are simulation overlays rather than historical attributes.
