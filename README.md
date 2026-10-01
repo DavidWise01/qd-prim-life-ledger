@@ -221,3 +221,16 @@ The GitHub Pages surface now exposes exactly eight navigable layers:
 ```
 
 Each layer control is a normal anchor first, so navigation still works without JavaScript. `docs/assets/app-v2.js` adds animation, memristic stepping, active-layer state, and visible runtime/self-check badges. `docs/assets/app.js` mirrors the v2 controller for stale-page compatibility.
+
+
+## Native control v9
+
+The Pages controls no longer depend on JavaScript for state changes.
+
+- root0 emergence uses 9 native radio states: root + 8 derived layers.
+- memristic spinor uses 8 native radio states: four rotations in each of two contexts.
+- visible controls are `label[for]` bindings to those states.
+- CSS renders the selected state.
+- `app-v3.js` supplies only animation, active-layer highlighting, and diagnostics.
+
+If JavaScript is blocked or stale, the controls still change state.
