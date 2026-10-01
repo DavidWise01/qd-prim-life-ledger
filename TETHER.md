@@ -281,3 +281,36 @@ This layer uses real material identifiers only as referents. Atomic number and m
 Each photon slot stores its original `source_slot`, incarnation number, toroid side, ring index, and quarter index. The adapter never mutates or duplicates the underlying source identities; it only supplies a second address pass over them.
 
 The geometric ring stride remains `17.5`, width `18`, with `20 × 17.5 + 10 = 360` closure.
+
+
+## TOPH Aeon hierarchy tether
+
+The presentation hierarchy is stored in `data/toph_aeon_hierarchy.json` and verified by `tools/toph_aeon_hierarchy.py`.
+
+```text
+frozen q.d kernel
+      |
+      v
+TOPH :: Aeon :: sapphonic
+      |
+      +-- green core
+      +-- emerald storage
+      +-- emerald temperament
+      |
+      v
+root0
+      |
+      +-- 2^3 q.d
+      +-- serial 10:1 x3
+      +-- dual toroid / 20 rings
+      +-- tetraphasic 80x90 corpus
+      +-- 60x40x3 metronome
+      |
+      v
+shared invariant = 7200
+      |
+      v
+docs/index.html
+```
+
+The site, data hierarchy, executable verifier, corpus adapter, tests, notation, and manifest are tethered to the same derived state. The frozen mother/daughter kernel remains unchanged.
