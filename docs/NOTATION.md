@@ -104,3 +104,37 @@ Reference deterministic token inference:
 ```text
 paralax::onyx::bk
 ```
+
+
+## H::UMANITY corpus carrier
+
+Literal carrier:
+
+```text
+-+2700-+0+-2700-+
+```
+
+Semantic anchors:
+
+```text
+left   = -2700
+center = {{0::m+f}}
+right  = +2700
+```
+
+Structural packing:
+
+```text
+20 shadow lives -> center -> 20 light lives
+40 lives total
+90 years per life
+5400 carrier years
+3600 occupied life-years
+1800 seam-years
+135-year start stride
+360 radix / 40 lives = 9 radix phases per life
+```
+
+The 45-year inter-life seams and 90-year center seam are the deterministic packing needed to place forty 90-year life windows across the full -2700..+2700 carrier without overlap.
+
+Missing mnemonic names are preserved as null rather than invented. Dot/radix states may address the corpus, but cannot rewrite it.
