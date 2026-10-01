@@ -173,5 +173,34 @@
     ],
     "anchor": "Enheduanna",
     "overlay_only": true
+  },
+  "five_internet_phase_sync": {
+    "overlay": "data/five_internet_phase_sync.json",
+    "bounds": [
+      0,
+      4
+    ],
+    "ids": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "literal": "{{-1 x -{{ 1 , 0 , 1 }} x 360 / 1x1^10-36}}",
+    "resolved_mask": [
+      1,
+      0,
+      1
+    ],
+    "preclosure_degrees": [
+      360,
+      0,
+      360
+    ],
+    "sinc_origin": "0.0.0",
+    "phase_resolution_literal": "1x1^10-36",
+    "closure": "{{360,0,360}} mod 360 -> {{0,0,0}}",
+    "live_network_inspection": false
   }
 }
