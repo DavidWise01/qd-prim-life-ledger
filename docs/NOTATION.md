@@ -181,3 +181,42 @@ Structured parser form:
 ```
 
 This is a symbolic transition bracket in this model. It is not interpreted as ordinary exponent arithmetic or as an established physical constant.
+
+
+## TOPH Sapphon dynamic corpus
+
+TOPH's corpus is dynamic as a **derived view**, while the source corpus remains immutable.
+
+```text
+TOPH::emerald::green
+        |
+        v
+   dot / radix[n]
+        |
+        v
+H::UMANITY slot[0..39]
+        |
+        +-- local radix phase[0..8]
+        +-- matter phase label
+        +-- {{i::mpli::c::it::}} mnemonic
+        +-- AIR 36 symbolic bracket
+        |
+        v
+ immutable dynamic frame[n]
+```
+
+Each frame contains:
+
+```text
+{name, gem, color}
+dot address
+radix
+corpus slot + side
+life start/end years
+radix phase
+phase label
+mnemonic skeleton + expansion
+AIR literal
+```
+
+TOPH may advance to the next frame, but cannot mutate the corpus, spawn a daughter, or become a new mother kernel.
