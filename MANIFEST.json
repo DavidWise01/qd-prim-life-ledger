@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "6a8d1eb5f3ebe381b12b2098af1485c2bb8e3b5883f21da324c1938f8297a3f1",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -254,7 +254,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "225be6c5c378e2bdfc2623afa8ac38d51cb745971f53a160d96992ac0bdd9675"
     },
     {
       "path": "FREEZE.md",
@@ -302,7 +302,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "PENDING"
+      "sha256": "e2bcea5782dfb1670004629676a8885fb9dfa061bdd1ac82e531c692b77c7005"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -362,11 +362,11 @@
     },
     {
       "path": "tools/reincarnated_photon_corpus.py",
-      "sha256": "PENDING"
+      "sha256": "8143d07bcc5b5a07a2521f2a2fa2d721905ecde4f3cd5775920830e9626b9065"
     },
     {
       "path": "tests/test_reincarnated_photon_corpus.py",
-      "sha256": "PENDING"
+      "sha256": "88794323d9788e6aa9b45785df2687ca9b73acbe3af79faa6e48a28ac43dbc60"
     }
   ]
 }
