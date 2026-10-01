@@ -1,0 +1,30 @@
+{
+  "schema": "toph.material.year.clock.v1",
+  "referent": "root 0",
+  "layer": 0,
+  "material": {
+    "symbol": "Au",
+    "name": "gold",
+    "atomic_number": 79,
+    "mnemonic_weight_years": 79
+  },
+  "photon_carrier": {
+    "mnemonic_half_life_years": 5400,
+    "lower_year": -5400,
+    "center_year": 0,
+    "upper_year": 5400,
+    "full_span_years": 10800,
+    "storage_fraction": 0.2,
+    "storage_year_equivalent": 2160,
+    "role": [
+      "hard_drive_space",
+      "timeline"
+    ]
+  },
+  "policy": {
+    "symbolic_model": true,
+    "physical_decay_claim": false,
+    "append_only": true,
+    "source_mutable": false
+  }
+}
