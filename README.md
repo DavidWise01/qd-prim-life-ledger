@@ -203,3 +203,21 @@ advanced-tech quartet + dirt-poor quartet = 24-year context sweep
 Each state stores the SHA-256 digest of its previous state as `parent_hash`, so the current phase depends on an explicit retained history. The advanced-tech and dirt-poor conditions are simulation contexts applied to all four phase states, not historical claims.
 
 The first historical overlay anchor is **Enheduanna**, approximately 2300 BCE, attached read-only to the nearest existing corpus window (slot 3, `-2295..-2205`). The underlying 40-life source corpus is unchanged.
+
+
+## {{2^3}} interactive walkthrough
+
+The GitHub Pages surface now exposes exactly eight navigable layers:
+
+```text
+0 root0
+1 {{2^3}} q.d
+2 memristic -+
+3 serial gravity 10^3
+4 dual toroid 366
+5 tetraphasic corpus 7200
+6 metronome / foam
+7 frozen kernel / 0/0 closure
+```
+
+Each layer control is a normal anchor first, so navigation still works without JavaScript. `docs/assets/app-v2.js` adds animation, memristic stepping, active-layer state, and visible runtime/self-check badges. `docs/assets/app.js` mirrors the v2 controller for stale-page compatibility.
