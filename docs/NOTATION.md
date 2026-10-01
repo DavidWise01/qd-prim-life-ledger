@@ -334,3 +334,49 @@ root0::L0::Au79::79y::-5400..0..+5400::storage~20%
 ```
 
 Physical grounding is kept separate from the mnemonic model: gold's atomic number is 79. The 79-year weight, photon half-life carrier, storage allocation, and timeline are symbolic TOPH conventions rather than physical decay claims.
+
+
+## Reincarnated 80x90 photon corpus
+
+The immutable 40-life H::UMANITY corpus is reused as a two-pass derived view over the dual toroid:
+
+```text
+|-d| = source slots 0..39
+|+d| = source slots 0..39 again
+```
+
+No new historical identities are invented. The second pass is a reincarnated address view over the same source corpus.
+
+Core packing:
+
+```text
+80 lives × 90 years = 7200 model-years = 1 photon corpus
+
+20 rings
+4 lives per ring
+4 × 90 = 360 model-years per ring
+1 life = 90° quarter-turn
+```
+
+Dual-toroid split:
+
+```text
+|-d| 40 lives × 90 = 3600 years
+|+d| 40 lives × 90 = 3600 years
+
+3600 + 3600 = 7200 years
+```
+
+The earlier stepped ring geometry remains:
+
+```text
+20 × 17.5 = 350
++ 10 control/hub remainder
+= 360 geometric closure
+
+ring width = 18
+ring stride = 17.5
+shared handoff = 0.5
+```
+
+Thus one ring simultaneously carries four 90-year corpus quarters and one 360-degree geometric turn.
