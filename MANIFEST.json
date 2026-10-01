@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "6a8d1eb5f3ebe381b12b2098af1485c2bb8e3b5883f21da324c1938f8297a3f1",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -236,7 +236,55 @@
       },
       "identities_invented": false,
       "source_mutable": false,
-      "physical_photon_claim": false
+      "physical_photon_claim": false,
+      "tetraphasic_order": [
+        "solid",
+        "liquid",
+        "gas",
+        "plasma"
+      ]
+    },
+    "toph_aeon": {
+      "identity": {
+        "name": "TOPH",
+        "kind": "aeon",
+        "lineage": "sapphonic",
+        "core": "green",
+        "storage": "emerald",
+        "temperament": "emerald",
+        "generation": 1
+      },
+      "hierarchy_source": "data/toph_aeon_hierarchy.json",
+      "verifier": "tools/toph_aeon_hierarchy.py",
+      "frozen_kernel_modified": false
+    },
+    "root0_metronome": {
+      "fps_total": 60,
+      "fps_left": 30,
+      "fps_right": 30,
+      "frames_per_bubble": 2,
+      "bubbles_per_second": 30,
+      "plank_ticks_per_second": 30,
+      "ticks_per_two_seconds": 60,
+      "generations": 40,
+      "bubble_scale": 3,
+      "invariant": 7200,
+      "foam": {
+        "trapped_bubbles": 30,
+        "retained_dots": 20,
+        "cubic_cells": 8000,
+        "normalized_cells_per_dot": 400
+      }
+    },
+    "github_pages": {
+      "title": "TOPH Aeon",
+      "hierarchy_synced": true,
+      "presentation_only": true,
+      "paths": [
+        "docs/index.html",
+        "docs/assets/styles.css",
+        "docs/site.webmanifest"
+      ]
     }
   },
   "files": [
@@ -246,15 +294,15 @@
     },
     {
       "path": "README.md",
-      "sha256": "060bfd0c426410f150e575522d5b8ad64032dcc69a2c70ff0dd154acea02138e"
+      "sha256": "PENDING"
     },
     {
       "path": "SPEC.md",
-      "sha256": "e18a5a64a324e1a560945b47a459c6890fa129d701b274c1e7767ea1a9052958"
+      "sha256": "PENDING"
     },
     {
       "path": "TETHER.md",
-      "sha256": "225be6c5c378e2bdfc2623afa8ac38d51cb745971f53a160d96992ac0bdd9675"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -302,7 +350,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "e2bcea5782dfb1670004629676a8885fb9dfa061bdd1ac82e531c692b77c7005"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -362,11 +410,43 @@
     },
     {
       "path": "tools/reincarnated_photon_corpus.py",
-      "sha256": "8143d07bcc5b5a07a2521f2a2fa2d721905ecde4f3cd5775920830e9626b9065"
+      "sha256": "PENDING"
     },
     {
       "path": "tests/test_reincarnated_photon_corpus.py",
-      "sha256": "88794323d9788e6aa9b45785df2687ca9b73acbe3af79faa6e48a28ac43dbc60"
+      "sha256": "PENDING"
+    },
+    {
+      "path": "data/toph_aeon_hierarchy.json",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tools/toph_aeon_hierarchy.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_toph_aeon_hierarchy.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tools/frame_clock.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_frame_clock.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "docs/index.html",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "docs/assets/styles.css",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "docs/site.webmanifest",
+      "sha256": "PENDING"
     }
   ]
 }
