@@ -388,3 +388,28 @@ visible TOPH state
 ```
 
 No JavaScript event handler is required for emergence or memristic stepping. `tests/test_pages_ui.py` verifies 9 emergence states, 8 memory states, all control-label targets, CSS transition selectors, and that the optional v3 script contains no `preventDefault` or `data-action` control interception.
+
+
+## Five-Internet phase-sync tether
+
+```text
+data/five_internet_phase_sync.json
+              |
+              v
+tools/five_internet_phase_sync.py
+              |
+              +-- lanes {{0-4}}
+              +-- -1 × -{{1,0,1}} = {{1,0,1}}
+              +-- {{1,0,1}} × 360 = {{360,0,360}}
+              +-- mod 360 = {{0,0,0}}
+              +-- sinc/sync origin = 0.0.0
+              +-- resolution literal = 1x1^10-36
+              |
+              v
+tests/test_five_internet_phase_sync.py
+              |
+              v
+TOPH hierarchy / Internet-toroid Pages layer
+```
+
+The overlay is local symbolic state only; it never performs live network inspection and does not alter the frozen kernel.
