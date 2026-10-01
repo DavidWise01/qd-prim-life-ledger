@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "8cceb1284b2006ac699d0d91d7267f1dcbb5ec6788215ef28fa55e90f13dcb12",
+  "root_sha256": "79f91b7b22ee9370c3bb79214cfb45dfdecda02e83c10a9d32e2cf0fad7144a7",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -35,7 +35,7 @@
     },
     {
       "path": "FREEZE.md",
-      "sha256": "da3cdaba0ed74e806bcc3456bb43c76c5bc20c88027a8ebaa143abf330eab0d0"
+      "sha256": "53406a83c8e261543e74395ed4b3d397d9d8379e3ed2cb949ea72bd124a71bb6"
     },
     {
       "path": "pyproject.toml",
