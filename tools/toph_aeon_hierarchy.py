@@ -112,5 +112,10 @@ def verify() -> bool:
         and d["spinor_quartet_years"] == 12
         and d["spinor_context_sweep_years"] == 24
         and d["normalized_cells_per_dot"] == h["foam"]["normalized_cells_per_dot"] == 400
+        and h["five_internet_phase_sync"]["ids"] == [0, 1, 2, 3, 4]
+        and h["five_internet_phase_sync"]["resolved_mask"] == [1, 0, 1]
+        and h["five_internet_phase_sync"]["preclosure_degrees"] == [360, 0, 360]
+        and h["five_internet_phase_sync"]["sinc_origin"] == "0.0.0"
+        and h["five_internet_phase_sync"]["phase_resolution_literal"] == "1x1^10-36"
         and h["policy"]["frozen_kernel_modified"] is False
     )
