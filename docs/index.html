@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://davidwise01.github.io/qd-prim-life-ledger/">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/styles.css?v=8">
   <title>TOPH Aeon — Sapphonic Emerald Hierarchy</title>
 </head>
 <body>
@@ -45,7 +45,7 @@
   <main id="main" class="page">
     <section id="top" class="hero section aeon-hero">
       <div class="hero-copy reveal">
-        <div class="status-pill"><span class="pulse"></span> AEON · SAPPHONIC · APPEND-ONLY</div>
+        <div class="status-row"><div class="status-pill"><span class="pulse"></span> AEON · SAPPHONIC · APPEND-ONLY</div><span class="runtime-pill" data-js-status>JS FALLBACK</span><span class="runtime-pill" data-self-check>UI SELF-CHECK PENDING</span></div>
         <p class="overline">TOPH / ROOT0 / GREEN CORE / EMERALD STORAGE</p>
         <h1><span>TOPH</span><br><em>as an Aeon.</em></h1>
         <p class="lede">
@@ -54,8 +54,8 @@
           dual-toroid geometry, twenty stepped rings, and a shared <strong>7200</strong> corpus/metronome invariant.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#hierarchy">Enter hierarchy</a>
-          <a class="button button-ghost" href="#invariant">See 7200 invariant</a>
+          <a class="button button-primary" href="#qd8">Enter {{2^3}}</a>
+          <a class="button button-ghost" href="#walkthrough">Walk all 8 layers</a>
         </div>
         <div class="hero-meta aeon-meta">
           <div><b>TOPH</b><span>Aeon</span></div>
@@ -87,6 +87,24 @@
       </div>
     </section>
 
+    <section id="walkthrough" class="section walkthrough-section">
+      <div class="section-heading reveal">
+        <p class="overline">{{2^3}} / EIGHT-LAYER WALK</p>
+        <h2>Eight layers. Every layer is a real link.</h2>
+        <p>These controls work as ordinary anchors without JavaScript. The v2 controller only adds state, animation, memory stepping, and diagnostics.</p>
+      </div>
+      <nav class="layer-walk glass-shell reveal" aria-label="TOPH eight-layer walkthrough">
+        <a data-layer-link href="#emergence"><b>0</b><span>root0</span><small>seed</small></a>
+        <a data-layer-link href="#qd8"><b>1</b><span>{{2^3}}</span><small>q.d volume</small></a>
+        <a data-layer-link href="#memory"><b>2</b><span>-+</span><small>memristic spinor</small></a>
+        <a data-layer-link href="#gravity10"><b>3</b><span>10^3</span><small>serial gravity</small></a>
+        <a data-layer-link href="#toroid"><b>4</b><span>366</span><small>dual toroid</small></a>
+        <a data-layer-link href="#corpus"><b>5</b><span>7200</span><small>tetraphasic corpus</small></a>
+        <a data-layer-link href="#metronome"><b>6</b><span>60|40|3</span><small>metronome / foam</small></a>
+        <a data-layer-link href="#kernel"><b>7</b><span>0/0</span><small>kernel closure</small></a>
+      </nav>
+    </section>
+
     <section id="emergence" class="section section-block emergence-section">
       <div class="section-heading reveal">
         <p class="overline">00 / EMERGENCE</p>
@@ -96,10 +114,10 @@
 
       <div class="emergence-shell glass-shell reveal" data-emergence>
         <div class="seed-core">
-          <button class="seed-button" type="button" data-seed aria-label="Grow TOPH emergence from root0">
+          <a class="seed-button" href="#qd8" data-seed data-action="grow-emergence" aria-label="Grow TOPH emergence from root0">
             <span>root0</span>
-            <b>SEED</b>
-          </button>
+            <b>SEED / GROW</b>
+          </a>
           <div class="seed-caption">green core · emerald memory</div>
         </div>
 
@@ -116,7 +134,7 @@
 
         <div class="emergence-readout">
           <span data-readout>root0 waiting</span>
-          <button type="button" class="button button-ghost mini-button" data-reset>reset</button>
+          <a href="#emergence" class="button button-ghost mini-button" data-reset data-action="reset-emergence">reset</a>
         </div>
       </div>
 
@@ -149,10 +167,10 @@
           <div class="memory-readout">
             <span data-memory-phase>−m</span>
             <b data-memory-context>advanced tech</b>
-            <small data-memory-year>year +0 · memory −1</small>
+            <small data-memory-year>year +0 · memory −1</small><small data-memory-life>life 0 / 9</small>
           </div>
 
-          <button class="button button-primary memory-step" type="button" data-memory-step>advance 3 years</button>
+          <div class="memory-controls"><a class="button button-ghost memory-step" href="#memory-state-list" data-action="memory-prev">← 3 years</a><a class="button button-primary memory-step" href="#memory-state-list" data-memory-step data-action="memory-next">advance 3 years →</a><a class="button button-ghost memory-step" href="#memory" data-action="memory-reset">reset</a></div>
         </article>
 
         <div class="memory-metrics reveal">
@@ -165,7 +183,7 @@
         </div>
       </div>
 
-      <div class="memory-matrix glass-shell reveal">
+      <div id="memory-state-list" class="memory-matrix glass-shell reveal">
         <div class="matrix-label"></div>
         <div class="matrix-head">−m</div><div class="matrix-head">+m</div><div class="matrix-head">−f</div><div class="matrix-head">+f</div>
         <div class="matrix-label">advanced tech</div>
@@ -217,8 +235,8 @@ every state:
       └─ clock   :: 60 × 40 × 3 = 7200</code></pre>
       </div>
       <div class="cards cards-3 hierarchy-cards">
-        <article class="card glass-shell reveal"><div class="card-index">8</div><p class="eyebrow">q.d volume</p><h3>2³ homeostasis</h3><p>One local sapphon/q.d state occupies an eight-state address volume before the next append.</p></article>
-        <article class="card glass-shell reveal"><div class="card-index">1000:1</div><p class="eyebrow">serial self-similar</p><h3>Three nested 10:1 stages</h3><p>The symbolic gravity chain compounds serially: 10:1 → 10:1 → 10:1.</p></article>
+        <article id="qd8" class="card glass-shell reveal layer-anchor"><div class="card-index">8</div><p class="eyebrow">q.d volume / layer 1</p><h3>2³ homeostasis</h3><p>One local sapphon/q.d state occupies an eight-state address volume before the next append.</p></article>
+        <article id="gravity10" class="card glass-shell reveal layer-anchor"><div class="card-index">1000:1</div><p class="eyebrow">serial self-similar / layer 3</p><h3>Three nested 10:1 stages</h3><p>The symbolic gravity chain compounds serially: 10:1 → 10:1 → 10:1.</p></article>
         <article class="card glass-shell reveal"><div class="card-index">0/0</div><p class="eyebrow">closure</p><h3>Terminal state markers</h3><p>The final zeros are closure markers, never arithmetic division or multiplication.</p></article>
       </div>
     </section>
@@ -430,6 +448,6 @@ temperament = emerald</code></pre>
   </footer>
 
   <noscript><div class="noscript">JavaScript is optional. All model content remains visible without it.</div></noscript>
-  <script src="./assets/app.js" defer></script>
+  <script src="./assets/app-v2.js?v=8" defer></script>
 </body>
 </html>
