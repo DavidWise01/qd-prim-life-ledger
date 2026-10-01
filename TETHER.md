@@ -252,3 +252,32 @@ root 0
 ```
 
 This layer uses real material identifiers only as referents. Atomic number and mnemonic year weight are deliberately separated; the timeline is model storage space, not a physical statement about gold or photon decay.
+
+
+## Reincarnated photon corpus tether
+
+`tools/reincarnated_photon_corpus.py` projects the existing immutable 40-slot corpus across the dual toroid:
+
+```text
+                    1 photon corpus
+                     80 × 90 = 7200
+                           |
+             +-------------+-------------+
+             |                           |
+           |-d|                        |+d|
+       40 × 90 = 3600             40 × 90 = 3600
+             |                           |
+          rings 0..9                 rings 10..19
+             \                           /
+              +------- 20 rings --------+
+                         |
+                  4 lives / ring
+                         |
+                   4 × 90 = 360
+                         |
+                90° + 90° + 90° + 90°
+```
+
+Each photon slot stores its original `source_slot`, incarnation number, toroid side, ring index, and quarter index. The adapter never mutates or duplicates the underlying source identities; it only supplies a second address pass over them.
+
+The geometric ring stride remains `17.5`, width `18`, with `20 × 17.5 + 10 = 360` closure.
