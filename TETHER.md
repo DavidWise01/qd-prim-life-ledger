@@ -59,3 +59,22 @@ path:sha256
 ```
 
 This avoids self-hash recursion while giving the repository a single auditable tether root.
+
+
+## Append-only skill adapter
+
+The frozen mother kernel is unchanged. Skill assessment is appended outside the freeze:
+
+```text
+frozen q.d ledger
+      |
+      v
+tools/skill_probe.py
+      |
+      v
+tests/test_skill_probe.py
+```
+
+The probe reports demonstrated structural complexity from 0..5:
+`1=unary`, `2=binary`, `3=ternary`, `4=ternary+4 payloads`, `5=ternary+5 payloads`.
+It reads committed q.d evidence only and never grants generation authority.
