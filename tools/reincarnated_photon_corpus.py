@@ -34,6 +34,7 @@ TOROID_LIVES = SOURCE_SLOTS
 TOROID_YEARS = TOROID_LIVES * LIFE_YEARS
 
 SIDES = ("-d", "+d")
+TETRAPHASIC = ("solid", "liquid", "gas", "plasma")
 
 _DATA = Path(__file__).resolve().parents[1] / "data" / "humanity_corpus_2700.json"
 
@@ -49,6 +50,7 @@ class ReincarnatedLife:
     ring_stride: Decimal
     life_degrees: int
     life_years: int
+    phase: str
     mnemonic_name: str | None
 
 
@@ -74,6 +76,7 @@ def life_at(photon_slot: int) -> ReincarnatedLife:
         ring_stride=RING_STRIDE,
         life_degrees=LIFE_DEGREES,
         life_years=LIFE_YEARS,
+        phase=TETRAPHASIC[photon_slot % LIVES_PER_RING],
         mnemonic_name=source["mnemonic_name"],
     )
 
