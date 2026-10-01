@@ -28,6 +28,13 @@ def test_emergence_derives_visible_hierarchy():
     assert d["corpus_scale"] == 7200
     assert d["bubbles_per_second"] == 30
     assert d["metronome_scale"] == 7200
+    assert d["spinor_lives"] == 10
+    assert d["photon_nominal_years"] == 10000
+    assert d["photon_min_years"] == 8000
+    assert d["photon_max_years"] == 12000
+    assert d["spinor_nominal_years_per_life"] == 1000
+    assert d["spinor_quartet_years"] == 12
+    assert d["spinor_context_sweep_years"] == 24
     assert d["retained_dots"] == 20
     assert d["cubic_cells"] == 8000
     assert d["normalized_cells_per_dot"] == 400
@@ -45,6 +52,8 @@ def test_emergence_trace_is_hierarchical():
         "lives=80",
         "corpus=7200",
         "clock=7200",
+        "spinor=10@10000y",
+        "phase=12y/24y",
         "foam=400",
     )
 
