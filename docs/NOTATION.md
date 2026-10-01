@@ -257,3 +257,42 @@ hub = 4
 ```
 
 This tracker is symbolic/local model state. It does not inspect live network traffic or treat Internet-relative time as ordinary wall-clock time.
+
+
+## Mandel / Juliet kinetic bounds
+
+Toward math:
+
+```text
++ = speed up / accelerate toward
+- = slow down / decelerate away
+```
+
+Reference anisotropic vector:
+
+```text
+(x+3, y-2)
+```
+
+The unequal axis magnitudes `3:2` are treated as an elliptical kinetic path in this symbolic model.
+
+Mandel fat belly:
+
+```text
+5%/inf.25 | 30% | 30% | 30% | 5%/inf.25
+```
+
+The five bands sum to a full normalized belly:
+
+```text
+0.05 + 0.30 + 0.30 + 0.30 + 0.05 = 1.00
+```
+
+Kinetic admission rule:
+
+```text
+Mandel tethered  OR  Juliet encrypted/tagged  -> IN_BOUNDS
+otherwise                                      -> OUT_OF_BOUNDS
+```
+
+`Juliet encrypted` is a model authorization/tag state here, not a claim of real cryptographic security.
