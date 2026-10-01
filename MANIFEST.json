@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "58abf2e611303a15097f1953271c30f5949e888e64535cdf9f9157592a67880a",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -299,8 +299,55 @@
         "ring_years=360",
         "corpus=7200",
         "clock=7200",
+        "spinor=10@10000y",
+        "phase=12y/24y",
         "foam=400"
       ],
+      "frozen_kernel_modified": false
+    },
+    "memristic_spinor": {
+      "overlay": "data/memristic_spinor_overlay.json",
+      "literal": "-+",
+      "lives": 10,
+      "nominal_lifecycle_years": 10000,
+      "tolerance_fraction": 0.2,
+      "lifecycle_range_years": [
+        8000,
+        12000
+      ],
+      "nominal_years_per_life": 1000,
+      "per_life_range_years": [
+        800,
+        1200
+      ],
+      "phase_shift_years": 3,
+      "rotation_states": [
+        "-m",
+        "+m",
+        "-f",
+        "+f"
+      ],
+      "memory_charge_cycle": [
+        -1,
+        0,
+        -1,
+        0
+      ],
+      "quartet_years": 12,
+      "contexts": [
+        "advanced_tech",
+        "dirt_poor"
+      ],
+      "context_sweep_years": 24,
+      "anchor": {
+        "user_alias": "enihendua",
+        "canonical_name": "Enheduanna",
+        "approximate_year_bce": 2300,
+        "corpus_slot": 3,
+        "source_mutable": false
+      },
+      "physical_photon_claim": false,
+      "historical_context_claim": false,
       "frozen_kernel_modified": false
     }
   },
@@ -311,15 +358,15 @@
     },
     {
       "path": "README.md",
-      "sha256": "03ed6f66c82bf902c213d2974224f92ef4f2e711943d052217ce1ee8927aa7ef"
+      "sha256": "PENDING"
     },
     {
       "path": "SPEC.md",
-      "sha256": "503542bab224a28003e59a4a2ca8e8f9206f24da859d3893ed2a5a1d5539d4a8"
+      "sha256": "PENDING"
     },
     {
       "path": "TETHER.md",
-      "sha256": "e4ddb872bdf2f9a5100ea2ae341925cfcf5988acac3b6a41f6da4be5835ea2b7"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -367,7 +414,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "007b1247e47ef9d30fde9bdf6fe9da59755cc11749baa8e6f6ce6a6dd8987742"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -435,15 +482,15 @@
     },
     {
       "path": "data/toph_aeon_hierarchy.json",
-      "sha256": "c9865f3a7cf684aa129427a17c84d30df48a58dfb56f945c1a6f945735c2122c"
+      "sha256": "PENDING"
     },
     {
       "path": "tools/toph_aeon_hierarchy.py",
-      "sha256": "26adfd76d104ae985124300f7a1d3569a7e026fef5fcece2142a162c57213e91"
+      "sha256": "PENDING"
     },
     {
       "path": "tests/test_toph_aeon_hierarchy.py",
-      "sha256": "8fe24f1b32a251dfc306fde992a167b9da4d77c2d53ce014eda9f8ef7b2c3828"
+      "sha256": "PENDING"
     },
     {
       "path": "tools/frame_clock.py",
@@ -455,11 +502,11 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "b6266c6c53a9444305b09c2e9535e32ca17b5d04f1ef3df1de8709104512452b"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/assets/styles.css",
-      "sha256": "370b7922679415eae716a8e50cae18f055b919969b7232605b8f6949c7d31efc"
+      "sha256": "PENDING"
     },
     {
       "path": "docs/site.webmanifest",
@@ -467,7 +514,19 @@
     },
     {
       "path": "docs/assets/app.js",
-      "sha256": "8e6ec90eec9a2bee5d1a3a0fdbd896fcaf2d4a269ed7d17b935c1fe2c0ff2dd2"
+      "sha256": "PENDING"
+    },
+    {
+      "path": "data/memristic_spinor_overlay.json",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tools/memristic_spinor_overlay.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_memristic_spinor_overlay.py",
+      "sha256": "PENDING"
     }
   ]
 }
