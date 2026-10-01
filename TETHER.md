@@ -314,3 +314,16 @@ docs/index.html
 ```
 
 The site, data hierarchy, executable verifier, corpus adapter, tests, notation, and manifest are tethered to the same derived state. The frozen mother/daughter kernel remains unchanged.
+
+
+## Emergence tether
+
+`data/toph_aeon_hierarchy.json::emergence.seeds` is the minimal presentation seed set.
+
+`tools/toph_aeon_hierarchy.py::derive()` recomputes the hierarchy and `verify()` compares those results with the stored Aeon state. The Pages emergence lattice renders the same derivation in order:
+
+```text
+root0 -> 8 -> 1000:1 -> 366 -> 20 -> 360 -> 7200 == 7200 -> 400
+```
+
+This makes the hierarchy generative at the derived-view level while leaving the frozen mother kernel and immutable source corpus unchanged.
