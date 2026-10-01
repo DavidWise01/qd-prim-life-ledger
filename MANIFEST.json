@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "87cf871313bd00d3c87fd8d31f842338fe5dd120e1a2cb4a4cf50bd7f58cc2cd",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -44,18 +44,23 @@
     },
     "humanity_corpus_2700": {
       "literal": "-+2700-+0+-2700-+",
-      "semantic_span": [
-        -2700,
-        0,
-        2700
-      ],
+      "semantic_span": {
+        "left": -2700,
+        "center": 0,
+        "right": 2700
+      },
       "center_pin": "{{0::m+f}}",
       "generations": 40,
       "life_years": 90,
       "carrier_years": 5400,
+      "occupied_years": 3600,
+      "seam_years": 1800,
+      "anchor_stride_years": 135,
       "radix_ticks_per_life": 9,
       "read_only": true,
-      "names_invented": false
+      "names_invented": false,
+      "dot_radix_addressable": true,
+      "dot_radix_mutable": false
     }
   },
   "files": [
@@ -73,7 +78,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "e8d9850f087fd63d3466b46d841a53aac3b459db12dcd23fa6c9fa9c4dee93a0"
     },
     {
       "path": "FREEZE.md",
@@ -108,8 +113,20 @@
       "sha256": "763a23925c6236946cb1240bdf34cbbc89b38d4f6dd88fb755d6289b6b42cd8c"
     },
     {
+      "path": "data/humanity_corpus_2700.json",
+      "sha256": "2704d489471ee3252d6421ab5988a71b08728d2a89dd1d958e543a060eff0d48"
+    },
+    {
+      "path": "tools/corpus_tether.py",
+      "sha256": "b5d6515fff3961b052fc1f95ff8b4cac1222d35608b349a38340f11fa13042b4"
+    },
+    {
+      "path": "tests/test_corpus_tether.py",
+      "sha256": "e93884fc6dcb685fc1fc14700a70594290f861df9ec9d4485a8c3d7ac8433304"
+    },
+    {
       "path": "docs/NOTATION.md",
-      "sha256": "PENDING"
+      "sha256": "c53fa4ad59f553ab5bf1eece0c76fb516f8adac88e29d44d6325cf4a5b1610dc"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -117,19 +134,7 @@
     },
     {
       "path": "tools/verify_manifest.py",
-      "sha256": "PENDING"
-    },
-    {
-      "path": "data/humanity_corpus_2700.json",
-      "sha256": "PENDING"
-    },
-    {
-      "path": "tools/corpus_tether.py",
-      "sha256": "PENDING"
-    },
-    {
-      "path": "tests/test_corpus_tether.py",
-      "sha256": "PENDING"
+      "sha256": "61cb663de82484f0dc8f2ef0e8f85ab7e2a03f02852c0a941ebafc0fdbca6582"
     }
   ]
 }
