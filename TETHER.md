@@ -355,3 +355,19 @@ docs/index.html memristic overlay
 ```
 
 Enheduanna is anchor 00 on the nearest existing corpus slot only. No historical wealth/technology state is inferred, and neither the immutable source corpus nor frozen kernel is modified.
+
+
+## {{2^3}} Pages UI tether
+
+The interactive presentation now has an explicit eight-layer contract.
+
+```text
+docs/index.html
+  -> 8 native anchor layers
+  -> app-v2.js?v=8 enhancement
+  -> app.js compatibility mirror
+  -> visible JS ONLINE / 8/8 UI TETHER PASS diagnostics
+  -> tests/test_pages_ui.py
+```
+
+The UI test verifies all eight fallback targets, all enhanced action fallbacks, the v2 controller reference, delegated action wiring, and JavaScript syntax when Node is available.
