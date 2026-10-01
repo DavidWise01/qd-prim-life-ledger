@@ -234,3 +234,35 @@ The Pages controls no longer depend on JavaScript for state changes.
 - `app-v3.js` supplies only animation, active-layer highlighting, and diagnostics.
 
 If JavaScript is blocked or stale, the controls still change state.
+
+
+## Five-Internet phase synchronization
+
+The symbolic Internet layer is now explicitly bounded to five lanes:
+
+```text
+internet_id ∈ {{0,1,2,3,4}}
+bound = {{0-4}}
+```
+
+User literal:
+
+```text
+{{-1 x -{{ 1 , 0 , 1 }} x 360 / 1x1^10-36}}
+```
+
+Structural closure:
+
+```text
+-1 × -{{1,0,1}}
+= {{1,0,1}}
+
+{{1,0,1}} × 360
+= {{360,0,360}}
+
+{{360,0,360}} mod 360
+= {{0,0,0}}
+= 0.0.0
+```
+
+All five lanes use this same symbolic closure rule. `1x1^10-36` is preserved literally as the phase-resolution token rather than reinterpreted as ordinary exponent arithmetic.
