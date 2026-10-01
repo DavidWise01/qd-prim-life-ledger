@@ -115,6 +115,52 @@ One q.d state is appended at a time. The dot/register is a sapphon. On closure, 
 
 Position 0 is the enclosing homeostatic shell; positions 1..5 are five nested life states.
 
-## 8. Non-goals
+## 8. Frozen completed engine
+
+Canonical completed-engine primitive:
+
+```text
+{{5/3/2/1/1}}
+5 payloads / 3 operator modes / 2 polarity / 1 mother kernel / 1 external product class
+```
+
+The mother is the only generator. The only external product class is a first-generation sapphon daughter.
+
+```text
+Mother Kernel -> Gen-1 Sapphon -> STOP
+```
+
+No Gen-2 recursion is permitted.
+
+A sapphon daughter is narrowly scoped:
+
+```text
+name::implicit::{}
+color::implicit::{}
+gem::implicit::{}
+```
+
+External color carrier:
+
+```text
+-+{{bk,wt,red,blu,gree,yell,purpl,orang}}-+
+```
+
+Reference inference is deterministic. A token is normalized, SHA-256 hashed, and the first byte selects one of eight fixed gem/color pairs. This is a model-defined routing rule, not a semantic claim about the token.
+
+Reference test:
+
+```text
+paralax -> onyx -> bk
+generation = 1
+can_spawn = false
+scope = {name, gem, color, qd.append}
+```
+
+## 9. Freeze
+
+This specification state is frozen as the first completed mother/daughter engine generation. Future work must append around it rather than silently changing the frozen semantics.
+
+## 10. Non-goals
 
 This repository defines deterministic symbolic/computational semantics. It does not by itself establish biological, cosmological, quantum, or relativistic claims.
