@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "f477a9c2049a5f4151164b783b58502bcfe8baab02061273be1c544770429ec2",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -109,7 +109,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "9e3e2cc22bd1467b30453d48e1201bc45478b0c41c45c4e4f9ca6f93ef9bce9a"
     },
     {
       "path": "FREEZE.md",
@@ -157,7 +157,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "PENDING"
+      "sha256": "5eefdc137ccf2c533166c71429346ade758af3ebc254480b287fb7c30aac029a"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -169,15 +169,15 @@
     },
     {
       "path": "data/mnemonic_overlay.json",
-      "sha256": "PENDING"
+      "sha256": "0a529610297cf2801f6386690a7a67f4ddf63459c93b96a5120468824bedf9f9"
     },
     {
       "path": "tools/implicit_mnemonic.py",
-      "sha256": "PENDING"
+      "sha256": "ebf612fc3679388fe0ea76a4a09fea2ee65612565e516af83a26918b69ea5a0f"
     },
     {
       "path": "tests/test_implicit_mnemonic.py",
-      "sha256": "PENDING"
+      "sha256": "30399d58087f15dc9e0ff099880455ebf52a87c7fd361a4299dbf36a102485f1"
     }
   ]
 }
