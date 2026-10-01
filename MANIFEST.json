@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "035975aa169e9482f1fd548c645b6b53c04f36bc091f580064237d4142f868a2",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -223,7 +223,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "d0185762f143cf82d238661c7299d8f8d5a7b5233064316ea4e25b4e4d3beb28"
     },
     {
       "path": "FREEZE.md",
@@ -271,7 +271,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "PENDING"
+      "sha256": "d3b1b8d766f03168020737b3abe8a431fa2f46ab4f1f67257875b0c0c8cf23ef"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -319,15 +319,15 @@
     },
     {
       "path": "data/material_year_clock.json",
-      "sha256": "PENDING"
+      "sha256": "2a02478da7a51bb474384eb9ca8a0dd1c6ecc749404576a76538438f3b755d86"
     },
     {
       "path": "tools/material_year_clock.py",
-      "sha256": "PENDING"
+      "sha256": "bed9258f8e25f7cffe3df3aec67a0b6e54991871a51edda82b381fe45e4979d1"
     },
     {
       "path": "tests/test_material_year_clock.py",
-      "sha256": "PENDING"
+      "sha256": "9b39db292d90a06c1f632f30c79c6523f443a3122aa7bfb5d5c6a07032881d15"
     }
   ]
 }
