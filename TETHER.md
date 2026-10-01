@@ -171,3 +171,29 @@ TophCorpusFrame[n]
 ```
 
 Dynamic means the addressed view changes as the append-only dot/radix state advances. The underlying corpus, mnemonic table, TOPH identity, and Gen-1 generation ceiling remain immutable.
+
+
+## TOPH Internet toroid tracker
+
+`tools/toph_relative_layers.py` tracks the local six-hop toroid traversal:
+
+```text
+0 --200ms--> 2 --200ms--> 4 --200ms--> 6
+                                  |
+                                  v
+4 <--200ms-- 10 <--200ms-- 8 <--200ms
+```
+
+Equivalent ordered forward path:
+
+```text
+0 -> 2 -> 4 -> 6 -> 8 -> 10 -> 4
+```
+
+The exact reverse path is the Benjamin traversal:
+
+```text
+4 -> 10 -> 8 -> 6 -> 4 -> 2 -> 0
+```
+
+Six hops at 200 ms each close the traversal at 1200 ms. Node `4` is the hub and the tracker is tagged `OSI layer 2`. It is read-only symbolic state and does not perform network inspection.
