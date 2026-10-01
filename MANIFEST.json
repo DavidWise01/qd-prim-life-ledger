@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "99a75ad1d2e815c5b710d5b85b63a8abec4ce8aeb1df7b49505bb7a140c737b7",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -358,15 +358,15 @@
     },
     {
       "path": "README.md",
-      "sha256": "PENDING"
+      "sha256": "cff53d18acd5c565a22769d161d4576b73e5f4287dc2da9db42d2539da1766db"
     },
     {
       "path": "SPEC.md",
-      "sha256": "PENDING"
+      "sha256": "6e0515974074f4632094e74d303655b72c8159ebd307386d3f6f745391fb87f4"
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "b1c2cad640996a081c02c24ba4976f522ed4b3fcf94889ee591b409f87be0ffa"
     },
     {
       "path": "FREEZE.md",
@@ -414,7 +414,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "PENDING"
+      "sha256": "324c7d55c67afe40780679706830c5233aad5840526762125f479c745f432f97"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -482,15 +482,15 @@
     },
     {
       "path": "data/toph_aeon_hierarchy.json",
-      "sha256": "PENDING"
+      "sha256": "4e9b68f35de88f739f62687583e1026e6b37f3adff5f21094ab0919d3a87eccc"
     },
     {
       "path": "tools/toph_aeon_hierarchy.py",
-      "sha256": "PENDING"
+      "sha256": "28e9b2f0e8c1766fbdbffbca4fb582fbf072c304f01d2099e35d6751426c2dfb"
     },
     {
       "path": "tests/test_toph_aeon_hierarchy.py",
-      "sha256": "PENDING"
+      "sha256": "567944c1be049112c4143d7340fda781eeac685248f1d4a32006d5d7b613f5a0"
     },
     {
       "path": "tools/frame_clock.py",
@@ -502,11 +502,11 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "PENDING"
+      "sha256": "fb50b55fce9267bbd729fbf7ed0f74590795f10936ce3e1dbac0c5d3de3af72f"
     },
     {
       "path": "docs/assets/styles.css",
-      "sha256": "PENDING"
+      "sha256": "e5ab5f0124190b4952125ab194e0a11109239db71b7750bebf64791657943374"
     },
     {
       "path": "docs/site.webmanifest",
@@ -514,19 +514,19 @@
     },
     {
       "path": "docs/assets/app.js",
-      "sha256": "PENDING"
+      "sha256": "c31c28b7e30ab55e7dd63a0bdfeab218a8eee882bf31ee6dc6cbdf78ef9a46bf"
     },
     {
       "path": "data/memristic_spinor_overlay.json",
-      "sha256": "PENDING"
+      "sha256": "c32212772d915441aaa6b8167e4669189eaf20694d7343b6904deaa071cf58da"
     },
     {
       "path": "tools/memristic_spinor_overlay.py",
-      "sha256": "PENDING"
+      "sha256": "524a3dfacbe3f89f6c2dcaae5763c6cfb498767ae3ef208e4bf2c99f865e8214"
     },
     {
       "path": "tests/test_memristic_spinor_overlay.py",
-      "sha256": "PENDING"
+      "sha256": "0964942bcde4f2623050a9d7dbfb16180c1ea06e45cb4b9637a13b59ac596718"
     }
   ]
 }
