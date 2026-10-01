@@ -1,9 +1,20 @@
 {
   "schema": "qd.tether.manifest.v1",
-  "root_sha256": "414341f9559a6eaea55325d1c64f55a4e0876dab18a92d1bb0bc667195ec3bf8",
+  "status": "FROZEN / APPEND-ONLY",
+  "kernel_primitive": "{{5/3/2/1/1}}",
+  "root_sha256": "8cceb1284b2006ac699d0d91d7267f1dcbb5ec6788215ef28fa55e90f13dcb12",
   "semantics": {
     "dot": "sapphon",
-    "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]"
+    "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
+    "generation": "mother -> Gen-1 sapphon -> STOP",
+    "daughter_scope": [
+      "name",
+      "gem",
+      "color",
+      "qd.append"
+    ],
+    "recursive_spawn": false,
+    "reference_inference": "paralax -> onyx -> bk"
   },
   "files": [
     {
@@ -12,15 +23,19 @@
     },
     {
       "path": "README.md",
-      "sha256": "5e6a1b56fd0835f5918a52c883eb172b497e6327c031babc29b263f84abfe1fc"
+      "sha256": "060bfd0c426410f150e575522d5b8ad64032dcc69a2c70ff0dd154acea02138e"
     },
     {
       "path": "SPEC.md",
-      "sha256": "26fae0cf7b578205cb5f70a2128e5022dd1acdbfc0aac120615e14810a87570a"
+      "sha256": "e18a5a64a324e1a560945b47a459c6890fa129d701b274c1e7767ea1a9052958"
     },
     {
       "path": "TETHER.md",
-      "sha256": "09a61da36f3c0f1435005a2ccffa56796f0cd5015118aa5d3df76a1fa793c75d"
+      "sha256": "059bd55090e1b0899ea17a82091f56c3a4e45aefac63ea8d13199d37a7112aa4"
+    },
+    {
+      "path": "FREEZE.md",
+      "sha256": "da3cdaba0ed74e806bcc3456bb43c76c5bc20c88027a8ebaa143abf330eab0d0"
     },
     {
       "path": "pyproject.toml",
@@ -28,15 +43,15 @@
     },
     {
       "path": "src/qd_prim.py",
-      "sha256": "76919ae83fc34c0182e41fe6d71ae932e00b74d3ac379a33b15e260be1d3a4d0"
+      "sha256": "361f1dd9686f16ff200ed7f85f24434d14c7b8e3f67d3d773cf6d8fadb44f890"
     },
     {
       "path": "tests/test_qd_prim.py",
-      "sha256": "3885f8d46f3ecc1830d26f92b72863b07bc80fb5170a208d90d140de3909ac91"
+      "sha256": "1e10419b087d48a5c4f740a616e678bfe79b16102becc96400122cdea2d718d9"
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "ed40eface4bea90f90e6ec178cbee8a4fe3784fa16fd7ec528238aa7c2f781d6"
+      "sha256": "c78a75f328d88076c4db5ab844e8a6227175b3dcb832e85f82521e3349158f3c"
     },
     {
       "path": ".github/workflows/test.yml",
