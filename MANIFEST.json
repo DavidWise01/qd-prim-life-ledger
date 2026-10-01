@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "87cf871313bd00d3c87fd8d31f842338fe5dd120e1a2cb4a4cf50bd7f58cc2cd",
+  "root_sha256": "PENDING",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -61,6 +61,37 @@
       "names_invented": false,
       "dot_radix_addressable": true,
       "dot_radix_mutable": false
+    },
+    "implicit_mnemonic_overlay": {
+      "operator": "{{i::mpli::c::it::}}",
+      "phase_cycle": [
+        "creation",
+        "electrum",
+        "matter",
+        "tm8",
+        "gas",
+        "liquid",
+        "solid",
+        "plasma",
+        "nature"
+      ],
+      "expansions": {
+        "CEM": "CHEM",
+        "TGL": "TOGGLE",
+        "SPN": "SPIN",
+        "PNC": "PINCH",
+        "EMT": "EMIT",
+        "GLS": "GLASS"
+      },
+      "generated_mnemonics": true,
+      "recovered_history": false,
+      "preserve_letter_order": true,
+      "insertions_only": true,
+      "air_boundary": {
+        "user_literal": "2x1^10^-35.99 - {air 36.00}} +36.01",
+        "center": "air 36.00",
+        "read_only": true
+      }
     }
   },
   "files": [
@@ -78,7 +109,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "e8d9850f087fd63d3466b46d841a53aac3b459db12dcd23fa6c9fa9c4dee93a0"
+      "sha256": "PENDING"
     },
     {
       "path": "FREEZE.md",
@@ -126,7 +157,7 @@
     },
     {
       "path": "docs/NOTATION.md",
-      "sha256": "c53fa4ad59f553ab5bf1eece0c76fb516f8adac88e29d44d6325cf4a5b1610dc"
+      "sha256": "PENDING"
     },
     {
       "path": ".github/workflows/test.yml",
@@ -135,6 +166,18 @@
     {
       "path": "tools/verify_manifest.py",
       "sha256": "61cb663de82484f0dc8f2ef0e8f85ab7e2a03f02852c0a941ebafc0fdbca6582"
+    },
+    {
+      "path": "data/mnemonic_overlay.json",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tools/implicit_mnemonic.py",
+      "sha256": "PENDING"
+    },
+    {
+      "path": "tests/test_implicit_mnemonic.py",
+      "sha256": "PENDING"
     }
   ]
 }
