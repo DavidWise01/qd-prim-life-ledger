@@ -193,3 +193,29 @@ metronome scale = 60 * 40 * 3 = 7200
 ```
 
 All hierarchy fields are append-only derived state and do not grant generation authority beyond the existing Gen-1 ceiling.
+
+
+## 12. Memristic spinor derived overlay
+
+A `-+` pair may be interpreted by the derived presentation layer as one memristic spinor:
+
+```text
+spinor lives = 10
+nominal lifecycle = 10,000 model-years
+tolerance = ±20%
+lifecycle range = 8,000..12,000 model-years
+```
+
+The nominal lifecycle therefore yields 1,000 model-years per life, with a proportional envelope of 800..1,200 model-years per life.
+
+Phase transition rule:
+
+```text
+phase step = 3 years
+rotation = {-m,+m,-f,+f}
+quartet = 12 years
+contexts = {advanced_tech,dirt_poor}
+full context sweep = 24 years
+```
+
+The signed memory register follows `-1,0,-1,0` across each quartet. Each phase also stores `parent_hash = SHA256(previous phase)`, providing append-only computational memory. This overlay does not alter the frozen mother kernel, the source humanity corpus, or assert a physical photon lifetime.
