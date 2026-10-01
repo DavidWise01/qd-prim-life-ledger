@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "PENDING",
+  "root_sha256": "710b968f857015a6bd5809c3453e16717d62bcf7cf9c733c9c8ca08798e5ed3f",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -387,7 +387,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "PENDING"
+      "sha256": "3678fa6c26e7b94f8c9f31139b1433bee404b5bd8c752ca9f269fd4bd8e4dc86"
     },
     {
       "path": "SPEC.md",
@@ -395,7 +395,7 @@
     },
     {
       "path": "TETHER.md",
-      "sha256": "PENDING"
+      "sha256": "f6c847d014aa2b57fcaac9be59e081828ae35560a25863b6619647833d8c3fb1"
     },
     {
       "path": "FREEZE.md",
@@ -531,11 +531,11 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "PENDING"
+      "sha256": "fbaf3a86439d390b2cb5490c8b0b5b3c47cd24caf49844bb7b432f5d58b50a2e"
     },
     {
       "path": "docs/assets/styles.css",
-      "sha256": "PENDING"
+      "sha256": "f0e932147652c570861a37060ed7e626686d05358ab6afc5288afb70d2132559"
     },
     {
       "path": "docs/site.webmanifest",
@@ -559,7 +559,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "PENDING"
+      "sha256": "5c9915f79d77b02f5b1aa2f6d854510c51388b3b37da0e608501a55d11893d45"
     },
     {
       "path": "docs/assets/app-v2.js",
@@ -567,11 +567,11 @@
     },
     {
       "path": "tests/test_pages_ui.py",
-      "sha256": "PENDING"
+      "sha256": "ab9b504faa45ff3044a1c041dcd4a52ffc7f3e0b817a98b7f6a06f71b4e241d5"
     },
     {
       "path": "docs/assets/app-v3.js",
-      "sha256": "PENDING"
+      "sha256": "f8994045bb2bd9c946d47fd412575955242670700d3feec67fe1685653e907f7"
     }
   ]
 }
