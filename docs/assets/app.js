@@ -48,4 +48,63 @@
     }, { threshold: 0.45 });
     sections.forEach((section) => spy.observe(section));
   }
+
+  const emergence = document.querySelector('[data-emergence]');
+  if (emergence) {
+    const seed = emergence.querySelector('[data-seed]');
+    const reset = emergence.querySelector('[data-reset]');
+    const readout = emergence.querySelector('[data-readout]');
+    const nodes = [...emergence.querySelectorAll('.em-node')];
+    const trace = [
+      'root0 → q.d volume 2³ = 8',
+      '8 → serial gravity 10³ = 1000:1',
+      '1000:1 → 360 + 3L + 3R = 366 addresses',
+      '366 geometry → (360 − 10) / 17.5 = 20 rings',
+      '20 rings → solid/liquid/gas/plasma × 90 = 360 per ring',
+      '40 source lives × 2 incarnations × 90 = 7200',
+      '60 ticks × 40 generations × 3 = 7200',
+      '30 bubbles → 20 retained dots → 20³ / 20 = 400'
+    ];
+    let stage = 0;
+    let timer = null;
+
+    const showStage = (index) => {
+      nodes.forEach((node, i) => node.classList.toggle('active', i < index));
+      readout.textContent = index === 0 ? 'root0 waiting' : trace[index - 1];
+      emergence.classList.toggle('complete', index === nodes.length);
+    };
+
+    const step = () => {
+      if (stage >= nodes.length) {
+        clearInterval(timer);
+        timer = null;
+        seed.classList.remove('growing');
+        return;
+      }
+      stage += 1;
+      showStage(stage);
+      seed.classList.remove('growing');
+      void seed.offsetWidth;
+      seed.classList.add('growing');
+    };
+
+    seed.addEventListener('click', () => {
+      if (timer) return;
+      if (stage >= nodes.length) stage = 0;
+      showStage(stage);
+      step();
+      timer = setInterval(step, reduced ? 70 : 430);
+    });
+
+    reset.addEventListener('click', () => {
+      if (timer) clearInterval(timer);
+      timer = null;
+      stage = 0;
+      seed.classList.remove('growing');
+      showStage(0);
+    });
+
+    showStage(0);
+  }
+
 })();
