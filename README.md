@@ -148,3 +148,23 @@ TOPH Aeon
 ```
 
 The GitHub Pages presentation at `docs/index.html` mirrors this hierarchy. These are repository-defined symbolic/simulation semantics; physical interpretations are not asserted as established law.
+
+
+## Emergence from seeds
+
+The Aeon hierarchy is now derivable from a small seed lattice rather than being only a list of fixed outputs.
+
+```text
+root0
+  -> q.d axes = 3           -> 2^3 = 8
+  -> gravity 10 x depth 3   -> 10^3 = 1000:1
+  -> turn 360 + 3L + 3R     -> 366 addresses
+  -> hub/control remainder 10
+  -> (360 - 10) / 17.5      -> 20 rings
+  -> 4 phases x 90          -> 360 per ring
+  -> 40 x 2 x 90            -> 7200 corpus
+  -> 60 x 40 x 3            -> 7200 metronome
+  -> 30 x 2/3 = 20          -> 20^3 / 20 = 400
+```
+
+`tools/toph_aeon_hierarchy.py::derive()` recomputes these values from `data/toph_aeon_hierarchy.json::emergence.seeds`. GitHub Pages exposes the same derivation as an interactive root0 growth sequence.
