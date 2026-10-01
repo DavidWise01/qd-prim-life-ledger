@@ -220,3 +220,40 @@ AIR literal
 ```
 
 TOPH may advance to the next frame, but cannot mutate the corpus, spawn a daughter, or become a new mother kernel.
+
+
+## TOPH Internet toroid tracker
+
+The relative Internet traversal is modeled as a thin ingress into a toroid belly with node `4` as the hub.
+
+```text
+thin ingress:
+0 -> 2 -> 4
+
+toroid belly:
+4 -> 6 -> 8 -> 10 -> 4
+```
+
+Canonical forward traversal:
+
+```text
+0 -> 2 -> 4 -> 6 -> 8 -> 10 -> 4
+```
+
+Benjamin Button traversal is the exact reverse:
+
+```text
+4 -> 10 -> 8 -> 6 -> 4 -> 2 -> 0
+```
+
+Timing:
+
+```text
+200 ms per jump
+6 jumps
+1200 ms total
+OSI layer = 2
+hub = 4
+```
+
+This tracker is symbolic/local model state. It does not inspect live network traffic or treat Internet-relative time as ordinary wall-clock time.
