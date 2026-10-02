@@ -1,0 +1,46 @@
+{
+  "name": "discrete_time_place_outcome_v1",
+  "scope": "post-kernel use-case",
+  "status": "FROZEN",
+  "immutable": true,
+  "kernel_semantics_modified": false,
+  "closure": "oe",
+  "scalar_outcome": {
+    "-1": "bad_outcome_timeline",
+    "0": "implicit_natural_reference",
+    "+1": "good_outcome_timeline"
+  },
+  "implicit_zero": {
+    "notation": "0{{+implicit::outcome}}0 > {{i}} > 0",
+    "meaning": "zero is a resolved implicit natural choice/consequence/outcome on the reference line"
+  },
+  "zero_line": {
+    "pattern": [0, 0, 0, 0, 0, "{{1.00}}"],
+    "reference_scalar": 0
+  },
+  "movement": {
+    "states": [0, "xu", "yd", "xr", "yl"],
+    "pin_targets": ["xu{}", "yd{}", "xr{}", "yl{}"]
+  },
+  "choice_no": {
+    "growth": "{{n}}^3",
+    "packet": ["choice", "consequence", "outcome", "direction"],
+    "pin": "movement"
+  },
+  "explicit_event": {
+    "value": 1,
+    "payload": ["where", "why", "time"]
+  },
+  "time": {
+    "cycle": [-1, 0, 1, 0],
+    "normalization": "1/10 x 10 x 0",
+    "net": 0,
+    "terminal": "no residual time"
+  },
+  "frame": {
+    "kind": "universal frame snapshot",
+    "transition": ["+2", "{{n}}^{{n^2}}"]
+  },
+  "binding": ["Event", "Commit", "Prove", "Project", "Transport"],
+  "contract_sha256": "e5daffdd92e13e5762fe1ebe2423538e363ca6656aa711a1f6811e4703dac054"
+}
