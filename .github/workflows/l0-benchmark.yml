@@ -16,5 +16,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify L0/OSI alignment
+      - name: Verify and benchmark optimized L0/OSI
         run: python tools/l0_osi_stack.py
