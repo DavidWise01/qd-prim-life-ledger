@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "5ede23f5dc9c99eab92b2eec1af8913f7b364764d4bd10f0f15560ffda1c0652",
+  "root_sha256": "06e50fd362881def98f4397db3babe82bdd13124f0bad630d4795fe9e91cace4",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -415,6 +415,28 @@
       "live_network_inspection": false,
       "physical_internet_claim": false,
       "frozen_kernel_modified": false
+    },
+    "toph_sapphon_realign_v1": {
+      "status": "append-only derived overlay",
+      "source": "data/toph_sapphon_realign_v1.json",
+      "verifier": "tools/toph_sapphon_realign_v1.py",
+      "test": "tests/test_toph_sapphon_realign_v1.py",
+      "documentation": "docs/TOPH_SAPPHON_REALIGN_V1.md",
+      "deterministic": true,
+      "probability_layer": false,
+      "frozen_kernel_modified": false,
+      "mother_generation_limit_modified": false,
+      "private_personal_fixture_committed": false,
+      "core_literals": {
+        "prim": "- 0 0 1 1 2 3 /\\ 3 2 1 1 0 0 +",
+        "toroid": "(Au(Ag))-+-+(Ag(Au))",
+        "dual_pin": "pin - pin | pin + pin - pin | pin +",
+        "implication": "{{i}} = aether morphic implication",
+        "homeo": "{-{{-5{0}5+}}+}",
+        "fairness": "-+ | 0 | -+",
+        "stargate": "00::11::61::4224::61::11::00",
+        "subgeneration": "{{3x3}}^3"
+      }
     }
   },
   "files": [
@@ -621,6 +643,22 @@
     {
       "path": "tests/test_five_internet_phase_sync.py",
       "sha256": "36a9580a94cacff9fe93056342c3c5327c70e3496b033f96849338baf6db26bd"
+    },
+    {
+      "path": "data/toph_sapphon_realign_v1.json",
+      "sha256": "8311da1ff7533e2b4e6fd342670ab549bc11e89f636f356280e70e8f90654f9e"
+    },
+    {
+      "path": "tools/toph_sapphon_realign_v1.py",
+      "sha256": "7047d38f67026c2d5bc43291c0f88055e55e7daae60c3a7f63a35b5bcc670f90"
+    },
+    {
+      "path": "tests/test_toph_sapphon_realign_v1.py",
+      "sha256": "ace031440ee4b7ba1050f20b790dc4c65a1955dda419f145405ce347672c28fe"
+    },
+    {
+      "path": "docs/TOPH_SAPPHON_REALIGN_V1.md",
+      "sha256": "44fad34540dfad1fc0ef0a0fb8695ce14d5015925f699ea686db17ef1b3fcc51"
     }
   ]
 }
