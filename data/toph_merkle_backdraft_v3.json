@@ -1,0 +1,54 @@
+{
+  "schema": "toph.sapphon.merkle_backdraft.v3",
+  "status": "APPEND-ONLY / BOLTED TO QK V2",
+  "authority": {
+    "extends": "toph.sapphon.qk_handoff.v2",
+    "frozen_mother_kernel_modified": false,
+    "qk_v2_modified": false
+  },
+  "tri_state": {
+    "literal": "yes/no/maybe",
+    "resolved": ["Y", "N"],
+    "maybe": "?",
+    "maybe_meaning": "unresolved provenance; not a third probabilistic truth value",
+    "bit_mapping": {"Y": "1", "N": "0"},
+    "probability_layer": false
+  },
+  "merkle": {
+    "digest": "SHA-256 over canonical JSON node payload",
+    "node_fields": ["address", "state", "kind", "edges", "tick"],
+    "edge_fields": ["parent", "op"],
+    "operations": ["HOLD", "FLIP", "SET_Y", "SET_N"],
+    "parent_hashes_preserved": true,
+    "merge_preserves_distinct_history": true,
+    "tamper_detection": true
+  },
+  "backdraft": {
+    "rule": "on MAYBE, follow parent hashes backward until resolved provenance is found, then replay deterministic edge operations forward",
+    "conflict_rule": "if merge/co-op parent projections disagree, resolution fails closed",
+    "cycle_rule": "cycles fail closed",
+    "missing_parent_rule": "missing provenance fails closed"
+  },
+  "graph_ops": {
+    "branch": "one lineage continues to an addressed child without erasing provenance",
+    "fork": "one parent produces opposed children through deterministic edge operations",
+    "merge": "distinct histories converge only when their projected resolved states agree",
+    "coop": "multiple parent histories synchronize only when their projected resolved states agree"
+  },
+  "qk_bolt": {
+    "qk_source": "tools/toph_qk_handoff_v2.py",
+    "snow_input": "12 Plank cells / 6 frames",
+    "fill_rule": "resolve each ? left-to-right from a supplied Merkle proof target",
+    "handoff": "resolved window -> qk -> {{i}} -> d",
+    "retest_count": 2,
+    "freeze_sentinel": "eo",
+    "unresolved_writeback": false
+  },
+  "demo": {
+    "snow": "00011011????",
+    "recovered_bits": "0001",
+    "resolved_qk_window": "000110110001",
+    "expected_qk_status": "eo"
+  },
+  "scope": "repository-defined deterministic/Merkle simulation semantics; MAYBE represents missing provenance rather than physical indeterminacy"
+}
