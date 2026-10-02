@@ -1,0 +1,36 @@
+{
+  "schema": "toph.sapphon.carbon_human_somatic_overlay.v1",
+  "status": "FROZEN / APPEND-ONLY / SIMULATION OVERLAY",
+  "scope": "post-kernel symbolic/somatic model",
+  "subject": {
+    "substrate": "carbon",
+    "matter_type": "human",
+    "mode": "somatic"
+  },
+  "poles": {
+    "photon": 1,
+    "black_hole": -1
+  },
+  "asymptotic_stop_operator": "+inf - 1",
+  "speed_ladder": {
+    "start": "1c",
+    "ratio": "1/10 per stage",
+    "min_nonzero": "10^-36 c",
+    "terminal": "0.0.0"
+  },
+  "terminal_interpretation": {
+    "computed": "scalar_0",
+    "optional_symbolic": "white_hole"
+  },
+  "physical_claim": false,
+  "kernel_modified": false,
+  "binding": [
+    "SapphonSnapshot",
+    "TOPHCommit",
+    "TOPHProve",
+    "TOPHProject",
+    "TOPHTransport"
+  ],
+  "closure": "oe",
+  "contract_sha256": "9455425b0d4837df2d0af8746b1d95151edf4793cdf5ac9b6df811e224099364"
+}
