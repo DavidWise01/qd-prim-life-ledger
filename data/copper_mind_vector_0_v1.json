@@ -1,0 +1,32 @@
+{
+  "schema": "copper_mind_vector_0_v1",
+  "status": "FROZEN / IMMUTABLE / APPEND-ONLY",
+  "anchor": "Copper Mind Vector 0",
+  "carrier_metaphor": "Earth is the Copper Mind",
+  "ripple": {
+    "exponent_min": -36,
+    "exponent_max": 36,
+    "shell_width": 10,
+    "push": 1.25,
+    "pushes_per_shell": 8,
+    "shells": 72,
+    "supercycle_shells": 3,
+    "pushes_per_supercycle": 24,
+    "supercycles": 24,
+    "homeostatic_center": 5.0
+  },
+  "photon_gravity": {
+    "g": 1.0,
+    "p_signed": true,
+    "pair_expression": "1g1p = 2",
+    "breakout_requires_negative_p": true,
+    "breakout_threshold": 1.02,
+    "physics_claim": false
+  },
+  "force_cycle": ["strong", "middle", "weak", "weak", "middle", "strong"],
+  "sign_cycle": "-++--+",
+  "center": "000",
+  "kernel_modified": false,
+  "closure": "oe",
+  "contract_sha256": "986a36616d7c1d49a89dc053ebb038d662b6757a87800da751b6fb95608efb1b"
+}
