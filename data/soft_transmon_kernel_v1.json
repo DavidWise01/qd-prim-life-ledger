@@ -1,0 +1,47 @@
+{
+  "name": "soft_transmon_kernel_v1",
+  "scope": "post-kernel simulation use-case",
+  "status": "FROZEN",
+  "physical_claim": false,
+  "final_kernel_semantics_modified": false,
+  "scale": {
+    "scalar": 0,
+    "g": 0.25,
+    "t": 1
+  },
+  "local_register": {
+    "dimensions": 3,
+    "addressable_states": 8,
+    "notation": "2^3"
+  },
+  "phase": {
+    "modulus": 1,
+    "step": 0.25,
+    "cycle": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      0
+    ],
+    "closure_after_steps": 4,
+    "closure_symbol": "oe"
+  },
+  "nested_tick": {
+    "top_exponent": 0,
+    "bottom_exponent": -35,
+    "rule": "one local 2^3 register per scale stage",
+    "full_cycle_stages": 36
+  },
+  "seed": {
+    "active": "+k.0.k-",
+    "resolved": "0.0.0"
+  },
+  "binding": [
+    "Event",
+    "Commit",
+    "Prove",
+    "Project",
+    "Transport"
+  ]
+}
