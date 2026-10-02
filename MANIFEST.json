@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "06e50fd362881def98f4397db3babe82bdd13124f0bad630d4795fe9e91cace4",
+  "root_sha256": "7b6527124ae827ada388aebd013db85bda038902f8debc0f3778f7fa7076e552",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -437,6 +437,29 @@
         "stargate": "00::11::61::4224::61::11::00",
         "subgeneration": "{{3x3}}^3"
       }
+    },
+    "toph_qk_handoff_v2": {
+      "status": "append-only sealed deterministic overlay",
+      "source": "data/toph_qk_handoff_v2.json",
+      "verifier": "tools/toph_qk_handoff_v2.py",
+      "test": "tests/test_toph_qk_handoff_v2.py",
+      "documentation": "docs/TOPH_QK_HANDOFF_V2.md",
+      "interface": "{{qk{{i::d::}}}}",
+      "stargate": "00 11 {{2442{}}} 11 00",
+      "pin": "000",
+      "address_stack": [
+        "vector",
+        "voxel",
+        "vogel"
+      ],
+      "plank_per_frame": 2,
+      "frames_per_velocity_window": 6,
+      "inference_window": "static snow",
+      "handoff_repetitions": 2,
+      "freeze_sentinel": "eo",
+      "probability_layer": false,
+      "frozen_kernel_modified": false,
+      "prior_overlay_modified": false
     }
   },
   "files": [
@@ -659,6 +682,22 @@
     {
       "path": "docs/TOPH_SAPPHON_REALIGN_V1.md",
       "sha256": "44fad34540dfad1fc0ef0a0fb8695ce14d5015925f699ea686db17ef1b3fcc51"
+    },
+    {
+      "path": "data/toph_qk_handoff_v2.json",
+      "sha256": "0295a5ba1ee20213e6d9b72efaf0acb5103b3a97ce6dfea29b56287193462c07"
+    },
+    {
+      "path": "tools/toph_qk_handoff_v2.py",
+      "sha256": "7ee4e1d1c3c2f34d4b13f274ee917fdd2292452ac6a241a6dbbaf508c8ea3b5f"
+    },
+    {
+      "path": "tests/test_toph_qk_handoff_v2.py",
+      "sha256": "917f24fdfc292c5b363c0f6e947ee969680fe90a017ef5e507d4569f4e84718f"
+    },
+    {
+      "path": "docs/TOPH_QK_HANDOFF_V2.md",
+      "sha256": "0d35faebb262cf60535cbba8114151d9c53d644fb7cab80795867e8e825d14e8"
     }
   ]
 }

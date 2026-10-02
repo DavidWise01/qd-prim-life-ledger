@@ -1,0 +1,127 @@
+{
+  "schema": "toph.sapphon.qk_handoff.v2",
+  "status": "APPEND-ONLY / SEALED ON eo",
+  "authority": {
+    "extends": "toph.sapphon.realign.v1",
+    "frozen_mother_kernel_modified": false,
+    "mother_generation_limit_modified": false,
+    "previous_overlay_modified": false
+  },
+  "kernel": {
+    "literal": "{{qk{{i::d::}}}}",
+    "domain": "sealed symbolic quantum-kernel model",
+    "physical_quantum_hardware_claim": false,
+    "implication": "{{i}}",
+    "digital": "d",
+    "digital_writeback_into_unresolved_kernel": false
+  },
+  "stargate": {
+    "literal": "00 11 {{2442{}}} 11 00",
+    "gate": [
+      "00",
+      "11",
+      "{{2442{}}}",
+      "11",
+      "00"
+    ],
+    "throat": "2442",
+    "palindrome": true,
+    "handoff_direction": "qk -> i -> d"
+  },
+  "state_space": {
+    "pin": "000",
+    "fixed_point_rule": "fixed point is identified only after the complete finite address map under test is enumerated",
+    "exhaustive_map_required": true,
+    "address_stack": [
+      "vector",
+      "voxel",
+      "vogel"
+    ],
+    "dual_invariant": "STATE(a,+) = NOT STATE(a,-)",
+    "probability_layer": false,
+    "unknown": "unmapped or unresolved observer state; not randomness"
+  },
+  "bubble": {
+    "carrier_literal": "{-+-+-+{}}",
+    "decision_gate": "{y/n}",
+    "sequence": [
+      "input",
+      "id",
+      "feedback{{i}}",
+      "sync{{i}}",
+      "decide"
+    ],
+    "reality_per_bubble": "static"
+  },
+  "clock": {
+    "plank_per_frame": 2,
+    "frames_per_velocity_window": 6,
+    "frame_fraction_of_velocity_window": "1/6",
+    "vsync_symbol": "f",
+    "frame_seconds": "1/f",
+    "plank_seconds": "1/(2f)",
+    "velocity_window_seconds": "6/f",
+    "nonoverlap_velocity_windows_per_second": "f/6",
+    "rolling_output_cadence": "f"
+  },
+  "direction": {
+    "bits_per_frame": 2,
+    "addresses": 4,
+    "mapping": {
+      "00": "U",
+      "01": "R",
+      "10": "L",
+      "11": "D"
+    },
+    "inverse": {
+      "U": "D",
+      "D": "U",
+      "L": "R",
+      "R": "L"
+    },
+    "quarter_turn_literal": ".25",
+    "quarter_turn_fraction": "1/4",
+    "quarter_turn_degrees": 90,
+    "quarter_turn_is_percent": false
+  },
+  "inference_window": {
+    "name": "static snow",
+    "analogy": "TV static: unresolved binary cells remain visually noisy until enough exact state is mapped",
+    "frames": 6,
+    "plank_cells": 12,
+    "candidate_count": "2^unknown_plank_cells",
+    "probability_interpretation": false,
+    "resolved_when": "unknown_plank_cells == 0",
+    "handoff_repetitions": 2,
+    "freeze_sentinel": "eo",
+    "freeze_rule": "freeze only when the window is fully resolved and both deterministic qk->i->d handoffs produce the same digest"
+  },
+  "sample": {
+    "plank_bits": "000110110001",
+    "frames": [
+      "00",
+      "01",
+      "10",
+      "11",
+      "00",
+      "01"
+    ],
+    "directions": [
+      "U",
+      "R",
+      "L",
+      "D",
+      "U",
+      "R"
+    ],
+    "net_displacement": [
+      1,
+      1
+    ],
+    "at_60hz_velocity_units_per_second": [
+      10,
+      10
+    ]
+  },
+  "scope": "repository-defined symbolic/deterministic simulation semantics; actual quantum hardware and physical cosmology require independent validation"
+}
