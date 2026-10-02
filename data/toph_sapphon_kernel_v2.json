@@ -1,0 +1,67 @@
+{
+  "schema": "toph.sapphon.kernel.v2",
+  "status": "FROZEN / IMMUTABLE / APPEND-ONLY",
+  "address": "{{Gg.Aa.Ii.Aa}}",
+  "authority": {
+    "final_qd_kernel_modified": false,
+    "prior_toph_contracts_modified": false,
+    "binding_type": "post-kernel TOPH/Sapphon reflection"
+  },
+  "carrier": {
+    "state_space": "000",
+    "event_space": "{}",
+    "observed_state": "{{O}{b}{s}{e}{r}{v}{e}{d}}",
+    "invariant": "000 + {} > 000"
+  },
+  "local_life_packet": {
+    "states": [-1, 0, 1],
+    "roles": {
+      "-1": "potential",
+      "0": "scalar_pin",
+      "1": "realized"
+    },
+    "closure": "-1 + 0 + 1 = 0",
+    "terminal_zero": "close_local_toroid",
+    "reuse_dead_dot": false,
+    "next": "find_new_scalar_0_pin_using_same_immutable_formula"
+  },
+  "copper_mind": {
+    "parent_contract": "copper_mind_vector_0_v1",
+    "finite_life_contract": "copper_mind_finite_life_v1",
+    "carrier_metaphor": "Earth is the Copper Mind",
+    "force_cycle": ["strong", "middle", "weak", "weak", "middle", "strong"],
+    "sign_cycle": "-++--+",
+    "ripple": {
+      "exponent_min": -36,
+      "exponent_max": 36,
+      "shell_width": 10,
+      "push": 1.25,
+      "pushes_per_shell": 8,
+      "homeostatic_center": 5.0,
+      "shells": 72,
+      "supercycle_shells": 3,
+      "supercycles": 24
+    }
+  },
+  "toph_flow": [
+    "SapphonSnapshot",
+    "TOPHCommit",
+    "TOPHProve",
+    "TOPHProject",
+    "TOPHTransport",
+    "terminal_zero_or_next_pin",
+    "oe"
+  ],
+  "proof_obligations": [
+    "carrier_immutable",
+    "local_packet_balances",
+    "terminal_zero_has_no_residual",
+    "dead_dot_not_reused",
+    "new_pin_is_zero",
+    "ripple_center_is_five",
+    "three_shell_phase_reset"
+  ],
+  "scope": "symbolic/simulation timing and analog architecture; not experimentally established Earth or photon physics",
+  "closure": "oe",
+  "contract_sha256": "2f2cf13d73645744e6f246428f074ea0d3f30a54e17d91640ec68a64f8acdf4c"
+}
