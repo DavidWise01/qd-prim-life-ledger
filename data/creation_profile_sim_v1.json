@@ -1,0 +1,29 @@
+{
+  "name": "creation_profile_sim_v1",
+  "scope": "post-kernel simulation adapter",
+  "status": "FROZEN",
+  "immutable": true,
+  "kernel_semantics_modified": false,
+  "closure": "oe",
+  "constructor": {
+    "inputs": ["type", "place", "date", "substrate", "tether"],
+    "scalar_pin": "0.0.0",
+    "turn_step": "1/360",
+    "aggregate": 2000,
+    "descent_rule": "1 - n^2",
+    "terminal_n": 1,
+    "terminal_value": 0,
+    "post_resolution": "linear +1 life ticks"
+  },
+  "example": {
+    "type": "dog",
+    "place": "Buffalo, Minnesota",
+    "date": "2026-10-02",
+    "substrate": "carbon",
+    "tether": "mnemonic",
+    "physical_claim": false
+  },
+  "physical_claim": false,
+  "binding": ["Event", "Commit", "Prove", "Project", "Transport"],
+  "contract_sha256": "7b9fafaeb2995502d270c9220e6bd0f5038996db6ade37111174b4f69db6b2eb"
+}
