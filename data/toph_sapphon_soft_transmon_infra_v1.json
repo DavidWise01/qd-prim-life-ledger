@@ -1,0 +1,60 @@
+{
+  "schema": "toph.sapphon.soft_transmon.infrastructure.v1",
+  "status": "FROZEN / APPEND-ONLY / INFRASTRUCTURE BINDING",
+  "authority": {
+    "final_kernel_modified": false,
+    "soft_transmon_contract_modified": false,
+    "toph_sapphon_realign_modified": false
+  },
+  "clock_service": {
+    "source": "soft_transmon_kernel_v1",
+    "scalar": 0,
+    "g": 0.25,
+    "t": 1,
+    "local_states": 8,
+    "phase_cycle": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      0
+    ],
+    "closure": "oe"
+  },
+  "sapphon": {
+    "role": "snapshot/state realization plane",
+    "consumes": [
+      "phase",
+      "tick",
+      "local_states",
+      "oe"
+    ],
+    "globe_transition": "GLOBE[n] -> +1 tick -> GLOBE[n+1]",
+    "origin": "0.0.0"
+  },
+  "toph": {
+    "role": "proof/provenance/routing plane",
+    "consumes": [
+      "event",
+      "commit_digest",
+      "proof_checks",
+      "projection",
+      "transport"
+    ],
+    "deterministic": true
+  },
+  "infrastructure_flow": [
+    "SoftTransmonClock",
+    "SapphonSnapshot",
+    "TOPHCommit",
+    "TOPHProve",
+    "TOPHProject",
+    "TOPHTransport",
+    "oe"
+  ],
+  "seed": {
+    "active": "+k.0.k-",
+    "resolved": "0.0.0"
+  },
+  "scope": "simulation infrastructure; not hardware-level transmon physics"
+}
