@@ -1,0 +1,20 @@
+name: l0-osi-benchmark
+
+on:
+  push:
+    paths:
+      - 'tools/l0_osi_stack.py'
+      - 'tests/test_l0_osi_stack.py'
+      - '.github/workflows/l0-benchmark.yml'
+  workflow_dispatch:
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify L0/OSI alignment
+        run: python tools/l0_osi_stack.py
