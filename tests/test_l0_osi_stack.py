@@ -71,3 +71,44 @@ def test_overlay_stride():
 
 def test_full_verifier():
     assert verify()
+
+
+from tools.l0_osi_stack import (
+    MerkleL0Ledger,
+    benchmark_merkle_block_sizes,
+    verify_merkle_v3,
+)
+
+
+def test_merkle_blocks_preserve_all_ticks_and_chain_commits():
+    ledger = MerkleL0Ledger(block_size=8, retain_leaves=True)
+    for _ in range(25):
+        ledger.append()
+    ledger.finalize()
+    assert ledger.tick == 25
+    assert len(ledger.leaves) == 25
+    assert [c.first_tick for c in ledger.commits] == [1, 9, 17, 25]
+    assert [c.last_tick for c in ledger.commits] == [8, 16, 24, 25]
+    assert ledger.commits[0].parent_commit == bytes(32)
+    assert ledger.commits[1].parent_commit == ledger.commits[0].digest_bytes
+    assert ledger.verify()
+
+
+def test_merkle_tamper_fails_closed():
+    ledger = MerkleL0Ledger(block_size=4, retain_leaves=True)
+    for _ in range(8):
+        ledger.append()
+    ledger.finalize()
+    assert ledger.verify()
+    ledger._leaves[0] = bytes(32)
+    assert not ledger.verify()
+
+
+def test_merkle_v3_verifier():
+    assert verify_merkle_v3()
+
+
+def test_merkle_benchmark_small():
+    out = benchmark_merkle_block_sizes(iterations=1000, block_sizes=(4, 8, 16))
+    assert out["best_block_size"] in (4, 8, 16)
+    assert all(v["verified"] for v in out["results"].values())
