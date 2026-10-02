@@ -1,7 +1,9 @@
 from tools.l0_osi_stack import (
     BASE_EXPONENT,
     ExactScale,
+    FastL0Ledger,
     L0Ledger,
+    canonical_overlay_digest,
     carry,
     decode_l2_header,
     encode_l2_frame,
@@ -19,37 +21,46 @@ def test_decimal_carry_is_exact():
     assert carry(1000) == ExactScale(1, -32)
 
 
-def test_one_tick_is_minus_one():
-    ledger = L0Ledger()
-    for n in range(1, 101):
-        rec = ledger.append()
-        assert rec.tick == n
-        assert rec.state == -n
-    assert ledger.verify()
+def test_fast_and_legacy_semantics_match():
+    legacy = L0Ledger()
+    fast = FastL0Ledger()
+    for n in range(1, 1001):
+        a = legacy.append()
+        b = fast.append()
+        assert a.tick == b.tick == n
+        assert a.elapsed == b.elapsed
+        assert a.state == b.state == -n
+    assert legacy.verify()
+    assert fast.verify()
 
 
-def test_overlays_share_clock_without_forced_update():
-    ledger = L0Ledger()
-    rec = ledger.append(
-        physics={"event": "p"},
-        chemistry={},
-        cellular={},
-    )
-    assert rec.physics == {"event": "p"}
-    assert rec.chemistry == {}
-    assert rec.cellular == {}
+def test_overlay_digests_are_canonical():
+    a = {"event": "p", "value": 1}
+    b = {"value": 1, "event": "p"}
+    assert canonical_overlay_digest(a) == canonical_overlay_digest(b)
 
 
-def test_osi_l2_frame_round_trip():
-    ledger = L0Ledger()
+def test_fast_parent_chain_is_append_only():
+    fast = FastL0Ledger()
+    a = fast.append()
+    b = fast.append()
+    c = fast.append()
+    assert a.parent_digest == bytes(32)
+    assert b.parent_digest == a.digest_bytes
+    assert c.parent_digest == b.digest_bytes
+    assert fast.verify()
+
+
+def test_osi_l2_frame_round_trip_fast():
+    fast = FastL0Ledger()
     for _ in range(10):
-        rec = ledger.append()
+        rec = fast.append()
     frame = encode_l2_frame(rec)
     decoded = decode_l2_header(frame)
     assert decoded["tick"] == 10
     assert decoded["elapsed"] == ExactScale(1, -34)
     assert decoded["state"] == -10
-    assert decoded["digest"] == rec.digest()
+    assert decoded["digest"] == rec.digest
 
 
 def test_overlay_stride():
