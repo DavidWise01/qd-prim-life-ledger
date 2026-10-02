@@ -374,3 +374,203 @@ def verify() -> bool:
 if __name__ == "__main__":
     print("0e / L0-OSI OPT V2 PASS" if verify() else "xe")
     print(json.dumps(benchmark(), indent=2, sort_keys=True))
+
+
+# Optimization v3: batched Merkle commit path
+MERKLE_LEAF_STRUCT = struct.Struct("!QQhq32s32s32s")
+MERKLE_COMMIT_STRUCT = struct.Struct("!4sQQ32s32s")
+
+
+def _leaf_digest(
+    tick: int,
+    elapsed: ExactScale,
+    state: int,
+    physics_digest: bytes,
+    chemistry_digest: bytes,
+    cellular_digest: bytes,
+) -> bytes:
+    return sha256(MERKLE_LEAF_STRUCT.pack(
+        tick,
+        elapsed.coefficient,
+        elapsed.exponent,
+        state,
+        physics_digest,
+        chemistry_digest,
+        cellular_digest,
+    )).digest()
+
+
+def _merkle_root(leaves: list[bytes]) -> bytes:
+    if not leaves:
+        return ZERO_DIGEST
+    level = list(leaves)
+    while len(level) > 1:
+        if len(level) % 2:
+            level.append(level[-1])
+        level = [
+            sha256(level[i] + level[i + 1]).digest()
+            for i in range(0, len(level), 2)
+        ]
+    return level[0]
+
+
+@dataclass(frozen=True)
+class MerkleCommit:
+    first_tick: int
+    last_tick: int
+    root: bytes
+    parent_commit: bytes
+    digest_bytes: bytes
+
+    @property
+    def digest(self) -> str:
+        return self.digest_bytes.hex()
+
+
+class MerkleL0Ledger:
+    """Per-tick immutable leaves, batched append-only Merkle commits."""
+
+    def __init__(self, block_size: int = 16, retain_leaves: bool = True) -> None:
+        if block_size <= 0:
+            raise ValueError("block_size must be positive")
+        self.block_size = block_size
+        self.retain_leaves = retain_leaves
+        self._tick = 0
+        self._pending: list[bytes] = []
+        self._pending_first_tick: int | None = None
+        self._leaves: list[bytes] | None = [] if retain_leaves else None
+        self._commits: list[MerkleCommit] = []
+        self._last_commit = ZERO_DIGEST
+
+    @property
+    def commits(self) -> tuple[MerkleCommit, ...]:
+        return tuple(self._commits)
+
+    @property
+    def leaves(self) -> tuple[bytes, ...]:
+        return tuple(self._leaves or ())
+
+    @property
+    def tick(self) -> int:
+        return self._tick
+
+    def append(
+        self,
+        *,
+        physics: dict | None = None,
+        chemistry: dict | None = None,
+        cellular: dict | None = None,
+    ) -> bytes:
+        self._tick += 1
+        elapsed = ExactScale(self._tick, BASE_EXPONENT).normalized()
+        p = canonical_overlay_digest(physics)
+        c = canonical_overlay_digest(chemistry)
+        b = canonical_overlay_digest(cellular)
+        leaf = _leaf_digest(self._tick, elapsed, -self._tick, p, c, b)
+        if self._pending_first_tick is None:
+            self._pending_first_tick = self._tick
+        self._pending.append(leaf)
+        if self._leaves is not None:
+            self._leaves.append(leaf)
+        if len(self._pending) >= self.block_size:
+            self.flush()
+        return leaf
+
+    def flush(self) -> MerkleCommit | None:
+        if not self._pending:
+            return None
+        first_tick = self._pending_first_tick
+        assert first_tick is not None
+        last_tick = first_tick + len(self._pending) - 1
+        root = _merkle_root(self._pending)
+        payload = MERKLE_COMMIT_STRUCT.pack(
+            b"QDMK",
+            first_tick,
+            last_tick,
+            root,
+            self._last_commit,
+        )
+        digest = sha256(payload).digest()
+        commit = MerkleCommit(
+            first_tick=first_tick,
+            last_tick=last_tick,
+            root=root,
+            parent_commit=self._last_commit,
+            digest_bytes=digest,
+        )
+        self._commits.append(commit)
+        self._last_commit = digest
+        self._pending = []
+        self._pending_first_tick = None
+        return commit
+
+    def finalize(self) -> bytes:
+        self.flush()
+        return self._last_commit
+
+    def verify(self) -> bool:
+        if self._pending:
+            return False
+        parent = ZERO_DIGEST
+        for commit in self._commits:
+            if commit.parent_commit != parent:
+                return False
+            payload = MERKLE_COMMIT_STRUCT.pack(
+                b"QDMK",
+                commit.first_tick,
+                commit.last_tick,
+                commit.root,
+                commit.parent_commit,
+            )
+            if sha256(payload).digest() != commit.digest_bytes:
+                return False
+            parent = commit.digest_bytes
+        if self._leaves is not None:
+            pos = 0
+            for commit in self._commits:
+                count = commit.last_tick - commit.first_tick + 1
+                block = self._leaves[pos:pos + count]
+                if _merkle_root(block) != commit.root:
+                    return False
+                pos += count
+            if pos != len(self._leaves):
+                return False
+        return True
+
+
+def benchmark_merkle_block_sizes(iterations: int = 200_000, block_sizes: tuple[int, ...] = (4, 8, 16, 32, 64)) -> dict:
+    results = {}
+    for block_size in block_sizes:
+        ledger = MerkleL0Ledger(block_size=block_size, retain_leaves=True)
+        t0 = perf_counter()
+        for _ in range(iterations):
+            ledger.append()
+        ledger.finalize()
+        elapsed = perf_counter() - t0
+        results[str(block_size)] = {
+            "records_per_second": iterations / elapsed,
+            "seconds": elapsed,
+            "commit_count": len(ledger.commits),
+            "verified": ledger.verify(),
+            "final_commit": ledger.commits[-1].digest if ledger.commits else ZERO_DIGEST.hex(),
+        }
+    best = max(results, key=lambda k: results[k]["records_per_second"])
+    return {
+        "iterations": iterations,
+        "results": results,
+        "best_block_size": int(best),
+        "best_records_per_second": results[best]["records_per_second"],
+    }
+
+
+def verify_merkle_v3() -> bool:
+    for block_size in (4, 8, 16, 32):
+        ledger = MerkleL0Ledger(block_size=block_size, retain_leaves=True)
+        for _ in range(101):
+            ledger.append()
+        ledger.finalize()
+        assert ledger.tick == 101
+        assert ledger.verify()
+        assert ledger.commits[0].first_tick == 1
+        assert ledger.commits[-1].last_tick == 101
+    return True
