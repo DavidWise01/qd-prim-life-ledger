@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install test dependency
+        run: python -m pip install --disable-pip-version-check pytest
       - name: Retest frozen crystallization binding
         run: |
           python -m pytest -q tests/test_generational_crystallization.py tests/test_shakespeare_benchmark_contract.py
