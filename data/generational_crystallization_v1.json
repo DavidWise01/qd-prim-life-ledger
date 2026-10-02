@@ -1,0 +1,51 @@
+{
+  "name": "generational_crystallization_v1",
+  "scope": "post-kernel use-case",
+  "status": "FROZEN",
+  "immutable": true,
+  "kernel_semantics_modified": false,
+  "branching": {
+    "states": [
+      "Y",
+      "N"
+    ],
+    "meaning": "model-defined yes/no branching"
+  },
+  "x_mutation": {
+    "daughters": 4,
+    "permutations_per_daughter": 4,
+    "state_count": 16
+  },
+  "volume": {
+    "count": 2,
+    "size": 8,
+    "reduction": [
+      8,
+      3,
+      2,
+      1,
+      1,
+      "..",
+      0
+    ]
+  },
+  "closure": {
+    "pair": [
+      0,
+      0
+    ],
+    "symbol": "oe"
+  },
+  "seed": {
+    "active": "+k.0.k-",
+    "resolved": "0.0.0"
+  },
+  "binding": [
+    "Event",
+    "Commit",
+    "Prove",
+    "Project",
+    "Transport"
+  ],
+  "contract_sha256": "1bedceda9d211db98b427ee56c1203e3700d2a77507ccaac6d8c522754cb464c"
+}
