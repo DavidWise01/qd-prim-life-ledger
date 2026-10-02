@@ -17,17 +17,10 @@ jobs:
         with:
           python-version: '3.12'
       - name: Verify optimized L0/OSI
-        run: python - <<'PY'
-          from tools.l0_osi_stack import verify, verify_merkle_v3
-          assert verify()
-          assert verify_merkle_v3()
-          print("0e / L0-OSI MERKLE V3 PASS")
-          PY
+        run: python -c "from tools.l0_osi_stack import verify, verify_merkle_v3; assert verify() and verify_merkle_v3(); print('0e / L0-OSI MERKLE V3 PASS')"
       - name: Benchmark legacy and binary chain
         run: python tools/l0_osi_stack.py
       - name: Benchmark Merkle block sizes
-        run: python - <<'PY'
-          import json
-          from tools.l0_osi_stack import benchmark_merkle_block_sizes
-          print(json.dumps(benchmark_merkle_block_sizes(), indent=2, sort_keys=True))
-          PY
+        run: python -c "import json; from tools.l0_osi_stack import benchmark_merkle_block_sizes; print(json.dumps(benchmark_merkle_block_sizes(), indent=2, sort_keys=True))"
+      - name: Benchmark Merkle proof tradeoff
+        run: python -c "import json; from tools.l0_osi_stack import benchmark_merkle_tradeoff; print(json.dumps(benchmark_merkle_tradeoff(), indent=2, sort_keys=True))"
