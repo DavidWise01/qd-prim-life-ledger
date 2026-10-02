@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from hashlib import 256
+from hashlib import sha256
 import json
 from pathlib import Path
 from typing import Iterable, Mapping, Sequence
