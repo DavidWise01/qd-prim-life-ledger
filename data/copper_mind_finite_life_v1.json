@@ -1,0 +1,18 @@
+{
+  "schema": "copper_mind_finite_life_v1",
+  "status": "FROZEN / IMMUTABLE / APPEND-ONLY",
+  "parent": "Copper Mind Vector 0",
+  "local_packet": [-1, 0, 1],
+  "roles": {
+    "-1": "potential",
+    "0": "scalar_pin",
+    "1": "realized"
+  },
+  "closure_rule": "-1 + 0 + 1 = 0",
+  "terminal_zero": "local_cycle_closed",
+  "next_step": "find_new_scalar_0_pin_using_same_immutable_formula",
+  "reuse_dead_dot": false,
+  "kernel_modified": false,
+  "closure": "oe",
+  "contract_sha256": "9d224578b4d8e172957a9c3c5f1df5270988b4225596607642299ec5bfaadab9"
+}
