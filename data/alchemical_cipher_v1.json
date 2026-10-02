@@ -1,0 +1,46 @@
+{
+  "schema": "qd.usecase.alchemical_cipher.v1",
+  "status": "USE-CASE / READ-ONLY / APPEND-ONLY",
+  "kernel_modified": false,
+  "purpose": "Project the immutable humanity corpus through a symbolic alchemical cipher with explicit source timing.",
+  "cipher": {
+    "male": {
+      "sex_code": "1m",
+      "axis": "y",
+      "alchemical_role": "base",
+      "literal": "male = y = base"
+    },
+    "female": {
+      "sex_code": "0f",
+      "axis": "x",
+      "alchemical_role": ["acid", "philosopher_stone"],
+      "literal": "female = x = acid + philosopher stone"
+    }
+  },
+  "timing": {
+    "source": "data/humanity_corpus_2700.json",
+    "life_years": 90,
+    "radix_positions_per_life": 9,
+    "years_per_radix_position": 10,
+    "total_slots": 40,
+    "total_radix_positions": 360,
+    "carrier_span": "-2700..+2700",
+    "rule": "timing is inherited from the immutable corpus slot and local radix position"
+  },
+  "mnemonic_overlay": {
+    "source": "data/mnemonic_overlay.json",
+    "phase_cycle": [
+      "creation",
+      "electrum",
+      "matter",
+      "tm8",
+      "gas",
+      "liquid",
+      "solid",
+      "plasma",
+      "nature"
+    ],
+    "read_only": true
+  },
+  "scope": "Symbolic alchemical cipher/use-case; acid/base/philosopher-stone labels are not asserted as biological sex chemistry."
+}
