@@ -112,3 +112,39 @@ def test_merkle_benchmark_small():
     out = benchmark_merkle_block_sizes(iterations=1000, block_sizes=(4, 8, 16))
     assert out["best_block_size"] in (4, 8, 16)
     assert all(v["verified"] for v in out["results"].values())
+
+
+from tools.l0_osi_stack import (
+    merkle_proof,
+    verify_merkle_proof,
+    benchmark_merkle_proofs,
+)
+
+
+def test_merkle_inclusion_proofs_all_leaves():
+    ledger = MerkleL0Ledger(block_size=8, retain_leaves=True)
+    for _ in range(8):
+        ledger.append()
+    ledger.finalize()
+    leaves = list(ledger.leaves)
+    root = ledger.commits[0].root
+    for i, leaf in enumerate(leaves):
+        proof = merkle_proof(leaves, i)
+        assert verify_merkle_proof(leaf, proof, root)
+
+
+def test_merkle_inclusion_proof_rejects_wrong_leaf():
+    ledger = MerkleL0Ledger(block_size=8, retain_leaves=True)
+    for _ in range(8):
+        ledger.append()
+    ledger.finalize()
+    leaves = list(ledger.leaves)
+    root = ledger.commits[0].root
+    proof = merkle_proof(leaves, 3)
+    assert not verify_merkle_proof(bytes(32), proof, root)
+
+
+def test_merkle_proof_benchmark_small():
+    out = benchmark_merkle_proofs(block_size=8, rounds=100)
+    assert out["proof_depth"] == 3
+    assert out["all_verified"]
