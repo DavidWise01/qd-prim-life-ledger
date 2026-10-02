@@ -1,0 +1,68 @@
+{
+  "schema": "qd.final.kernel.v1",
+  "status": "FINAL / FROZEN / APPEND-ONLY",
+  "name": "q.d PRIM Final Kernel",
+  "purpose": "Take one exact append-only event, preserve provenance, derive higher-scale views, and never overwrite source state.",
+  "pipeline": [
+    "Event",
+    "Commit",
+    "Prove",
+    "Project",
+    "Transport"
+  ],
+  "primitive": {
+    "prim": [1, 1, 2, 8],
+    "mother": [5, 3, 2, 1, 1],
+    "dot": "sapphon",
+    "append_rule": "prim, append only, add to next",
+    "base_tick": "1e-35 s",
+    "tick_delta": -1
+  },
+  "roles": {
+    "Event": [
+      "src/qd_prim.py",
+      "tools/l0_osi_stack.py"
+    ],
+    "Commit": [
+      "tools/l0_osi_stack.py",
+      "tools/dot_radix_generator.py",
+      "tools/memristic_spinor_overlay.py"
+    ],
+    "Prove": [
+      "tools/l0_osi_stack.py",
+      "tools/toph_merkle_backdraft_v3.py",
+      "tools/verify_manifest.py"
+    ],
+    "Project": [
+      "tools/corpus_tether.py",
+      "tools/implicit_mnemonic.py",
+      "tools/toph_dynamic_corpus.py",
+      "tools/toph_aeon_hierarchy.py",
+      "tools/material_year_clock.py",
+      "tools/reincarnated_photon_corpus.py",
+      "tools/five_internet_phase_sync.py",
+      "tools/toph_sapphon_realign_v1.py",
+      "tools/toph_qk_handoff_v2.py"
+    ],
+    "Transport": [
+      "tools/l0_osi_stack.py",
+      "tools/toph_relative_layers.py"
+    ]
+  },
+  "kernel_boundary": {
+    "final": true,
+    "frozen": true,
+    "source_overwrite": false,
+    "recursive_generation": false,
+    "new_kernel_semantics_allowed": false,
+    "allowed_after_freeze": [
+      "adapters",
+      "benchmarks",
+      "documentation",
+      "projections",
+      "transport bindings",
+      "verification tooling"
+    ]
+  },
+  "scope": "Repository-defined symbolic/simulation architecture; physical overlays are models, not established physical claims."
+}
