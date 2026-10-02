@@ -2,7 +2,7 @@
   "schema": "qd.tether.manifest.v1",
   "status": "FROZEN / APPEND-ONLY",
   "kernel_primitive": "{{5/3/2/1/1}}",
-  "root_sha256": "7b6527124ae827ada388aebd013db85bda038902f8debc0f3778f7fa7076e552",
+  "root_sha256": "f978fabe4a66015c6752ffc96337c2bff4ab2072869313d1e2601579e26bc76e",
   "semantics": {
     "dot": "sapphon",
     "append_rule": "sapphon[n] = Plank[n]; next write -> sapphon[n+1]",
@@ -460,6 +460,27 @@
       "probability_layer": false,
       "frozen_kernel_modified": false,
       "prior_overlay_modified": false
+    },
+    "toph_merkle_backdraft_v3": {
+      "status": "append-only deterministic Merkle backdraft overlay",
+      "source": "data/toph_merkle_backdraft_v3.json",
+      "verifier": "tools/toph_merkle_backdraft_v3.py",
+      "test": "tests/test_toph_merkle_backdraft_v3.py",
+      "documentation": "docs/TOPH_MERKLE_BACKDRAFT_V3.md",
+      "tri_state": "yes/no/maybe",
+      "maybe": "unresolved provenance; not probability",
+      "operations": [
+        "branch",
+        "fork",
+        "merge",
+        "coop"
+      ],
+      "qk_bolt": "static snow -> Merkle backdraft -> qk -> {{i}} -> d",
+      "retest_count": 2,
+      "freeze_sentinel": "eo",
+      "probability_layer": false,
+      "frozen_kernel_modified": false,
+      "qk_v2_modified": false
     }
   },
   "files": [
@@ -698,6 +719,22 @@
     {
       "path": "docs/TOPH_QK_HANDOFF_V2.md",
       "sha256": "0d35faebb262cf60535cbba8114151d9c53d644fb7cab80795867e8e825d14e8"
+    },
+    {
+      "path": "data/toph_merkle_backdraft_v3.json",
+      "sha256": "7d2e6922a32c918d21ca25e763634155f02eca5b38c3da51ea2dc9490e0e164f"
+    },
+    {
+      "path": "tools/toph_merkle_backdraft_v3.py",
+      "sha256": "2de17bfda8bb5adfa520de188172d71c300cc567173ade94e617400bc67f12b8"
+    },
+    {
+      "path": "tests/test_toph_merkle_backdraft_v3.py",
+      "sha256": "47801fa097d58592168318ee2e509736a84b0c3988b210be12ade1337ca42f44"
+    },
+    {
+      "path": "docs/TOPH_MERKLE_BACKDRAFT_V3.md",
+      "sha256": "e48b931390c60e36114758f85e29df401f8ffef4a5bfb9027ac3e3f1ce1806f1"
     }
   ]
 }
