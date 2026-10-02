@@ -35,10 +35,10 @@ def parse():
     return p
 
 
-def test_pages_uses_native_control_v10():
+def test_pages_uses_native_control_v11():
     html = HTML.read_text(encoding="utf-8")
     assert "./assets/app-v3.js?v=10" in html
-    assert "./assets/styles.css?v=10" in html
+    assert "./assets/styles.css?v=11" in html
     assert "data-js-status" in html
     assert "data-self-check" in html
 

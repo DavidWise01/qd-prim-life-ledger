@@ -1,0 +1,39 @@
+{
+  "schema": "toph.sapphon.hierarchical_state_space.v1",
+  "status": "FROZEN / IMMUTABLE / APPEND-ONLY",
+  "address": "{{Gg.Aa.Ii.Aa}}",
+  "carrier": "000 + {} > 000",
+  "state_space": "000",
+  "event_space": "{}",
+  "ternary_observation": [-1, 0, 1],
+  "observed_state": "{{O}{b}{s}{e}{r}{v}{e}{d}}",
+  "lanes": [
+    "state",
+    "condition",
+    "observation",
+    "change",
+    "provenance",
+    "return",
+    "append"
+  ],
+  "rules": {
+    "state_space_frozen": true,
+    "event_space_may_vary": true,
+    "condition_is_no_condition_setup": true,
+    "observation_is_read_only": true,
+    "change_is_append_only": true,
+    "return_state_must_equal_entry_state": true,
+    "recursive_hierarchy_allowed_as_projection": true,
+    "new_kernel_semantics": false
+  },
+  "breathing_scalar": "000 -> {-1,0,+1} -> 000 -> repeat",
+  "binding": [
+    "SapphonSnapshot",
+    "TOPHCommit",
+    "TOPHProve",
+    "TOPHProject",
+    "TOPHTransport"
+  ],
+  "closure": "oe",
+  "contract_sha256": "c06158d86bdb5ea2ca5e6eaa2ea32a7cf2770bc2924fd13be5b3b5e70896ef01"
+}
