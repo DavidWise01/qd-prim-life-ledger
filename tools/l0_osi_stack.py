@@ -574,3 +574,103 @@ def verify_merkle_v3() -> bool:
         assert ledger.commits[0].first_tick == 1
         assert ledger.commits[-1].last_tick == 101
     return True
+
+
+def merkle_proof(leaves: list[bytes], index: int) -> list[tuple[str, bytes]]:
+    if index < 0 or index >= len(leaves):
+        raise IndexError("leaf index out of range")
+    level = list(leaves)
+    pos = index
+    proof: list[tuple[str, bytes]] = []
+    while len(level) > 1:
+        if len(level) % 2:
+            level.append(level[-1])
+        sibling = pos ^ 1
+        side = "L" if sibling < pos else "R"
+        proof.append((side, level[sibling]))
+        level = [
+            sha256(level[i] + level[i + 1]).digest()
+            for i in range(0, len(level), 2)
+        ]
+        pos //= 2
+    return proof
+
+
+def verify_merkle_proof(leaf: bytes, proof: list[tuple[str, bytes]], root: bytes) -> bool:
+    acc = leaf
+    for side, sibling in proof:
+        if side == "L":
+            acc = sha256(sibling + acc).digest()
+        elif side == "R":
+            acc = sha256(acc + sibling).digest()
+        else:
+            raise ValueError("proof side must be L or R")
+    return acc == root
+
+
+def benchmark_merkle_proofs(block_size: int = 16, rounds: int = 50_000) -> dict:
+    if block_size <= 0 or rounds <= 0:
+        raise ValueError("block_size and rounds must be positive")
+    ledger = MerkleL0Ledger(block_size=block_size, retain_leaves=True)
+    for _ in range(block_size):
+        ledger.append()
+    ledger.finalize()
+    leaves = list(ledger.leaves)
+    root = ledger.commits[0].root
+    indexes = [i % block_size for i in range(rounds)]
+
+    t0 = perf_counter()
+    proofs = [merkle_proof(leaves, i) for i in indexes]
+    gen_s = perf_counter() - t0
+
+    t1 = perf_counter()
+    ok = 0
+    for i, proof in zip(indexes, proofs):
+        ok += verify_merkle_proof(leaves[i], proof, root)
+    verify_s = perf_counter() - t1
+
+    depth = len(proofs[0]) if proofs else 0
+    return {
+        "block_size": block_size,
+        "rounds": rounds,
+        "proof_depth": depth,
+        "proof_bytes": depth * 33,
+        "proofs_generated_per_second": rounds / gen_s,
+        "proofs_verified_per_second": rounds / verify_s,
+        "all_verified": ok == rounds,
+        "seconds": {"generate": gen_s, "verify": verify_s},
+    }
+
+
+def benchmark_merkle_tradeoff(
+    iterations: int = 100_000,
+    block_sizes: tuple[int, ...] = (4, 8, 16, 32, 64),
+    proof_rounds: int = 10_000,
+) -> dict:
+    append = benchmark_merkle_block_sizes(iterations=iterations, block_sizes=block_sizes)
+    combined = {}
+    for size in block_sizes:
+        proof = benchmark_merkle_proofs(block_size=size, rounds=proof_rounds)
+        a = append["results"][str(size)]
+        combined[str(size)] = {
+            "append_records_per_second": a["records_per_second"],
+            "proofs_verified_per_second": proof["proofs_verified_per_second"],
+            "proof_depth": proof["proof_depth"],
+            "proof_bytes": proof["proof_bytes"],
+            "verified": a["verified"] and proof["all_verified"],
+        }
+    # balanced score: harmonic mean of normalized append and proof-verify throughput
+    max_append = max(v["append_records_per_second"] for v in combined.values())
+    max_verify = max(v["proofs_verified_per_second"] for v in combined.values())
+    for v in combined.values():
+        a = v["append_records_per_second"] / max_append
+        p = v["proofs_verified_per_second"] / max_verify
+        v["balanced_score"] = 2 * a * p / (a + p)
+    best = max(combined, key=lambda k: combined[k]["balanced_score"])
+    return {
+        "iterations": iterations,
+        "proof_rounds": proof_rounds,
+        "results": combined,
+        "best_balanced_block_size": int(best),
+        "best_balanced_score": combined[best]["balanced_score"],
+    }
