@@ -1,0 +1,31 @@
+{
+  "name": "toph_sapphon_truth_contract_v1",
+  "scope": "post-kernel simulation/provenance adapter",
+  "status": "FROZEN",
+  "immutable": true,
+  "kernel_semantics_modified": false,
+  "country_lanes": 176,
+  "generations": 10,
+  "cycle": ["grand", "parent", "child"],
+  "cycle_shape": "3+3+3+1",
+  "media_only": true,
+  "states": {
+    "+1": "supported_by_current_frame",
+    "0": "archived_alternate_or_unresolved",
+    "-1": "contradicted_in_current_frame"
+  },
+  "truth_contract": {
+    "definition": "best-supported classification available in the current frame",
+    "not_metaphysical_certainty": true,
+    "retest_each_frame": true,
+    "overwrite_prior_snapshot": false
+  },
+  "archive_rule": {
+    "contradicted_branch": "-1",
+    "demote_to": "0_archive",
+    "delete": false
+  },
+  "binding": ["SapphonSnapshot", "TOPHCommit", "TOPHProve", "TOPHProject", "TOPHTransport"],
+  "closure": "oe",
+  "contract_sha256": "52fb62216eeee276f26c67576cb2d0b03034699108fac074f2c9b20303f40ff9"
+}
