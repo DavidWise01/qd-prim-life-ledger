@@ -1,0 +1,23 @@
+{
+  "schema": "copper.mind.direct.address.v1",
+  "status": "FROZEN / POST-KERNEL / READ-ONLY",
+  "lane_bits": 7,
+  "lane_min": 0,
+  "lane_max": 127,
+  "dot_bits": 3,
+  "dot_states": 8,
+  "address_bits": 10,
+  "address_min": 0,
+  "address_max": 1023,
+  "pack": "(lane << 3) | dot",
+  "unpack": {
+    "lane": "addr >> 3",
+    "dot": "addr & 0b111"
+  },
+  "invariants": {
+    "bijection": true,
+    "lane_isomorphism": true,
+    "local_dot_volume": "2^3 = 8",
+    "source_kernel_modified": false
+  }
+}
