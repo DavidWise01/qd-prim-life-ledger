@@ -1,0 +1,19 @@
+{
+  "schema": "copper.mind.weak.ganglia.v1",
+  "status": "FROZEN / POST-KERNEL / READ-ONLY",
+  "scale": 729,
+  "scale_literal": "{{3x3}}^{{3}}",
+  "sign_string": "-+-+-+-+-+",
+  "per_side_coupling": "1/729",
+  "per_side_coupling_decimal": 0.0013717421124828531,
+  "per_side_percent": 0.13717421124828532,
+  "max_per_side_percent": 1.0,
+  "nudge_degrees_at_scale": 1.0,
+  "two_side_total_percent": 0.27434842249657065,
+  "rules": {
+    "adjacent_signs_are_inverse": true,
+    "contact_is_weak": true,
+    "identity_preserved": true,
+    "source_kernel_modified": false
+  }
+}
