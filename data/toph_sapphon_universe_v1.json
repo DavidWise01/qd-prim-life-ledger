@@ -1,0 +1,50 @@
+{
+  "append_rule": "prim, append only, add to next",
+  "axiom": {
+    "delta_g": "(P_model - 1000) / 1000",
+    "g_model": "P_model / 1000",
+    "homeostate": {
+      "G_model": 1,
+      "P_model": 1000,
+      "delta_g": 0,
+      "symbol": "{{xy0yx}}"
+    },
+    "semantics": {
+      "negative": "release/outward",
+      "positive": "binding/inward",
+      "zero": "homeostatic"
+    }
+  },
+  "comparison_frame": {
+    "+1": "TOPH Sapphon",
+    "-1": "established",
+    "0": "bridge/difference"
+  },
+  "direct10": {
+    "addresses": 1024,
+    "dot_states": 8,
+    "lanes": 128
+  },
+  "fight_club": {
+    "formula": "4^3",
+    "scope": "model-local geometry/information",
+    "states": 64
+  },
+  "frozen_kernel_untouched": true,
+  "geometry": {
+    "directions": 24,
+    "half_sector_degrees": 7.5,
+    "quads": 4,
+    "sector_degrees": 15,
+    "strands": 2,
+    "streams": 3
+  },
+  "name": "TOPH Sapphon Universe v1",
+  "reality_boundary": "1000 model-atm = G_model 1 is a normalization, not an SI identity.",
+  "status": "POST-KERNEL / MODEL-LOCAL / REALITY-BRIDGED",
+  "weak_resolution": {
+    "bins": 729,
+    "center_index": 364,
+    "increment": "1/729"
+  }
+}
