@@ -8,12 +8,16 @@ Model-local rule:
 """
 from __future__ import annotations
 
+from fractions import Fraction
+
 SCALE = (3 * 3) ** 3
-PER_SIDE = 1 / SCALE
-PER_SIDE_PERCENT = PER_SIDE * 100
+PER_SIDE_EXACT = Fraction(1, SCALE)
+PER_SIDE = float(PER_SIDE_EXACT)
+PER_SIDE_PERCENT = float(PER_SIDE_EXACT * 100)
 MAX_PER_SIDE_PERCENT = 1.0
-TWO_SIDE_PERCENT = 2 * PER_SIDE_PERCENT
-NUDGE_DEGREES = SCALE * PER_SIDE
+TWO_SIDE_PERCENT = float(PER_SIDE_EXACT * 200)
+NUDGE_DEGREES_EXACT = SCALE * PER_SIDE_EXACT
+NUDGE_DEGREES = float(NUDGE_DEGREES_EXACT)
 SIGN_STRING = "-+-+-+-+-+"
 
 def sign_at(index: int) -> int:
@@ -37,6 +41,7 @@ def project(index: int) -> dict:
         "left_sign": left,
         "right_sign": right,
         "per_side_coupling": PER_SIDE,
+        "per_side_exact": "1/729",
         "per_side_percent": PER_SIDE_PERCENT,
         "nudge_degrees": NUDGE_DEGREES,
         "identity_preserved": True,
@@ -45,8 +50,10 @@ def project(index: int) -> dict:
 
 def verify() -> bool:
     assert SCALE == 729
+    assert PER_SIDE_EXACT == Fraction(1, 729)
     assert PER_SIDE_PERCENT < MAX_PER_SIDE_PERCENT
     assert TWO_SIDE_PERCENT < 1.0
+    assert NUDGE_DEGREES_EXACT == 1
     assert NUDGE_DEGREES == 1.0
     assert all(sum(coupled_pair(i)) == 0 for i in range(64))
     assert SIGN_STRING == "-+-+-+-+-+"
