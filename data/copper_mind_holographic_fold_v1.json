@@ -1,0 +1,26 @@
+{
+  "name": "Copper Mind Holographic Fold v1",
+  "status": "FROZEN / APPEND-ONLY OVERLAY",
+  "word": "00 11 00",
+  "semantic": {
+    "front": "00",
+    "middle": "11",
+    "rear": "00",
+    "carrier_source_carrier": "00 11 00"
+  },
+  "rungs": 3,
+  "relations": ["EO", "EI", "IE", "II"],
+  "views": 12,
+  "equivalence_classes": 2,
+  "outer_class_views": 8,
+  "middle_class_views": 4,
+  "transforms": ["identity", "mirror", "inverse", "mirror_inverse", "reverse_rungs", "reverse_rungs_mirror", "reverse_rungs_inverse", "reverse_rungs_mirror_inverse"],
+  "invariants": {
+    "R1_R3_equivalent": true,
+    "R2_fixed_under_rung_reversal": true,
+    "mirror_inverse_closure": true,
+    "recursive_carrier_preserves_center": true
+  },
+  "recursive_form": "00[payload]00",
+  "contract_sha256": "93c6753b2a87d119452daac95673b32726665337ea16e2188ac17750722f3027"
+}
