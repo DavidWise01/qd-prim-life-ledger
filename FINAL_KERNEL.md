@@ -117,3 +117,39 @@ It must not silently redefine the frozen kernel primitive, generation boundary, 
 ## Scope
 
 This is a repository-defined symbolic/simulation architecture. Physics, chemistry, biological, corpus, and other overlays are model layers unless independently supported by established evidence.
+
+## Frozen post-kernel iteration registry
+
+The mother kernel above remains unchanged. The following immutable theory/projection layers are registered after the kernel boundary and must not redefine PRIM, the mother generation rule, or source-state semantics.
+
+### Metaverse → Universe Unification Theorem v01
+
+Status: **FROZEN / IMMUTABLE / APPEND-ONLY THEORY LAYER**
+
+Path:
+
+```text
+frozen/metaverse-to-universe-unification-v01/
+```
+
+Canonical law:
+
+```text
+N × 1/N → 1_[N]
+```
+
+with invariants:
+
+```text
+sum(weights) = 1
+sum(provenance counts) = N
+terminal active count = 1
+```
+
+Canonical case:
+
+```text
+100 × 1/100 → 1_[100]
+```
+
+Here `1_[100]` means **100-in-1**: one committed state carrying the resolved weight and provenance of all 100 originating predictive branches. It is a post-kernel predictive-branch unification theorem, not a redefinition of the frozen q.d primitive.
